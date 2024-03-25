@@ -1,5 +1,7 @@
 tmux/plugins/*
 keepassxc/
 inkscape/
-thunar/
+Thunar/
 xfce4/
+systemd/
+Signal/
