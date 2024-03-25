@@ -1,0 +1,60 @@
+{"level":30,"time":"2024-03-25T21:47:30.691Z","msg":"got fast localeOverride setting null"}
+{"level":30,"time":"2024-03-25T21:47:30.692Z","msg":"app.ready: hour cycle preference: UnknownPreference"}
+{"level":30,"time":"2024-03-25T21:47:30.692Z","msg":"app.ready: preferred system locales: en-US, en"}
+{"level":30,"time":"2024-03-25T21:47:30.693Z","msg":"locale: Supported locales: af-ZA, ar, az-AZ, bg-BG, bn-BD, bs-BA, ca, cs, da, de, el, en, es, et-EE, eu, fa-IR, fi, fr, ga-IE, gl-ES, gu-IN, he, hi-IN, hr-HR, hu, id, it, ja, ka-GE, kk-KZ, km-KH, kn-IN, ko, ky-KG, lt-LT, lv-LV, mk-MK, ml-IN, mr-IN, ms, my, nb, nl, pa-IN, pl, pt-BR, pt-PT, ro-RO, ru, sk-SK, sl-SI, sq-AL, sr, sv, sw, ta-IN, te-IN, th, tl-PH, tr, ug, uk-UA, ur, vi, yue, zh-CN, zh-HK, zh-Hant"}
+{"level":30,"time":"2024-03-25T21:47:30.693Z","msg":"locale: Preferred locales: en-US, en"}
+{"level":30,"time":"2024-03-25T21:47:30.693Z","msg":"locale: Locale Override: null"}
+{"level":30,"time":"2024-03-25T21:47:30.695Z","msg":"locale: Matched locale: en"}
+{"level":40,"time":"2024-03-25T21:47:30.736Z","msg":"intl.onWarn [@formatjs/intl] \"defaultRichTextElements\" was specified but \"message\" was not pre-compiled. \nPlease consider using \"@formatjs/cli\" to pre-compile your messages for performance.\nFor more details see https://formatjs.io/docs/getting-started/message-distribution"}
+{"level":30,"time":"2024-03-25T21:47:30.736Z","msg":"locale: Text info direction for en: ltr"}
+{"level":30,"time":"2024-03-25T21:47:30.737Z","msg":"app ready"}
+{"level":30,"time":"2024-03-25T21:47:30.737Z","msg":"starting version 7.3.1"}
+{"level":30,"time":"2024-03-25T21:47:30.737Z","msg":"media access status [object Undefined] [object Undefined]"}
+{"level":30,"time":"2024-03-25T21:47:30.739Z","msg":"got fast theme-setting value dark"}
+{"level":30,"time":"2024-03-25T21:47:30.741Z","msg":"got fast theme-setting value dark"}
+{"level":30,"time":"2024-03-25T21:47:30.741Z","msg":"got fast spellcheck setting true"}
+{"level":30,"time":"2024-03-25T21:47:30.742Z","msg":"getSystemTraySetting had no flags and did no DB lookups. Returning DoNotUseSystemTray"}
+{"level":30,"time":"2024-03-25T21:47:30.742Z","msg":"Initializing BrowserWindow config: {\"show\":false,\"width\":1892,\"height\":1052,\"minWidth\":300,\"minHeight\":200,\"autoHideMenuBar\":false,\"titleBarStyle\":\"default\",\"backgroundColor\":\"#121212\",\"webPreferences\":{\"devTools\":false,\"spellcheck\":true,\"enableBlinkFeatures\":\"CSSPseudoDir,CSSLogical\",\"enablePreferredSizeMode\":true,\"nodeIntegration\":false,\"nodeIntegrationInWorker\":false,\"sandbox\":false,\"contextIsolation\":true,\"preload\":\"[REDACTED]/preload.bundle.js\",\"backgroundThrottling\":true,\"disableBlinkFeatures\":\"Accelerated2dCanvas,AcceleratedSmallCanvases\"},\"icon\":\"[REDACTED]/images/signal-logo-desktop-linux.png\",\"x\":14,\"y\":14}"}
+{"level":30,"time":"2024-03-25T21:47:30.796Z","msg":"spellcheck: user locales: [\"en-US\",\"en\"]"}
+{"level":30,"time":"2024-03-25T21:47:30.796Z","msg":"spellcheck: available spellchecker languages: [\"af\",\"bg\",\"ca\",\"cs\",\"cy\",\"da\",\"de\",\"de-DE\",\"el\",\"en\",\"en-AU\",\"en-CA\",\"en-GB\",\"en-GB-oxendict\",\"en-US\",\"es\",\"es-419\",\"es-AR\",\"es-ES\",\"es-MX\",\"es-US\",\"et\",\"fa\",\"fo\",\"fr\",\"fr-FR\",\"he\",\"hi\",\"hr\",\"hu\",\"hy\",\"id\",\"it\",\"it-IT\",\"ko\",\"lt\",\"lv\",\"nb\",\"nl\",\"pl\",\"pt\",\"pt-BR\",\"pt-PT\",\"ro\",\"ru\",\"sh\",\"sk\",\"sl\",\"sq\",\"sr\",\"sv\",\"ta\",\"tg\",\"tr\",\"uk\",\"vi\"]"}
+{"level":30,"time":"2024-03-25T21:47:30.796Z","msg":"spellcheck: setting languages to: [\"en-US\",\"en\"]"}
+{"level":40,"time":"2024-03-25T21:47:30.797Z","msg":"MainSQL: Database log code=283: recovered 607 frames from WAL file [REDACTED]/sql/db.sqlite-wal"}
+{"level":30,"time":"2024-03-25T21:47:30.797Z","msg":"MainSQL: updateSchema:\n  Current user_version: 1000;\n  Most recent db schema: 1000;\n  SQLite version: 3.42.0;\n  SQLCipher version: 4.5.5 community;\n  (deprecated) schema_version: 441;\n"}
+{"level":30,"time":"2024-03-25T21:47:31.255Z","msg":"got fast theme-setting value dark"}
+{"level":30,"time":"2024-03-25T21:47:31.996Z","msg":"got fast spellcheck setting true"}
+{"level":30,"time":"2024-03-25T21:47:32.000Z","msg":"System tray service: created"}
+{"level":30,"time":"2024-03-25T21:47:32.001Z","msg":"System tray service: updating main window. Previously, there was not a window, and now there is"}
+{"level":30,"time":"2024-03-25T21:47:32.001Z","msg":"System tray service: rendering no tray"}
+{"level":30,"time":"2024-03-25T21:47:32.001Z","msg":"Begin ensuring permissions"}
+{"level":30,"time":"2024-03-25T21:47:32.002Z","msg":"Ensuring file permissions for 4 files"}
+{"level":30,"time":"2024-03-25T21:47:32.003Z","msg":"Finish ensuring permissions in 2ms"}
+{"level":30,"time":"2024-03-25T21:47:32.026Z","msg":"main window is ready-to-show"}
+{"level":30,"time":"2024-03-25T21:47:32.026Z","msg":"showing main window"}
+{"level":30,"time":"2024-03-25T21:47:32.028Z","msg":"System tray service: rendering no tray"}
+{"level":30,"time":"2024-03-25T21:47:32.176Z","msg":"Prevent display sleep service: allowing display sleep"}
+{"level":30,"time":"2024-03-25T21:47:32.176Z","msg":"Background throttling enabled because no call is active"}
+{"level":40,"time":"2024-03-25T21:47:32.486Z","msg":"MainSQL: getAllUnprocessedAndIncrementAttempts: deleting 1 invalid unprocessed envelopes"}
+{"level":30,"time":"2024-03-25T21:47:32.531Z","msg":"Updating BrowserWindow config: %s {\"maximized\":false,\"autoHideMenuBar\":false,\"fullscreen\":false,\"width\":1892,\"height\":1024,\"x\":14,\"y\":42}"}
+{"level":30,"time":"2024-03-25T21:47:32.533Z","msg":"config/set: Saving ephemeral config to disk"}
+{"level":30,"time":"2024-03-25T21:47:32.535Z","msg":"config/set: Saved ephemeral config to disk"}
+{"level":30,"time":"2024-03-25T21:47:32.753Z","msg":"updater/start: Updates disabled - not starting new version checks"}
+{"level":30,"time":"2024-03-25T21:47:32.753Z","msg":"System tray service: setting unread count to 2"}
+{"level":30,"time":"2024-03-25T21:47:32.753Z","msg":"System tray service: rendering no tray"}
+{"level":30,"time":"2024-03-25T21:47:32.754Z","msg":"App loaded - time: 2018"}
+{"level":30,"time":"2024-03-25T21:47:32.754Z","msg":"SQL init - time: 108"}
+{"level":30,"time":"2024-03-25T21:47:32.754Z","msg":"Preload - time: 720"}
+{"level":30,"time":"2024-03-25T21:47:32.754Z","msg":"WebSocket connect - time: 439"}
+{"level":30,"time":"2024-03-25T21:47:32.754Z","msg":"Processed count: 35"}
+{"level":30,"time":"2024-03-25T21:47:32.754Z","msg":"Messages per second: 40.74505238649593"}
+{"level":30,"time":"2024-03-25T21:47:34.515Z","msg":"System tray service: setting unread count to 0"}
+{"level":30,"time":"2024-03-25T21:47:34.515Z","msg":"System tray service: rendering no tray"}
+{"level":30,"time":"2024-03-25T21:51:04.919Z","msg":"Approving request for permission 'notifications'"}
+{"level":30,"time":"2024-03-25T21:51:09.273Z","msg":"System tray service: setting unread count to 1"}
+{"level":30,"time":"2024-03-25T21:51:09.273Z","msg":"System tray service: rendering no tray"}
+{"level":30,"time":"2024-03-25T21:51:09.390Z","msg":"Approving request for permission 'notifications'"}
+{"level":30,"time":"2024-03-25T21:51:11.102Z","msg":"System tray service: setting unread count to 2"}
+{"level":30,"time":"2024-03-25T21:51:11.102Z","msg":"System tray service: rendering no tray"}
+{"level":30,"time":"2024-03-25T21:51:11.206Z","msg":"Approving request for permission 'notifications'"}
+{"level":30,"time":"2024-03-25T22:00:09.503Z","msg":"System tray service: setting unread count to 3"}
+{"level":30,"time":"2024-03-25T22:00:09.503Z","msg":"System tray service: rendering no tray"}
+{"level":30,"time":"2024-03-25T22:00:09.622Z","msg":"Approving request for permission 'notifications'"}
