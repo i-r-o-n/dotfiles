@@ -5,3 +5,5 @@ Thunar/
 xfce4/
 systemd/
 Signal/
+pulse/
+dconf/
