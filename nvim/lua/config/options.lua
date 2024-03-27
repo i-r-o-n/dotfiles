@@ -7,6 +7,10 @@ vim.env.PATH = vim.env.PATH .. ":/usr/local/texlive/2024/bin/x86_64-linux"
 vim.o.shell = "/usr/bin/zsh"
 vim.o.runtimepath = vim.o.runtimepath .. ",~/.config/nvim/lua/"
 
+vim.o.encoding = "utf-8"
+
+vim.o.guifont = "JetBrains Mono Nerd Font:h12"
+
 vim.o.conceallevel = 1
 -- latex
 vim.g.tex_flavor = "latex"
