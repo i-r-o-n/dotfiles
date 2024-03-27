@@ -32,7 +32,32 @@ return {
         },
         sections = {
           lualine_a = { "mode" },
-          lualine_b = { "branch" },
+          lualine_b = {
+            {
+              "branch",
+              icon = "",
+              -- color = function()
+              --   -- tint background instead of catpuccin surface0
+              --   -- BUG: separator gets removed on color change
+              --   local mode_color = {
+              --     n = { bg = "#313244" }, -- Normal mode
+              --     i = { bg = "#334431" }, -- Insert mode
+              --     v = { bg = "#a3be8c" }, -- Visual mode
+              --     [""] = { bg = "#a3be8c" }, -- Visual Block mode
+              --     V = { bg = "#a3be8c" }, -- Visual Line mode
+              --     c = { bg = "#d08770" }, -- Command mode
+              --     -- r Replace
+              --     -- t Terminal
+              --   }
+              --   local mode = vim.fn.mode()
+              --   if mode_color[mode] then
+              --     return mode_color[mode]
+              --   else
+              --     return {} -- Default colors if mode not specified
+              --   end
+              -- end,
+            },
+          },
 
           lualine_c = {
             LazyVim.lualine.root_dir(),
