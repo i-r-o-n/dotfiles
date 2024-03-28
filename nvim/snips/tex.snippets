@@ -604,8 +604,22 @@ snippet cvec "column vector" iA
 \begin{pmatrix} ${1:x}_${2:1}\\\\ \vdots\\\\ $1_${2:n} \end{pmatrix}
 endsnippet
 
+priority 10
+context "math()"
 snippet vc "simple vector" iA
 \vec{$1}$0
+endsnippet
+
+priority 10
+context "math()"
+snippet bvc "bold vector" iA
+\mathbf{$1}$0
+endsnippet
+
+priority 100
+context "math()"
+snippet "([a-zA-Z])vec" "simple vector" riA
+\vec{`!p snip.rv=match.group(1)`}
 endsnippet
 
 priority 10

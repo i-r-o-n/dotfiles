@@ -4,19 +4,19 @@
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
--- Key mapping for correcting the last spelling mistake in insert mode
+-- correct last spelling mistake in insert mode
 vim.api.nvim_set_keymap("i", "<C-l>", "<c-g>u<Esc>[s1z=`]a<c-g>u", { noremap = true })
 
 -- ultisnips
--- vim.g.UltiSnipsExpandTrigger = "<tab>"
--- vim.g.UltiSnipsJumpForwardTrigger = "<tab>"
--- vim.g.UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
-vim.cmd([[
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-]])
+vim.g.UltiSnipsExpandTrigger = "<tab>"
+vim.g.UltiSnipsJumpForwardTrigger = "<tab>"
+vim.g.UltiSnipsJumpBackwardTrigger = "<s-tab>"
+-- redundant?
+-- vim.cmd([[
+-- let g:UltiSnipsExpandTrigger="<tab>"
+-- let g:UltiSnipsJumpForwardTrigger="<tab>"
+-- let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+-- ]])
 
 -- nvim tmux navigator
 -- require("nvim-tmux-navigation").setup({

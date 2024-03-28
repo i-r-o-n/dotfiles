@@ -1,9 +1,14 @@
 return {
+  { "SirVer/ultisnips" },
   {
     "L3MON4D3/LuaSnip",
-    keys = function()
-      return {}
-    end,
+    -- lazy = true,
+    -- enabled = function()
+    --   return vim.bo.filetype ~= "tex" -- disable for tex files
+    -- end,
+    -- keys = function()
+    --   return {}
+    -- end,
   },
   {
     "echasnovski/mini.surround",
@@ -19,6 +24,7 @@ return {
       },
     },
   },
+  -- { "quangnguyen30192/cmp-nvim-ultisnips" },
   {
     "hrsh7th/nvim-cmp",
     ---@param opts cmp.ConfigSchema
