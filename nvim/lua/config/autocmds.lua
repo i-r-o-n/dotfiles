@@ -9,3 +9,18 @@ vim.cmd([[
 
 -- colorizer
 require("colorizer").setup()
+
+-- keyboard layout force change
+-- vim.api.nvim_create_autocmd("InsertEnter", {
+--   pattern = "*",
+--   callback = function()
+--     vim.fn.system("setxkbmap semimak")
+--   end,
+-- })
+--
+-- vim.api.nvim_create_autocmd("InsertLeave", {
+--   pattern = "*",
+--   callback = function()
+--     vim.fn.system("setxkbmap us")
+--   end,
+-- })
