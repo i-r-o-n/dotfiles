@@ -1,5 +1,6 @@
-/**/.git/
+# /**/.git/
 tmux/plugins/*
+zsh/themes/**/.git
 keepassxc/
 inkscape/
 Thunar/
