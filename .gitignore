@@ -1,6 +1,7 @@
 # /**/.git/
 tmux/plugins/*
-zsh/themes/**/.git
+zsh/**/.git/
+zsh/themes/powerlevel10k/.git/
 keepassxc/
 inkscape/
 Thunar/
