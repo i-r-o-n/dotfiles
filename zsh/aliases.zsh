@@ -3,6 +3,7 @@ alias cd="z"
 
 alias ssh="ssh -F ~/.config/ssh/config"
 
+alias rm='trash-put'
 
 # clipboard
 alias "copy=xclip" # copy to X clipboard (register *)
