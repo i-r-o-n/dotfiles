@@ -4,6 +4,9 @@
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+-- exit insert mode
+vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true })
+
 -- correct last spelling mistake in insert mode
 vim.api.nvim_set_keymap("i", "<C-l>", "<c-g>u<Esc>[s1z=`]a<c-g>u", { noremap = true })
 

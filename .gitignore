@@ -10,3 +10,4 @@ systemd/
 Signal/
 pulse/
 dconf/
+htop/
