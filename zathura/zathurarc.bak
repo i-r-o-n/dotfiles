@@ -1,0 +1,12 @@
+set default-fg "#FFFFFF"
+set default-bg "#000000"
+
+set recolor "true"
+
+set recolor-lightcolor \#FFFFFF  # Text color
+set recolor-darkcolor \#000000   # Background color
+
+set font "JetBrainsMono Nerd Font"
+
+map <C-i> zoom in
+map <C-o> zoom out
