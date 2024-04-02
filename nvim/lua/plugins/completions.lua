@@ -24,7 +24,7 @@ return {
       },
     },
   },
-  { "quangnguyen30192/cmp-nvim-ultisnips" },
+  -- { "quangnguyen30192/cmp-nvim-ultisnips" },
   -- { "a-lipson/cmp-nvim-ultisnips" },
 
   {
@@ -37,8 +37,9 @@ return {
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
         return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
       end
+
       local cmp = require("cmp")
-      -- local luasnip = require("luasnip")
+      local luasnip = require("luasnip")
       local ultisnip = require("cmp_nvim_ultisnips.mappings")
 
       local function ultisnip_can_expand_or_jump()
@@ -54,13 +55,12 @@ return {
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item()
-            -- elseif ultisnip.can_expand_or_jump() then
           elseif ultisnip_can_expand_or_jump() then
             ultisnip.expand_or_jump_forwards(fallback)
+          elseif luasnip.expand_or_jumpable() then
+            luasnip.expand_or_jump()
           elseif has_words_before() then
             cmp.complete()
-            -- elseif luasnip.expand_or_jumpable() then
-            -- luasnip.expand_or_jump()
           else
             fallback()
           end
@@ -70,8 +70,8 @@ return {
             cmp.select_prev_item()
           elseif ultisnip_can_jump_back() then
             ultisnip.jump_backwards(fallback)
-            -- elseif luasnip.jumpable(-1) then
-            -- luasnip.jump(-1)
+          elseif luasnip.jumpable(-1) then
+            luasnip.jump(-1)
           else
             fallback()
           end
