@@ -11,7 +11,7 @@ vim.o.runtimepath = vim.o.runtimepath .. ",~/.config/nvim/lua/"
 vim.o.encoding = "utf-8"
 vim.o.guifont = "JetBrains Mono Nerd Font:h12"
 
-vim.o.conceallevel = 1
+vim.o.conceallevel = 2
 
 -- layout switcher
 vim.g.XkbSwitchEnabled = 1

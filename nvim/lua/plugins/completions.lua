@@ -25,11 +25,11 @@ return {
     },
   },
   -- { "quangnguyen30192/cmp-nvim-ultisnips" },
-  -- { "a-lipson/cmp-nvim-ultisnips" },
-
+  { "a-lipson/cmp-nvim-ultisnips" },
+  { "micangl/cmp-vimtex" },
   {
     "hrsh7th/nvim-cmp",
-    dependencies = { "quangnguyen30192/cmp-nvim-ultisnips" },
+    -- dependencies = { "quangnguyen30192/cmp-nvim-ultisnips" },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       local has_words_before = function()
