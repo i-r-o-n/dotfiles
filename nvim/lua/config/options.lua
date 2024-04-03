@@ -11,6 +11,9 @@ vim.o.runtimepath = vim.o.runtimepath .. ",~/.config/nvim/lua/"
 vim.o.encoding = "utf-8"
 vim.o.guifont = "JetBrains Mono Nerd Font:h12"
 
+vim.o.wrap = true
+vim.o.linebreak = true
+
 vim.o.conceallevel = 2
 
 -- layout switcher
@@ -24,9 +27,17 @@ vim.g.tex_flavor = "latex"
 vim.g.vimtex_view_method = "zathura"
 vim.g.vimtex_quickfix_mode = 0
 vim.g.tex_conceal = "abdmg"
+vim.g.vimtex_compiler_latexmk = {
+  options = {
+    "-lualatex",
+    "-file-line-error",
+    "-synctex=1",
+    "-interaction=nonstopmode",
+  },
+}
 
 -- ultisnips
-vim.g.UltiSnipsSnippetDirectories = { "../snips" }
+vim.g.UltiSnipsSnippetDirectories = { "~/.config/nvim/snips" }
 
 vim.o.spelllang = "en_us"
 -- vim.o.spell = true

@@ -29,7 +29,7 @@ return {
   { "micangl/cmp-vimtex" },
   {
     "hrsh7th/nvim-cmp",
-    -- dependencies = { "quangnguyen30192/cmp-nvim-ultisnips" },
+    -- dependencies = { "a-lipson/cmp-nvim-ultisnips" },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       local has_words_before = function()
