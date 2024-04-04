@@ -1,0 +1,8 @@
+[Match]
+Name=enp0s20f0u4c2
+
+[Network]
+Address=10.11.99.2/24
+
+
+# needs symlink to /etc/systemd/network/
