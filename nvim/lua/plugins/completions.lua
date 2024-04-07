@@ -40,7 +40,15 @@ return {
 
       local cmp = require("cmp")
       local luasnip = require("luasnip")
-      local ultisnip = require("cmp_nvim_ultisnips.mappings")
+      local ultisnips = require("cmp_nvim_ultisnips.mappings")
+
+      -- cmp.setup({
+      --   snippet = {
+      --     expand = function(args)
+      --       vim.fn["UltiSnips#Anon"](args.body) -- The UltiSnips expand function
+      --     end,
+      --   },
+      -- })
 
       local function ultisnip_can_expand_or_jump()
         return vim.api.nvim_call_function("UltiSnips#CanExpandSnippet", {}) == 1
@@ -56,7 +64,7 @@ return {
           if cmp.visible() then
             cmp.select_next_item()
           elseif ultisnip_can_expand_or_jump() then
-            ultisnip.expand_or_jump_forwards(fallback)
+            ultisnips.expand_or_jump_forwards(fallback)
           elseif luasnip.expand_or_jumpable() then
             luasnip.expand_or_jump()
           elseif has_words_before() then
@@ -69,7 +77,7 @@ return {
           if cmp.visible() then
             cmp.select_prev_item()
           elseif ultisnip_can_jump_back() then
-            ultisnip.jump_backwards(fallback)
+            ultisnips.jump_backwards(fallback)
           elseif luasnip.jumpable(-1) then
             luasnip.jump(-1)
           else

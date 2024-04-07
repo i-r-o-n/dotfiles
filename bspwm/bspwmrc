@@ -13,9 +13,9 @@ bspc config borderless_monocle true
 bspc config gapless_monocle true
 
 # set monocle by default
-for n in $(seq 1 5); do
-	bspc desktop $n --layout monocle
-done
+# for n in $(seq 1 5); do
+# bspc desktop $n --layout monocle
+# done
 
 # remap keys
 setxkbmap -option "caps:ctrl_modifier"
