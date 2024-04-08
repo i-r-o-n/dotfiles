@@ -2,17 +2,6 @@ global !p
 from latex_environments import math, comment, env
 endglobal
 
-# why is there regex to block an "i" here?
-context "math()"
-snippet '(?<!i)stt' "text subscript" irA
-_\text{$1} $0
-endsnippet
-
-context "math()"
-snippet tt "text" iA
-\text{$1}$0
-endsnippet
-
 # standard units
 snippet SI "SI" iA
 \SI{$1}{$2}

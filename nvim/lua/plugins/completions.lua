@@ -26,10 +26,10 @@ return {
   },
   -- { "quangnguyen30192/cmp-nvim-ultisnips" },
   { "a-lipson/cmp-nvim-ultisnips" },
+  { "saadparwaiz1/cmp_luasnip" },
   { "micangl/cmp-vimtex" },
   {
     "hrsh7th/nvim-cmp",
-    -- dependencies = { "a-lipson/cmp-nvim-ultisnips" },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       local has_words_before = function()
@@ -42,13 +42,14 @@ return {
       local luasnip = require("luasnip")
       local ultisnips = require("cmp_nvim_ultisnips.mappings")
 
-      -- cmp.setup({
-      --   snippet = {
-      --     expand = function(args)
-      --       vim.fn["UltiSnips#Anon"](args.body) -- The UltiSnips expand function
-      --     end,
-      --   },
-      -- })
+      cmp.setup({
+        snippet = {
+          expand = function(args)
+            luasnip.lsp_expand(args.body)
+            vim.fn["UltiSnips#Anon"](args.body)
+          end,
+        },
+      })
 
       local function ultisnip_can_expand_or_jump()
         return vim.api.nvim_call_function("UltiSnips#CanExpandSnippet", {}) == 1

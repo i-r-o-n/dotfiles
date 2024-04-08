@@ -1,5 +1,8 @@
+global !p
+from latex_environments import math, comment, env
+endglobal
 
-snippet lm "in-line math" wA
+snippet ml "in-line math" wA
 $${1}$`!p
 if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
 	snip.rv = ' '
@@ -22,6 +25,14 @@ endsnippet
 
 snippet == "equals" iA
 &= $1 \\\\
+endsnippet
+
+snippet ovst "overset" iA
+\overset{$1}{$2}$0
+endsnippet
+
+snippet unst "underset" iA
+\underset{$1}{$2}$0
 endsnippet
 
 snippet enum "enumerate" bA

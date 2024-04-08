@@ -13,6 +13,9 @@ return {
           name = "+ultisnips",
           r = { "<cmd>call UltiSnips#RefreshSnippets()<CR>", "Refresh UltiSnips" },
         },
+        l = {
+          name = "+vimtex",
+        },
       },
     }, { mode = "n" })
   end,
