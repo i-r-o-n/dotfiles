@@ -285,3 +285,9 @@ context "math()"
 snippet "([a-zA-Z])vec" "simple vector" riA
 \vec{`!p snip.rv=match.group(1)`}
 endsnippet
+
+priority 1000
+context "math()"
+snippet "([a-zA-Z]_[0-9nmij])vec" "vector with subscript" riA
+\vec{`!p snip.rv=match.group(1)`}
+endsnippet

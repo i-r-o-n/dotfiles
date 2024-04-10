@@ -1,35 +1,93 @@
 (defcfg
   linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
   process-unmapped-keys yes
+;;  log-layer-changes no
+)
+
+;; lrld = live reload
+;; rpt = repeat
+;; rpt-any = repeat key combo
+
+;; timings
+(defvar
+  tap-timeout   150
+  hold-timeout  200
+  t $tap-timeout
+  h $hold-timeout
+)
+
+;; symbols
+(defalias
+exl S-1 ;; !
+at  S-2 ;; @
+hsh S-3 ;; #
+dlr S-4 ;; $
+prc S-5 ;; %
+crt S-6 ;; ^
+amp S-7 ;; &
+ast S-8 ;; *
+
+lpr S-9 ;; (
+rpr S-0 ;; )
+lcb S-[ ;; {
+rcb S-] ;; }
+lab S-, ;; <
+rab S-. ;; >
+
+col S-; ;; :
+qst S-/ ;; ?
+
+pip S-\ ;; |
+und S-- ;; _
+
+pls S-= ;; +
+tld S-` ;; ~
+)
+
+;; utility
+(defalias
+  esc_ctl (tap-hold $t $h esc lctl)      ;; tap esc  hold lctl
+
+  cpy C-S-c
+  pst C-S-v
+
+  ;; ssup    (tap-hold $t $h spc @super)    ;; tap spc  hold super layer
+  ;; anav    (tap-hold $t $h lalt @alt_nav) ;; tap spc  hold super layer
 )
 
 ;; layers
 (defalias
-  super   (layer-toggle super)
-  alt_nav (layer-toggle alt_nav)
+  lay_semi (layer-toggle semimak)
+  lay_base (layer-toggle base)
 )
 
-;; home-row mod
+;; home-row mod GASC qwerty
 (defalias
-    met_a (tap-hold 200 200 a lmet)
-    alt_s (tap-hold 200 200 s lalt)
-    sft_d (tap-hold 200 200 d lsft)
-    ctl_f (tap-hold 200 200 f lctl)
-    ctl_j (tap-hold 200 200 j rctl)
-    sft_k (tap-hold 200 200 k rsft)
-    alt_l (tap-hold 200 200 l lalt)
-    met_; (tap-hold 200 200 ; rmet)
+  G_a (tap-hold $t $h a lmet)
+  A_s (tap-hold $t $h s lalt)
+  S_d (tap-hold $t $h d lsft)
+  C_f (tap-hold $t $h f lctl)
+  C_j (tap-hold $t $h j rctl)
+  S_k (tap-hold $t $h k rsft)
+  A_l (tap-hold $t $h l lalt) ;; ralt is alt-grave
+  G_; (tap-hold $t $h ; rmet)
 )
-
+;; home-row mod GASC semimak
 (defalias
-    ssup   (tap-hold 200 200 spc @super) ;; tap: spc       hold: super layer
-    anav   (tap-hold 200 200 lalt @alt_nav) ;; tap: spc    hold: super layer
+  G_s (tap-hold $t $h s lmet)
+  A_r (tap-hold $t $h r lalt)
+  S_n (tap-hold $t $h n lsft)
+  C_t (tap-hold $t $h t lctl)
+  C_d (tap-hold $t $h d rctl)
+  S_e (tap-hold $t $h e rsft)
+  A_a (tap-hold $t $h a lalt) ;; ralt is alt-grave
+  G_i (tap-hold $t $h i rmet)
 )
 
 ;; source; https://github.com/kmonad/kmonad/blob/master/keymap/template/thinkpad_T430_iso.kbd
-;; NOTE: DO NOT CHANGE
+;; row counts 17, 14, 14, 13, 12, 11, 3
 (defsrc
-esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
   grv  1    2    3    4    5    6    7    8    9    0    -     =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [     ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '          ret
@@ -44,27 +102,47 @@ esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  
   tab  q    w    e    r    t    y    u    i    o    p    [     ]    \
   lctl @met_a    @alt_s    @sft_d    @ctl_f    g    h    @ctl_j    @sft_k    @alt_l    @met_;    '          ret
   lsft z    x    c    v    b    n    m    ,    .    /               rsft
-  wkup lctl lmet @anav           @ssup            ralt sys  rctl  pgdn up   pgup
+  wkup lctl lmet @anav           @ssup            ralt @lay_semi  rctl  pgdn up   pgup
                                                                left down rght
 )
 
-(deflayer super
-  _  _      _      _      _      _      _      _      _      _      _    _  _  _ _  _  _
-  _  _      _      _      _      _      _      _      _      _      _    _     _    _
-  _ M-q    M-w    M-e    M-r    M-t    M-y    M-u    M-i    M-o    M-p   _     _    _
-  _ M-1    M-2    M-3    M-4    M-5    M-h    M-j    M-k    M-l    M-;   _          _
-  _ M-6    M-7    M-8    M-9    M-0    M-n    M-m    M-,    M-.    M-/              _
-  _  _     _       _      _      _      _      _     _       _      _
-                                                                          _ _ _
+(deflayer semimak
+esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12 home end ins del
+grv   1    2    3    4    5    6    7    8    9    0     -     =   bspc
+tab   f    l    h    v    z    '    w    u    o    y     [     ]   \
+lctl  G_s  A_r  S_n  C_t  k    c    C_d  S_e  A_a  G_i   /     ret
+lsft  x    j    b    m    q    p    g    ,    .    ;     rsft
+wkup  lctl lmet lalt spc  ralt @lay_base rctl pgdn up pgup
+                                         left down right
+
 )
 
-(deflayer alt_nav
-  _  _   _   _   _   _   _   _   _   _   _  _  _  _ _  _  _
-  _  _    _    _    _    _    _    _    _    _    _    _     _    _
-  _ A-q    A-w    A-e    A-r    A-t    A-y    A-u    A-i    A-o    A-p    _     _    _
-  _ A-1    A-2    A-3    A-4    A-5    A-h    A-j    A-k    A-l    A-;    _          _
-  _ A-6    A-7    A-8    A-9    A-0    A-n    A-m    A-,    A-.    A-/               _
-  _  _     _       _      _     _       _      _      _     _       _
-                                                                          _ _ _
+(deflayer symbol
+XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX XX XX XX XX XX
+XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX XX XX
+XX    lab   rab   lcb   rcb   XX    `     amp   ast   -     +     XX XX XX
+XX    \     /     lpr   rpr   XX    tld   und   =     qst   exl   XX XX
+XX    XX    pip   [     ]     XX    prc   hsh   dlr   at    crt   XX
+XX XX XX XX XX XX XX XX XX XX
+                     XX XX XX
 )
 
+(deflayer number
+XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX
+XX XX XX XX XX XX XX XX XX XX XX XX XX
+XX XX XX XX XX XX XX 7  8  9 .  XX XX
+XX XX XX XX XX XX XX 4  5  6 ret XX
+XX XX XX XX XX XX 0  1  2  3 bspc
+XX XX XX XX XX XX XX XX XX XX
+                     XX XX XX
+)
+
+(deflayer blank
+XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX
+XX XX XX XX XX XX XX XX XX XX XX XX XX
+XX XX XX XX XX XX XX XX XX XX XX XX XX
+XX XX XX XX XX XX XX XX XX XX XX XX
+XX XX XX XX XX XX XX XX XX XX XX
+XX XX XX XX XX XX XX XX XX XX
+                     XX XX XX
+)

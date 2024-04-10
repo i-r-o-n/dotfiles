@@ -32,6 +32,17 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- set file type
+-- vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, { pattern = "*.kbd", command = "set filetype=kbd" })
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*",
+  callback = function()
+    if vim.bo.filetype == "" then
+      vim.bo.filetype = vim.fn.expand("%:e")
+    end
+  end,
+})
+
 -- keyboard layout force change
 -- vim.api.nvim_create_autocmd("InsertEnter", {
 --   pattern = "*",
