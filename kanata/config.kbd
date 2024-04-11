@@ -1,7 +1,7 @@
 (defcfg
   linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
   process-unmapped-keys yes
-;;  log-layer-changes no
+  log-layer-changes no
 )
 
 ;; lrld = live reload
@@ -12,8 +12,10 @@
 (defvar
   tap-timeout   150
   hold-timeout  200
+  one-shot-timeout 500
   t $tap-timeout
   h $hold-timeout
+  o $one-shot-timeout
 )
 
 ;; symbols
@@ -51,14 +53,20 @@ tld S-` ;; ~
   cpy C-S-c
   pst C-S-v
 
-  ;; ssup    (tap-hold $t $h spc @super)    ;; tap spc  hold super layer
-  ;; anav    (tap-hold $t $h lalt @alt_nav) ;; tap spc  hold super layer
+  os_c (one-shot $o lctl)
+  os_s (one-shot $o lsft)
+  os_a (one-shot $o lalt)
+  os_g (one-shot $o lmet)
+
+  spc_ext (tap-hold $t $h spc (layer-while-held extension) )
 )
 
 ;; layers
 (defalias
-  lay_semi (layer-toggle semimak)
-  lay_base (layer-toggle base)
+  lay_sym (layer-while-held symbol)
+  lay_num (layer-while-held number)
+  lay_semi (layer-switch semimak)
+  lay_base (layer-switch base)
 )
 
 ;; home-row mod GASC qwerty
@@ -100,49 +108,58 @@ tld S-` ;; ~
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
   grv  1    2    3    4    5    6    7    8    9    0    -     =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [     ]    \
-  lctl @met_a    @alt_s    @sft_d    @ctl_f    g    h    @ctl_j    @sft_k    @alt_l    @met_;    '          ret
+  lctl @G_a @A_s @S_d @C_f g    h    @C_j @S_k @A_l @G_; '          ret
   lsft z    x    c    v    b    n    m    ,    .    /               rsft
-  wkup lctl lmet @anav           @ssup            ralt @lay_semi  rctl  pgdn up   pgup
-                                                               left down rght
+  wkup lctl lmet @lay_num       @spc_ext            @lay_sym @lay_semi  rctl  pgdn up   pgup
+                                                                         left down rght
 )
 
 (deflayer semimak
-esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12 home end ins del
-grv   1    2    3    4    5    6    7    8    9    0     -     =   bspc
-tab   f    l    h    v    z    '    w    u    o    y     [     ]   \
-lctl  G_s  A_r  S_n  C_t  k    c    C_d  S_e  A_a  G_i   /     ret
-lsft  x    j    b    m    q    p    g    ,    .    ;     rsft
-wkup  lctl lmet lalt spc  ralt @lay_base rctl pgdn up pgup
-                                         left down right
+  esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12 home end ins del
+  grv   1    2    3    4    5    6    7    8    9    0     -     =   bspc
+  tab   f    l    h    v    z    '    w    u    o    y     [     ]   \
+  lctl  @G_s @A_r @S_n @C_t k    c    @C_d @S_e @A_a @G_i  /         ret
+  lsft  x    j    b    m    q    p    g    ,    .    ;               rsft
+  wkup  lctl lmet @lay_num       @spc_ext            @lay_sym @lay_base rctl pgdn up   pgup
+                                                                        left down rght
+)
 
+(deflayer extension
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX XX XX XX XX XX
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX XX XX
+  XX    esc   lmet  XX    XX    XX    XX    home  end   XX    XX    XX XX XX
+  XX    @os_g @os_a @os_s @os_c XX    left  down  up    rght  XX    XX XX 
+  XX    XX    XX    @cpy  @pst  XX    XX    XX    XX    XX    XX    XX
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+                                                  XX    XX    XX
 )
 
 (deflayer symbol
-XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX XX XX XX XX XX
-XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX XX XX
-XX    lab   rab   lcb   rcb   XX    `     amp   ast   -     +     XX XX XX
-XX    \     /     lpr   rpr   XX    tld   und   =     qst   exl   XX XX
-XX    XX    pip   [     ]     XX    prc   hsh   dlr   at    crt   XX
-XX XX XX XX XX XX XX XX XX XX
-                     XX XX XX
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX XX XX XX XX XX
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX XX XX
+  XX    @lab  @rab  @lcb  @rcb  XX    `     @amp  @ast  -     @pls  XX XX XX
+  XX    \     /     @lpr  @rpr  XX    @tld  @und  =     @qst  @exl  XX XX
+  XX    XX    @pip  [     ]     XX    @prc  @hsh  @dlr  @at   @crt  XX
+  XX XX XX XX XX XX XX XX XX XX XX
+                      XX XX XX
 )
 
 (deflayer number
-XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX
-XX XX XX XX XX XX XX XX XX XX XX XX XX
-XX XX XX XX XX XX XX 7  8  9 .  XX XX
-XX XX XX XX XX XX XX 4  5  6 ret XX
-XX XX XX XX XX XX 0  1  2  3 bspc
-XX XX XX XX XX XX XX XX XX XX
-                     XX XX XX
+  XX XX XX XX XX XX XX XX XX XX XX   XX XX XX XX XX XX
+  XX XX XX XX XX XX XX XX XX XX XX   XX XX XX
+  XX XX XX XX XX XX XX 7  8  9  .    XX XX XX
+  XX XX XX XX XX XX XX 4  5  6  0  XX XX
+  XX XX XX XX XX XX XX 1  2  3  0 XX
+  XX XX XX XX spc XX XX XX XX XX XX
+                      XX XX XX
 )
 
-(deflayer blank
-XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX
-XX XX XX XX XX XX XX XX XX XX XX XX XX
-XX XX XX XX XX XX XX XX XX XX XX XX XX
-XX XX XX XX XX XX XX XX XX XX XX XX
-XX XX XX XX XX XX XX XX XX XX XX
-XX XX XX XX XX XX XX XX XX XX
-                     XX XX XX
-)
+;; (deflayer blank
+;;   XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX XX
+;;   XX XX XX XX XX XX XX XX XX XX XX XX XX XX
+;;   XX XX XX XX XX XX XX XX XX XX XX XX XX XX
+;;   XX XX XX XX XX XX XX XX XX XX XX XX XX
+;;   XX XX XX XX XX XX XX XX XX XX XX XX
+;;   XX XX XX XX XX XX XX XX XX XX XX
+;;                       XX XX XX
+;; )
