@@ -1,5 +1,3 @@
-(include aliases.kbd)
-
 (defcfg
   linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
   process-unmapped-keys yes
@@ -14,20 +12,84 @@
 (defvar
   tap-timeout   150
   hold-timeout  200
-  one-shot-timeout 1000
+  one-shot-timeout 500
   t $tap-timeout
   h $hold-timeout
   o $one-shot-timeout
 )
 
+;; symbols
+(defalias
+exl S-1 ;; !
+at  S-2 ;; @
+hsh S-3 ;; #
+dlr S-4 ;; $
+prc S-5 ;; %
+crt S-6 ;; ^
+amp S-7 ;; &
+ast S-8 ;; *
+
+lpr S-9 ;; (
+rpr S-0 ;; )
+lcb S-[ ;; {
+rcb S-] ;; }
+lab S-, ;; <
+rab S-. ;; >
+
+col S-; ;; :
+qst S-/ ;; ?
+
+pip S-\ ;; |
+und S-- ;; _
+
+pls S-= ;; +
+tld S-` ;; ~
+)
+
+;; utility
+(defalias
+  esc_ctl (tap-hold $t $h esc lctl)      ;; tap esc  hold lctl
+
+  cpy C-S-c
+  pst C-S-v
+
+  os_c (one-shot $o lctl)
+  os_s (one-shot $o lsft)
+  os_a (one-shot $o lalt)
+  os_g (one-shot $o lmet)
+
+  spc_ext (tap-hold $t $h spc (layer-while-held extension) )
+)
+
 ;; layers
 (defalias
-  spc_ext (tap-hold $t $h spc (layer-while-held extension) )
-
   lay_sym (layer-while-held symbol)
   lay_num (layer-while-held number)
   lay_semi (layer-switch semimak)
   lay_base (layer-switch base)
+)
+
+;; home-row mod GASC qwerty
+(defalias
+  G_a (tap-hold $t $h a lmet)
+  A_s (tap-hold $t $h s lalt)
+  S_d (tap-hold $t $h d lsft)
+  C_f (tap-hold $t $h f lctl)
+  C_j (tap-hold $t $h j rctl)
+  S_k (tap-hold $t $h k rsft)
+  A_l (tap-hold $t $h l lalt) ;; ralt is alt-grave
+  G_; (tap-hold $t $h ; rmet)
+)
+;; home-row mod GASC semimak
+(defalias
+  G_s (tap-hold $t $h s lmet)
+  A_r (tap-hold $t $h r lalt)
+  S_n (tap-hold $t $h n lsft)
+  C_t (tap-hold $t $h t lctl)
+  C_d (tap-hold $t $h d rctl)
+  S_e (tap-hold $t $h e rsft)
+  A_a (tap-hold $t $h a lalt) ;; ralt is alt-grave
+  G_i (tap-hold $t $h i rmet)
 )
 
 ;; source; https://github.com/kmonad/kmonad/blob/master/keymap/template/thinkpad_T430_iso.kbd
@@ -43,12 +105,12 @@
 )
 
 (deflayer base
-  esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
-  grv   1    2    3    4    5    6    7    8    9    0    -     =    bspc
-  tab   q    w    e    r    t    y    u    i    o    p    [     ]    \
-  @ectl @G_a @A_s @S_d @C_f g    h    j    k    l    ;    '          ret
-  lsft  z    x    c    v    b    n    m    ,    .    /               rsft
-  wkup  lctl lmet @lay_num       @spc_ext            @lay_sym @lay_semi  rctl  pgdn up   pgup
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  home end  ins  del
+  grv  1    2    3    4    5    6    7    8    9    0    -     =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [     ]    \
+  lctl @G_a @A_s @S_d @C_f g    h    @C_j @S_k @A_l @G_; '          ret
+  lsft z    x    c    v    b    n    m    ,    .    /               rsft
+  wkup lctl lmet @lay_num       @spc_ext            @lay_sym @lay_semi  rctl  pgdn up   pgup
                                                                          left down rght
 )
 
@@ -56,7 +118,7 @@
   esc   f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12 home end ins del
   grv   1    2    3    4    5    6    7    8    9    0     -     =   bspc
   tab   f    l    h    v    z    '    w    u    o    y     [     ]   \
-  @ectl @G_s @A_r @S_n @C_t k    c    d    e    a    i  /         ret
+  lctl  @G_s @A_r @S_n @C_t k    c    @C_d @S_e @A_a @G_i  /         ret
   lsft  x    j    b    m    q    p    g    ,    .    ;               rsft
   wkup  lctl lmet @lay_num       @spc_ext            @lay_sym @lay_base rctl pgdn up   pgup
                                                                         left down rght

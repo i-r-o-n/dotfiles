@@ -1,0 +1,65 @@
+
+;; symbols
+(defalias
+exl S-1 ;; !
+at  S-2 ;; @
+hsh S-3 ;; #
+dlr S-4 ;; $
+prc S-5 ;; %
+crt S-6 ;; ^
+amp S-7 ;; &
+ast S-8 ;; *
+
+lpr S-9 ;; (
+rpr S-0 ;; )
+lcb S-[ ;; {
+rcb S-] ;; }
+lab S-, ;; <
+rab S-. ;; >
+
+col S-; ;; :
+qst S-/ ;; ?
+
+pip S-\ ;; |
+und S-- ;; _
+
+pls S-= ;; +
+tld S-` ;; ~
+)
+
+;; utility
+(defalias
+  ectl (tap-hold $t $h esc lctl)      ;; tap esc  hold lctl
+
+  cpy C-S-c
+  pst C-S-v
+
+  os_c (one-shot $o lctl)
+  os_s (one-shot $o lsft)
+  os_a (one-shot $o lalt)
+  os_g (one-shot $o lmet)
+)
+
+
+;; home-row mod GASC qwerty
+(defalias
+  G_a (tap-hold $t $h a lmet)
+  A_s (tap-hold $t $h s lalt)
+  S_d (tap-hold $t $h d lsft)
+  C_f (tap-hold $t $h f lctl)
+  C_j (tap-hold $t $h j rctl)
+  S_k (tap-hold $t $h k rsft)
+  A_l (tap-hold $t $h l lalt) ;; ralt is alt-grave
+  G_; (tap-hold $t $h ; rmet)
+)
+;; home-row mod GASC semimak
+(defalias
+  G_s (tap-hold $t $h s lmet)
+  A_r (tap-hold $t $h r lalt)
+  S_n (tap-hold $t $h n lsft)
+  C_t (tap-hold $t $h t lctl)
+  C_d (tap-hold $t $h d rctl)
+  S_e (tap-hold $t $h e rsft)
+  A_a (tap-hold $t $h a lalt) ;; ralt is alt-grave
+  G_i (tap-hold $t $h i rmet)
+)
