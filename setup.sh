@@ -1,5 +1,18 @@
 #!/bin/sh
 
+# packages
+# ly
+# bspwm
+# sxhkd
+# signal-desktop
+# alacritty
+# nvim
+# tmux
+# polybar
+# zathura
+
+# AUR packages
+
 # yay-bin
 git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin
@@ -10,3 +23,7 @@ yay -S pac-pacman-aliases --noconfirm
 
 # kanata keyboard manager
 yay -S kanata --noconfirm
+
+# fonts
+
+# JetBrainsMono Nerd Font Mono
