@@ -18,8 +18,11 @@ set notification-error-fg   "#0F1419"
 set notification-warning-bg "#FB6F92"
 set notification-warning-fg "#0F1419"
 
-set highlight-color         "#C39720"
-set highlight-active-color  "#FB6F92"
+" set highlight-color         "#FFEA00"
+set highlight-color         "#FCBA0366"
+set highlight-active-color  "#E6A800"
+" set highlight-active-color  "#BDAD00"
+set highlight-transparency  0.4
 
 set completion-highlight-fg "#23B0A3"
 set completion-highlight-bg "#0F1419"

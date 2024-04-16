@@ -67,7 +67,7 @@
   XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX XX XX
   XX    esc   lmet  XX    XX    XX    XX    home  end   XX    XX    XX XX XX
   XX    @os_g @os_a @os_s @os_c XX    left  down  up    rght  XX    XX XX 
-  XX    XX    XX    @cpy  @pst  XX    XX    XX    XX    XX    XX    XX
+  XX    XX    XX    @cpy  @pst  XX    ret   bspc  XX    XX    XX    XX
   XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
                                                   XX    XX    XX
 )

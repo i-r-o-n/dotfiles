@@ -9,14 +9,14 @@ vim.o.runtimepath = vim.o.runtimepath .. ",~/.config/nvim/lua/"
 
 -- display
 vim.o.encoding = "utf-8"
-vim.o.guifont = "JetBrains Mono Nerd Font:h12"
+vim.o.guifont = "JetBrainsMono Nerd Font:h12"
 
 vim.o.wrap = true
 vim.o.linebreak = true
 
 vim.o.conceallevel = 2
 
--- layout switcher
+-- layout switcher (not used currently)
 vim.g.XkbSwitchEnabled = 1
 vim.g.XkbSwitchLib = "/usr/local/lib/libxkbswitch.so"
 vim.g.XkbSwitchNLayout = "us"
