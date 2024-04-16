@@ -13,6 +13,7 @@ vim.o.guifont = "JetBrainsMono Nerd Font:h12"
 
 vim.o.wrap = true
 vim.o.linebreak = true
+vim.o.scrolloff = 8
 
 vim.o.conceallevel = 2
 
