@@ -46,6 +46,14 @@ return {
         require("mini.files").refresh({ content = { filter = new_filter } })
       end
 
+      -- local safe_close_last_buffer = function()
+      --   local buf_id = vim.api.nvim_get_current_buf()
+      --   if #vim.api.nvim_list_bufs() <= 1 then
+      --     vim.api.nvim_command("enew") -- Opens a new buffer
+      --   end
+      --   vim.api.nvim_buf_delete(buf_id, { force = true })
+      -- end
+
       local close_buffer_if_open = function()
         -- fetch the file system entry for the current line
         local fs_entry = require("mini.files").get_fs_entry() -- Default to current buffer implicitly
@@ -54,8 +62,12 @@ return {
           for _, buffer in ipairs(vim.api.nvim_list_bufs()) do
             if vim.api.nvim_buf_is_loaded(buffer) and vim.api.nvim_buf_get_name(buffer) == fs_entry.path then
               -- close the buffer if it is open
+              -- first, prevent closing the last buffer or open a new one
+              if #vim.api.nvim_list_bufs() <= 1 then
+                vim.api.nvim_command("enew") -- Opens a new buffer
+              end
               vim.api.nvim_buf_delete(buffer, { force = true })
-              -- Notify user that the file has been closed
+              -- notify user that the file has been closed
               vim.notify("Closed buffer for: " .. fs_entry.path, vim.log.levels.INFO)
               return
             end
