@@ -1,4 +1,5 @@
 return {
+  { "nvim-tree/nvim-web-devicons" },
   {
     "nvim-neo-tree/neo-tree.nvim",
     config = function()
@@ -76,6 +77,10 @@ return {
               return {}
             end,
           },
+          -- follow_current_file = {
+          --   enabled = true,
+          --   leave_dirs_open = false,
+          -- },
           renderers = {
             file = {
               { "icon" },

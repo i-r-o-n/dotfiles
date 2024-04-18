@@ -8,15 +8,20 @@ return {
     local which_key = require("which-key")
 
     which_key.register({
-      ["\\"] = {
-        u = {
-          name = "+ultisnips",
-          r = { "<cmd>call UltiSnips#RefreshSnippets()<CR>", "Refresh UltiSnips" },
-        },
-        l = {
-          name = "+vimtex",
-        },
+      u = {
+        z = { "<cmd>ZenMode<CR>", "Toggle Zen Mode" }, -- New keybinding for Zen Mode
       },
-    }, { mode = "n" })
+    }, { prefix = "<leader>" })
+
+    which_key.register({
+      u = {
+        name = "+ultisnips",
+        r = { "<cmd>call UltiSnips#RefreshSnippets()<CR>", "Refresh UltiSnips" },
+      },
+      l = {
+        name = "+vimtex",
+        l = "compile",
+      },
+    }, { mode = "n", prefix = "<localleader>" })
   end,
 }

@@ -45,4 +45,5 @@ require("lazy").setup({
   },
 })
 
+-- scroll off at end of file on insert mode
 require("scrollEOF").setup({ insert_mode = true })
