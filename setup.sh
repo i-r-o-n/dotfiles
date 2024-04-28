@@ -10,6 +10,9 @@
 # tmux
 # polybar
 # zathura
+# firefox - vimium + config
+# fd-find
+# rg
 
 # AUR packages
 
@@ -27,3 +30,6 @@ yay -S kanata --noconfirm
 # fonts
 
 # JetBrainsMono Nerd Font Mono
+
+# zsh
+# powerlevel10k
