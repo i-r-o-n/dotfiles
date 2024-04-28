@@ -49,3 +49,38 @@
   lsft  z    x    c    v    b    n    m    ,    .    /    rsft up
         lctl lalt lmet           spc            rmet ralt left down rght
 )
+
+(deflayer semi
+
+)
+
+(deflayer extension
+
+)
+
+(deflayer symbol
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX XX
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX XX XX
+  XX    @lab  @rab  @lcb  @rcb  XX    `     @amp  @ast  -     @pls  XX XX XX
+  XX    \     /     @lpr  @rpr  XX    @tld  @und  =     @qst  @exl  XX XX
+  XX    XX    @pip  [     ]     XX    @prc  @hsh  @dlr  @at   @crt  XX XX
+  XX    XX    XX    XX    XX    XX    XX    XX    XX
+)
+
+(deflayer number
+XX XX XX XX XX XX XX XX XX XX XX XX XX
+XX XX XX XX XX XX XX XX XX XX XX XX XX XX
+XX XX XX XX XX XX XX 7  XX XX XX XX XX XX
+XX XX XX XX XX XX XX XX XX XX XX XX XX
+XX XX XX XX XX XX XX XX XX XX XX XX XX
+XX XX XX spc XX XX XX XX XX
+)
+
+;; (deflayer blank
+;; XX XX XX XX XX XX XX XX XX XX XX XX XX
+;; XX XX XX XX XX XX XX XX XX XX XX XX XX XX
+;; XX XX XX XX XX XX XX XX XX XX XX XX XX XX
+;; XX XX XX XX XX XX XX XX XX XX XX XX XX
+;; XX XX XX XX XX XX XX XX XX XX XX XX XX
+;; XX XX XX XX XX XX XX XX XX
+;; )
