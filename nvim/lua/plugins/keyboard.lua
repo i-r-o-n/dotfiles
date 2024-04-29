@@ -1,3 +1,3 @@
 return {
-  { "lyokha/vim-xkbswitch" },
+  -- { "lyokha/vim-xkbswitch" },
 }
