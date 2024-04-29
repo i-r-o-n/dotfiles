@@ -1,12 +1,12 @@
 # account one
-Host github.com-i-r-o-n
+Host github.com-account1
   HostName github.com
   User git
   IdentityFile ~/.ssh/id_ed25519_github1
   IdentitiesOnly yes
 
 # account two
-Host github.com-a-lipson
+Host github.com-account2
   HostName github.com
   User git
   IdentityFile ~/.ssh/id_ed25519_github2
