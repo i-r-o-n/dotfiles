@@ -15,3 +15,6 @@ cat ~/.ssh/id_ed25519_github1.pub
 
 # update repository configs
 git remote set-url origin git@github.com-account1:user1/repository1.git
+
+# symlink to config
+ln -s ~/.config/ssh/config ~/.ssh/config
