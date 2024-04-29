@@ -18,15 +18,12 @@ bspc config gapless_monocle true
 # done
 
 # remap keys
-setxkbmap -option "caps:ctrl_modifier"
-xcape -e "#66=Escape" &
+# setxkbmap -option "caps:ctrl_modifier"
+# xcape -e "#66=Escape" &
 
 # autostart applications
-# sxhkd &
 picom --config $HOME/.config/picom/picom.conf &
 # nitrogen --restore &
 dunst &
-# polybar &
 alacritty &
-# ~/.config/polybar/launch.sh &
 polybar -c ~/.config/polybar/config.ini main &

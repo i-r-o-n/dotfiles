@@ -33,3 +33,7 @@ yay -S kanata --noconfirm
 
 # zsh
 # powerlevel10k
+
+# for neovim
+sudo pac install nodejs npm
+sudo npm install -g tree-sitter-cli
