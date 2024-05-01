@@ -10,6 +10,7 @@
 # tmux
 # polybar
 # zathura
+# poppler zathura-pdf-poppler
 # firefox - vimium + config
 # fd-find
 # rg

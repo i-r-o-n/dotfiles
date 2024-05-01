@@ -2,9 +2,11 @@
 tmux/plugins/*
 zsh/**/.git/
 zsh/themes/powerlevel10k/.git/
+nvim/pythonx/__pycache__/
 ssh/config
 keepassxc/
 inkscape/
+GIMP/
 Thunar/
 xfce4/
 Signal/
