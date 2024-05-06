@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# need git installed
+# git clone --recurse-submodules -j8 git://github.com/i-r-o-n/dotfiles.git .config
+# git submodule update --init --recursive
+
 # packages
 # ly
 # bspwm
@@ -13,7 +17,7 @@
 # poppler zathura-pdf-poppler
 # firefox - vimium + config
 # fd-find
-# rg
+# ripgrep
 
 # AUR packages
 
