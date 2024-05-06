@@ -26,4 +26,4 @@ picom --config $HOME/.config/picom/picom.conf &
 # nitrogen --restore &
 dunst &
 alacritty &
-polybar -c ~/.config/polybar/config.ini main &
+polybar -c ~/.config/polybar/config.ini -r main &
