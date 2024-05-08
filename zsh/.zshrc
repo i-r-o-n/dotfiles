@@ -4,6 +4,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export TERM=screen-256color
 
 export PATH="/usr/local/texlive/2024/bin/x86_64-linux:$PATH"
 

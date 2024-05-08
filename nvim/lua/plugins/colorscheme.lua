@@ -1,16 +1,3 @@
--- return {
---   -- { "marko-cerovac/material.nvim" },
---   {
---     "projekt0n/github-nvim-theme",
---     lazy = false,
---   },
---   {
---     "LazyVim/LazyVim",
---     opts = {
---       colorscheme = "github_dark_default",
---     },
---   },
--- }
 return {
   {
     "LazyVim/LazyVim",
