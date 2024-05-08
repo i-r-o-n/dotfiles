@@ -8,6 +8,10 @@ local function auto_update_group(name)
 end
 
 vim.api.nvim_create_autocmd("VimEnter", {
+
+  -- vim.api.nvim_set_option("t_SI", "\x1b[5 q"),
+  -- vim.api.nvim_set_option("t_EI", "\x1b[1 q"),
+
   group = auto_update_group("autoupdate"),
   callback = function()
     if require("lazy.status").has_updates then
