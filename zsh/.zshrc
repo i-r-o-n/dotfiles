@@ -9,6 +9,8 @@ export PATH="/usr/local/texlive/2024/bin/x86_64-linux:$PATH"
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
+export PATH="/usr/bin:$PATH"
+
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_CUSTOM="$HOME/.config/zsh"
