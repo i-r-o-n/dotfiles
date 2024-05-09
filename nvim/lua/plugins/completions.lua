@@ -18,6 +18,8 @@ return {
     "hrsh7th/nvim-cmp",
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
+      -- opts.sources = opts.sources or {}
+      -- table.insert(opts.sources, { name = "crates" })
       local has_words_before = function()
         unpack = unpack or table.unpack
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
