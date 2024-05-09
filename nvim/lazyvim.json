@@ -1,5 +1,7 @@
 {
   "extras": [
+    "lazyvim.plugins.extras.dap.core",
+    "lazyvim.plugins.extras.dap.nlua",
     "lazyvim.plugins.extras.editor.dial",
     "lazyvim.plugins.extras.editor.harpoon2",
     "lazyvim.plugins.extras.editor.leap",
@@ -19,7 +21,9 @@
     "lazyvim.plugins.extras.lang.tex",
     "lazyvim.plugins.extras.lang.yaml",
     "lazyvim.plugins.extras.lazyrc",
-    "lazyvim.plugins.extras.ui.edgy"
+    "lazyvim.plugins.extras.test.core",
+    "lazyvim.plugins.extras.ui.edgy",
+    "lazyvim.plugins.extras.ui.mini-animate"
   ],
   "news": {
     "NEWS.md": "3314"
