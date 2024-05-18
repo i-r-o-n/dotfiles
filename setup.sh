@@ -5,6 +5,7 @@
 # git submodule update --init --recursive
 
 # packages
+
 # ly
 # bspwm
 # sxhkd
@@ -42,3 +43,10 @@ yay -S kanata --noconfirm
 # for neovim
 sudo pac install nodejs npm
 sudo npm install -g tree-sitter-cli
+
+# texlive
+curl -L -o install-tl-unx.tar.gz https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+zcat <install-tl-unx.tar.gz | tar xf -
+cd install-tl-*
+sudo perl ./install-tl --no-interaction
+# then this takes some time to complete
