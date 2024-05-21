@@ -24,9 +24,6 @@ vim.cmd([[
   autocmd FileType markdown,tex,html,text setlocal spell
 ]])
 
--- colorizer
-require("colorizer").setup()
-
 -- disable comment formatting on lines opened after comment
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "*",
