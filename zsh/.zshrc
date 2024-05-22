@@ -8,11 +8,16 @@ fi
 # causes issues with duplicate terminal output
 # export TERM=screen-256color
 
+# latex texlive
 export PATH="/usr/local/texlive/2024/bin/x86_64-linux:$PATH"
 
+# rust cargo
 export PATH="$HOME/.cargo/bin:$PATH"
 
 export PATH="/usr/bin:$PATH"
+
+# add custom shell utility scripts directory
+export PATH="$HOME/.config/zsh/scripts:$PATH"
 
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -33,8 +38,6 @@ ENABLE_CORRECTION="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 HIST_STAMPS="dd.mm.yyyy"
-
-plugins=(git)
 
 # =============================================================================
 #
@@ -156,5 +159,23 @@ fi
 #
 eval "$(zoxide init zsh)"
 
+# get powerlevel10k theme
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source ~/.config/zsh/.p10k.zsh
 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#
+# plugins
+#
+plugins=(
+  git
+  auto-notify
+  you-should-use
+  zsh-autosuggestions
+  zsh-history-substring-search
+  zsh-syntax-highlighting
+)
+
+
+# history substring search bindings
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
