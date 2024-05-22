@@ -39,6 +39,7 @@ yay -S kanata --noconfirm
 
 # zsh
 # powerlevel10k
+# zsh plugins as git submodules
 
 # for neovim
 sudo pac install nodejs npm
