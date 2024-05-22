@@ -13,3 +13,6 @@
 [submodule "zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "/home/a/.config/zsh/plugins/you-should-use"]
+	path = /home/a/.config/zsh/plugins/you-should-use
+	url = https://github.com/MichaelAquilina/zsh-you-should-use.git
