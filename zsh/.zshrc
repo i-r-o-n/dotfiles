@@ -19,14 +19,39 @@ export PATH="/usr/bin:$PATH"
 # add custom shell utility scripts directory
 export PATH="$HOME/.config/zsh/scripts:$PATH"
 
-export ZSH="$HOME/.oh-my-zsh"
-
 ZSH_CUSTOM="$HOME/.config/zsh"
-
 ZSH_THEME="powerlevel10k/powerlevel10k"
+
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
+export ZSH="$HOME/.oh-my-zsh"
 
 source $ZSH/oh-my-zsh.sh
 
+#
+# plugins
+#
+plugins=(
+  git
+  auto-notify
+  fzf-tab
+  you-should-use
+  zsh-autosuggestions
+  zsh-history-substring-search
+  zsh-syntax-highlighting
+)
+
+source ~/.config/zsh/plugins/fzf-tab/fzf-tab.zsh
+source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.config/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# history substring search bindings
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+#
+# options
+#
 
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 HYPHEN_INSENSITIVE="true"
@@ -38,6 +63,29 @@ ENABLE_CORRECTION="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 HIST_STAMPS="dd.mm.yyyy"
+
+HISTSIZE=5000
+# HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_ignore_dups
+setopt hist_save_no_dups
+setopt hist_find_no_dups
+
+zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+
+#
+# zoxide
+#
 
 # =============================================================================
 #
@@ -159,23 +207,10 @@ fi
 #
 eval "$(zoxide init zsh)"
 
+# fzf shell integration
+eval "$(fzf --zsh)"
+enable-fzf-tab
+
 # get powerlevel10k theme
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source ~/.config/zsh/.p10k.zsh
-
-#
-# plugins
-#
-plugins=(
-  git
-  auto-notify
-  you-should-use
-  zsh-autosuggestions
-  zsh-history-substring-search
-  zsh-syntax-highlighting
-)
-
-
-# history substring search bindings
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down

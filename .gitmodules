@@ -16,3 +16,9 @@
 [submodule "/home/a/.config/zsh/plugins/you-should-use"]
 	path = /home/a/.config/zsh/plugins/you-should-use
 	url = https://github.com/MichaelAquilina/zsh-you-should-use.git
+[submodule "/home/a/.config/zsh/plugins/zsh-completions"]
+	path = /home/a/.config/zsh/plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions
+[submodule "/home/a/.config/zsh/plugins/fzf-tab"]
+	path = /home/a/.config/zsh/plugins/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab
