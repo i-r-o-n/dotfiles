@@ -21,3 +21,4 @@ alias "puts=xclip -o -selection clipboard" # paste from system wide clipboard (e
 # git
 #
 alias g=git
+alias gc="git commit -m"
