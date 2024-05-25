@@ -13,12 +13,12 @@
 [submodule "zsh/plugins/zsh-syntax-highlighting"]
 	path = zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "/home/a/.config/zsh/plugins/you-should-use"]
-	path = /home/a/.config/zsh/plugins/you-should-use
+[submodule "zsh/plugins/you-should-use"]
+	path = zsh/plugins/you-should-use
 	url = https://github.com/MichaelAquilina/zsh-you-should-use.git
-[submodule "/home/a/.config/zsh/plugins/zsh-completions"]
-	path = /home/a/.config/zsh/plugins/zsh-completions
+[submodule "zsh/plugins/zsh-completions"]
+	path = zsh/plugins/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions
-[submodule "/home/a/.config/zsh/plugins/fzf-tab"]
-	path = /home/a/.config/zsh/plugins/fzf-tab
-	url = https://github.com/Aloxaf/fzf-tab
+[submodule "zsh/plugins/fzf-tab"]
+	path = zsh/plugins/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab.git
