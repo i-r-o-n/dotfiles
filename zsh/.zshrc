@@ -22,6 +22,8 @@ export PATH="$HOME/.config/zsh/scripts:$PATH"
 ZSH_CUSTOM="$HOME/.config/zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+export GTK_THEME=Adwaita:dark
+
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 export ZSH="$HOME/.oh-my-zsh"

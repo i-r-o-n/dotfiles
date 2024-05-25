@@ -4,6 +4,8 @@
 # git clone --recurse-submodules -j8 git://github.com/i-r-o-n/dotfiles.git .config
 # git submodule update --init --recursive
 
+# add reflector systemd service + timer to update mirrors
+
 # packages
 
 # ly

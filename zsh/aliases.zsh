@@ -15,3 +15,9 @@ alias "puts=xclip -o -selection clipboard" # paste from system wide clipboard (e
 
 # use shorter name for custom script
 # alias bak="backup"
+
+
+#
+# git
+#
+alias g=git
