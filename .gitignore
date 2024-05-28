@@ -4,7 +4,6 @@ zsh/**/.git/
 zsh/themes/powerlevel10k/.git/
 nvim/pythonx/__pycache__/
 nvim/lazy-lock.json
-ssh/config
 keepassxc/
 inkscape/
 GIMP/
@@ -15,7 +14,7 @@ pulse/
 dconf/
 htop/
 spotify/
-gtk-3.0/
 github-copilot/
 balenaEtcher/
 OpenRGB/
+virt-viewer/
