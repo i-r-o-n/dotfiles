@@ -9,7 +9,7 @@ fi
 # export TERM=screen-256color
 
 # latex texlive
-export PATH="/usr/local/texlive/2024/bin/x86_64-linux:$PATH"
+export PATH="$HOME/apps/texlive/2024/bin/x86_64-linux:$PATH"
 
 # rust cargo
 export PATH="$HOME/.cargo/bin:$PATH"
