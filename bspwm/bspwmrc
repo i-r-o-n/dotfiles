@@ -1,10 +1,11 @@
 #! /bin/sh
 
-# start sxhkd
+# start simple x hotkey daemon
 pgrep -x sxhkd >/dev/null || sxhkd &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
+# set zero gap between windows
 bspc config border_width 0
 bspc config window_gap 0
 
@@ -22,8 +23,9 @@ bspc config gapless_monocle true
 # xcape -e "#66=Escape" &
 
 # autostart applications
-picom --config $HOME/.config/picom/picom.conf &
+picom --config $HOME/.config/picom/picom.conf & # window stylizer
 # nitrogen --restore &
-dunst &
-alacritty &
-polybar -c ~/.config/polybar/config.ini -r main &
+polybar -c ~/.config/polybar/config.ini -r main & # desktop info header
+dunst &                                           # notifications
+syncthing &                                       # file syncing
+alacritty &                                       # terminal
