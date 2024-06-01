@@ -71,6 +71,7 @@ HISTSIZE=5000
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
 
+setopt extended_glob
 setopt appendhistory
 setopt sharehistory
 setopt hist_ignore_space
