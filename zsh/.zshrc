@@ -47,6 +47,13 @@ source ~/.config/zsh/plugins/fzf-tab/fzf-tab.zsh
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.config/zsh/plugins/you-should-use/you-should-use.plugin.zsh
+
+
+# enable you-should-use hardcore mode (forces usage of alias)
+export YSU_HARDCORE=1
+
+# export YSU_MESSAGE_FORMAT="$(tput setaf 1)%alias_type: %command -> %alias$(tput sgr0)"
 
 # history substring search bindings
 bindkey '^[[A' history-substring-search-up

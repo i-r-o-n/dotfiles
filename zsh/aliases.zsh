@@ -22,3 +22,5 @@ alias "puts=xclip -o -selection clipboard" # paste from system wide clipboard (e
 #
 alias g=git
 alias gc="git commit -m"
+alias gp="git push"
+alias gs="git status"
