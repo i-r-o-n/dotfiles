@@ -1,4 +1,5 @@
 return {
+  { "JoosepAlviste/nvim-ts-context-commentstring" },
   {
     "echasnovski/mini.comment",
     event = "VeryLazy",
