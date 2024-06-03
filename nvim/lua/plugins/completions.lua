@@ -1,19 +1,20 @@
 return {
   { "SirVer/ultisnips" },
-  {
-    "L3MON4D3/LuaSnip",
-    -- lazy = true,
-    -- enabled = function()
-    --   return vim.bo.filetype ~= "tex" -- disable for tex files
-    -- end,
-    keys = function()
-      return {}
-    end,
-  },
+  -- {
+  --   "L3MON4D3/LuaSnip",
+  --   -- lazy = true,
+  --   -- enabled = function()
+  --   --   return vim.bo.filetype ~= "tex" -- disable for tex files
+  --   -- end,
+  --   -- keys = function()
+  --   --   return {}
+  --   -- end,
+  -- },
   -- { "quangnguyen30192/cmp-nvim-ultisnips" },
   { "a-lipson/cmp-nvim-ultisnips" },
-  { "saadparwaiz1/cmp_luasnip" },
-  { "micangl/cmp-vimtex" },
+  -- { "saadparwaiz1/cmp_luasnip" },
+  -- { "micangl/cmp-vimtex" },
+  -- TODO: disable Luasnip in tex tiletype buffers
   {
     "hrsh7th/nvim-cmp",
     ---@param opts cmp.ConfigSchema
@@ -27,13 +28,18 @@ return {
       end
 
       local cmp = require("cmp")
-      local luasnip = require("luasnip")
       local ultisnips = require("cmp_nvim_ultisnips.mappings")
+
+      -- check if LuaSnip should be used based on buffer file type
+      local use_luasnip = vim.bo.filetype ~= "tex"
+      local luasnip = use_luasnip and require("luasnip") or nil
 
       cmp.setup({
         snippet = {
           expand = function(args)
-            luasnip.lsp_expand(args.body)
+            if luasnip then
+              luasnip.lsp_expand(args.body)
+            end
             vim.fn["UltiSnips#Anon"](args.body)
           end,
         },
@@ -54,7 +60,7 @@ return {
             cmp.select_next_item()
           elseif ultisnip_can_expand_or_jump() then
             ultisnips.expand_or_jump_forwards(fallback)
-          elseif luasnip.expand_or_jumpable() then
+          elseif luasnip and luasnip.expand_or_jumpable() then
             luasnip.expand_or_jump()
           elseif has_words_before() then
             cmp.complete()
@@ -67,7 +73,7 @@ return {
             cmp.select_prev_item()
           elseif ultisnip_can_jump_back() then
             ultisnips.jump_backwards(fallback)
-          elseif luasnip.jumpable(-1) then
+          elseif luasnip and luasnip.jumpable(-1) then
             luasnip.jump(-1)
           else
             fallback()
