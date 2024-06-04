@@ -1,5 +1,8 @@
 #! /bin/sh
 
+# setup monitors
+sh ~/.config/setup/setup-monitors.sh
+
 # start simple x hotkey daemon
 pgrep -x sxhkd >/dev/null || sxhkd &
 
@@ -19,6 +22,7 @@ bspc config gapless_monocle true
 # done
 
 # remap keys
+# DEPRICATED: handled in kanata
 # setxkbmap -option "caps:ctrl_modifier"
 # xcape -e "#66=Escape" &
 
@@ -27,5 +31,5 @@ picom --config $HOME/.config/picom/picom.conf & # window stylizer
 # nitrogen --restore &
 polybar -c ~/.config/polybar/config.ini -r main & # desktop info header
 dunst &                                           # notifications
-syncthing &                                       # file syncing
+syncthing --no-browser &                          # file syncing
 alacritty &                                       # terminal
