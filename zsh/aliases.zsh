@@ -25,3 +25,5 @@ alias gc="git commit -m"
 alias gp="git push"
 alias gs="git status" # gst also instantiated
 alias ga="git add"
+alias gl="git pull"
+alias gd="git diff"
