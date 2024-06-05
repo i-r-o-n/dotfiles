@@ -32,4 +32,11 @@ picom --config $HOME/.config/picom/picom.conf & # window stylizer
 polybar -c ~/.config/polybar/config.ini -r main & # desktop info header
 dunst &                                           # notifications
 syncthing --no-browser &                          # file syncing
-alacritty &                                       # terminal
+
+# open applications
+alacritty & # terminal
+bspc desktop -f '^2'
+firefox &
+bspc desktop -f '^3'
+spotify-launcher &
+bspc desktop -f '^1'
