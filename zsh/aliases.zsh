@@ -27,3 +27,9 @@ alias gs="git status" # gst also instantiated
 alias ga="git add"
 alias gl="git pull"
 alias gd="git diff"
+
+
+#
+# tmux
+#
+alias t=tmux
