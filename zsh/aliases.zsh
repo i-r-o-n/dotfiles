@@ -7,6 +7,9 @@ alias ssh="ssh -F ~/.config/ssh/config"
 # trash files instead of removing them
 alias rm='trash-put'
 
+# use eza
+alias ls=eza
+
 # clipboard
 alias "copy=xclip" # copy to X clipboard (register *)
 alias "copys=xclip -selection clipboard" # copy to system wide clipboard (register +)
