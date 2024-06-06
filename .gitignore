@@ -1,7 +1,10 @@
 # /**/.git/
 tmux/plugins/*
-zsh/**/.git/
+zsh/**/.git/*
+nvim.nvchad/.git
+nvim.nvchad.base/.git
 zsh/themes/powerlevel10k/.git/
+nvim/.git/*
 nvim/pythonx/__pycache__/
 nvim/lazy-lock.json
 keepassxc/

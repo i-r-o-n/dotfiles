@@ -14,7 +14,7 @@ vim.api.nvim_set_keymap("i", "<C-l>", "<c-g>u<Esc>[s1z=`]a<c-g>u", { noremap = t
 -- enter zen mode
 vim.api.nvim_set_keymap("n", "<leader>uz", ":ZenMode<CR>", { noremap = true, silent = true })
 
--- ultisnips
+-- ultisnips reload snippets
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "snippets",
   callback = function()

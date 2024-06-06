@@ -19,7 +19,7 @@ export PATH="/usr/bin:$PATH"
 # add custom shell utility scripts directory
 export PATH="$HOME/.config/zsh/scripts:$PATH"
 
-ZSH_CUSTOM="$HOME/.config/zsh"
+# ZSH_CUSTOM="$HOME/.config/zsh"
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # make GTK apps dark
@@ -42,6 +42,8 @@ source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #
 # plugin configuration
 #
+
+# completions
 autoload -Uz compinit
 compinit
 
@@ -98,10 +100,10 @@ eval "$(fzf --zsh)"
 enable-fzf-tab
 
 # starship theme
-export STARSHIP_CONFIG=~/.config/zsh/themes/starship/starship.toml
+# export STARSHIP_CONFIG=~/.config/zsh/themes/starship/starship.toml
+# eval "$(starship init zsh)"
 
-eval "$(starship init zsh)"
-
-# get powerlevel10k theme
+# powerlevel10k theme
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# source ~/.config/zsh/.p10k.zsh
+source ~/.config/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.config/zsh/.p10k.zsh
