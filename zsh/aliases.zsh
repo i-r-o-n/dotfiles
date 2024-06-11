@@ -1,5 +1,6 @@
 # use zoxide as default to change directories
 alias cd="z"
+alias c=cd
 
 # ensure ssh uses proper config
 alias ssh="ssh -F ~/.config/ssh/config"
@@ -9,6 +10,12 @@ alias rm='trash-put'
 
 # use eza
 alias ls=eza
+alias l=ls
+
+alias cl=clear # i use this too much
+
+alias v=nvim
+alias "v."="nvim ." # i don't know if this is necessary
 
 # clipboard
 alias "copy=xclip" # copy to X clipboard (register *)

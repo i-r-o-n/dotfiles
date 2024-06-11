@@ -136,6 +136,13 @@ XF86AudioPrev
     dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 
 #
+# screenshot
+#
+
+Print
+    flameshot gui -p ~/dls
+
+#
 # move/resize
 #
 

@@ -48,7 +48,7 @@ autoload -Uz compinit
 compinit
 
 # enable you-should-use hardcore mode (forces usage of alias)
-export YSU_HARDCORE=1
+# export YSU_HARDCORE=0
 
 # export YSU_MESSAGE_FORMAT="$(tput setaf 1)%alias_type: %command -> %alias$(tput sgr0)"
 
