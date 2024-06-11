@@ -21,7 +21,6 @@
 
 ;; TODO: Finish working on this config
 
-
 ;; layers
 (defalias
   spc_ext (tap-hold $t $h spc (layer-while-held extension) )
