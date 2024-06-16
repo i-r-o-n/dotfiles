@@ -30,10 +30,11 @@ bspc config gapless_monocle true
 picom --config $HOME/.config/picom/picom.conf & # window stylizer
 # nitrogen --restore &
 polybar -c ~/.config/polybar/config.ini -r main & # desktop info header
-dunst &                                           # notifications
+dunst -conf ~/.config/dunst/dunstrc &             # notifications
 syncthing --no-browser &                          # file syncing
 
 # open applications
+# TODO: Fix these
 alacritty & # terminal
 bspc desktop -f '^2'
 firefox &
