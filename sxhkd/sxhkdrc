@@ -19,6 +19,8 @@ super + Return
 super + @space
   rofi -show run
 	# dmenu_run -fn 'JetBrainsMono Nerd Font' -sb "#fff" -sf "#000" -nb "#000" -nf "#000"
+super + shift + @space
+  rofi -show drun
 # switch windows gui
 super + s
   rofi -show window 
