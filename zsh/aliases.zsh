@@ -1,6 +1,6 @@
 # use zoxide as default to change directories
 alias cd="z"
-alias c=cd
+# alias c=cd
 
 # ensure ssh uses proper config
 alias ssh="ssh -F ~/.config/ssh/config"
@@ -10,7 +10,7 @@ alias rm='trash-put'
 
 # use eza
 alias ls=eza
-alias l=ls
+# alias l=ls
 
 alias cl=clear # i use this too much
 
