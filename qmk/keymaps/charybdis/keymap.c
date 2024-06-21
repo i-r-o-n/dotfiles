@@ -7,7 +7,7 @@
 
 enum custom_layers {
     _BASE = 0,
-    _VIM,
+    // _VIM,
     _EXTENSION,
     _SYMBOL,
     _NUMBER,
@@ -34,17 +34,17 @@ enum custom_keycodes {
 #define OSA OSM(MOD_LALT)
 
 // home row mods
-#define GUI_A GUI_T(KC_A)
-#define ALT_S ALT_T(KC_S)
-#define SFT_D SFT_T(KC_D)
-#define CTL_F CTL_T(KC_F)
+#define GUI_S GUI_T(KC_S)
+#define ALT_R ALT_T(KC_R)
+#define SFT_N SFT_T(KC_N)
+#define CTR_T CTL_T(KC_T)
 
 // layers
-#define L_SEMI TO(0)
-#define L_VIM TO(1)
-#define L_POINT MO(7)
-#define L_FUNC MO(5)
-#define L_NUM MO(4)
+// #define L_SEMI TO(0)
+// #define L_VIM TO(1)
+#define L_POINT MO(6)
+#define L_FUNC MO(4)
+#define L_NUM MO(3)
 
 #define NEXTTAB C(KC_TAB)
 #define PREVTAB C(S(KC_TAB))
@@ -208,25 +208,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ╭─────────────────────────────────────────────╮ ╭─────────────────────────────────────────────╮
           KC_F,    KC_L,    KC_H,    KC_V,    KC_Z,    KC_QUOT,    KC_W,    KC_U,    KC_O,    KC_Y,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-          KC_S,    KC_R,    KC_N,    KC_T,    KC_K,       KC_C,    KC_D,    KC_E,    KC_A,    KC_I,
+         GUI_S,   ALT_R,   SFT_N,   CTR_T,    KC_K,       KC_C,    KC_D,    KC_E,    KC_A,    KC_I,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
           KC_X,    KC_J,    KC_B,    KC_M,    KC_Q,       KC_P,    KC_G, KC_COMM,  KC_DOT, KC_SCLN,
   // ╰─────────────────────────────────────────────┤ ├────────────────────╭───╮────────────────────╯
-                           L_VIM, TL_LOWR,  KC_SPC,     KC_ENT, TL_UPPR //│   │
+                         L_POINT, TL_LOWR,  KC_SPC,     KC_ENT, TL_UPPR //│   │
   //                   ╰───────────────────────────╯ ╰──────────────────╯ ╰───╯
   ),
 
-  [_VIM] = LAYOUT(
-  // ╭─────────────────────────────────────────────╮ ╭─────────────────────────────────────────────╮
-          KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
-  // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-         GUI_A,   ALT_S,   SFT_D,   CTL_F,    KC_G,       KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,
-  // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-          KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,
-  // ╰─────────────────────────────────────────────┤ ├────────────────────╭───╮────────────────────╯
-                          L_SEMI, TL_LOWR,  KC_SPC,     KC_ENT, TL_UPPR //│   │
-  //                   ╰───────────────────────────╯ ╰──────────────────╯ ╰───╯
-  ),
+  // [_VIM] = LAYOUT(
+  // // ╭─────────────────────────────────────────────╮ ╭─────────────────────────────────────────────╮
+  //         KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
+  // // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
+  //        GUI_A,   ALT_S,   SFT_D,   CTL_F,    KC_G,       KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,
+  // // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
+  //         KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,
+  // // ╰─────────────────────────────────────────────┤ ├────────────────────╭───╮────────────────────╯
+  //                         L_SEMI, TL_LOWR,  KC_SPC,     KC_ENT, TL_UPPR //│   │
+  // //                   ╰───────────────────────────╯ ╰──────────────────╯ ╰───╯
+  // ),
 
 
   [_EXTENSION] = LAYOUT(

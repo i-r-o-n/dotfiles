@@ -6,7 +6,8 @@
 -- vim.keymap.set("n", "<leader>uv", vim.cmd.Ex)
 
 -- exit insert mode
-vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true })
+-- vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true })
+vim.api.nvim_set_keymap("i", "dd", "<Esc>", { noremap = true })
 
 -- correct last spelling mistake in insert mode
 vim.api.nvim_set_keymap("i", "<C-l>", "<c-g>u<Esc>[s1z=`]a<c-g>u", { noremap = true })
@@ -27,6 +28,11 @@ vim.api.nvim_create_autocmd("FileType", {
     )
   end,
 })
+
+-- alternate layout support
+local layout = require("config.layout")
+layout.remap_keys()
+
 -- vim.api.nvim_set_keymap("n", "\\ur", ":call UltiSnips#RefreshSnippets()<CR>", { noremap = true, silent = true })
 -- these dont' need to be defined here
 -- vim.g.UltiSnipsExpandTrigger = "<tab>"
