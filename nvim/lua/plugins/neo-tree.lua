@@ -93,37 +93,37 @@ return {
         },
         window = {
           mappings = {
-            -- ["d"] = "<Down>",
-            -- ["e"] = "<Up>",
-            -- ["c"] = "<Left>",
-            -- ["a"] = "<Right>",
-            ["<CR>"] = "open",
-            ["<2-LeftMouse>"] = "open",
-            ["<C-s>"] = "open_split",
-            ["<C-v>"] = "open_vsplit",
-            ["<C-t>"] = "open_tabnew",
-            ["i"] = { "toggle_preview", config = { use_float = true } },
-            ["z"] = "close_all_nodes",
-            ["Z"] = "expand_all_nodes",
-            ["s"] = {
-              "add",
-              config = {
-                show_path = "none", -- "none", "relative", "absolute"
-              },
-            },
-            ["S"] = "add_directory", -- Add a directory
-            ["n"] = "delete",
-            ["r"] = "rename",
-            ["k"] = "copy_to_clipboard",
-            ["j"] = "cut_to_clipboard",
-            ["p"] = "paste_from_clipboard",
-            ["b"] = "copy", -- Copy a file
-            ["m"] = "move", -- Move a file
-            ["q"] = "close_window", -- Close Neo-tree
-            ["R"] = "refresh", -- Refresh Neo-tree
+            -- -- ["d"] = "<Down>",
+            -- -- ["e"] = "<Up>",
+            -- -- ["c"] = "<Left>",
+            -- -- ["a"] = "<Right>",
+            -- ["<CR>"] = "open",
+            -- ["<2-LeftMouse>"] = "open",
+            -- ["<C-s>"] = "open_split",
+            -- ["<C-v>"] = "open_vsplit",
+            -- ["<C-t>"] = "open_tabnew",
+            -- ["i"] = { "toggle_preview", config = { use_float = true } },
+            -- ["z"] = "close_all_nodes",
+            -- ["Z"] = "expand_all_nodes",
+            -- ["s"] = {
+            --   "add",
+            --   config = {
+            --     show_path = "none", -- "none", "relative", "absolute"
+            --   },
+            -- },
+            -- ["S"] = "add_directory", -- Add a directory
+            -- ["n"] = "delete",
+            -- ["r"] = "rename",
+            -- ["k"] = "copy_to_clipboard",
+            -- ["j"] = "cut_to_clipboard",
+            -- ["p"] = "paste_from_clipboard",
+            -- ["b"] = "copy", -- Copy a file
+            -- ["m"] = "move", -- Move a file
+            -- ["q"] = "close_window", -- Close Neo-tree
+            -- ["R"] = "refresh", -- Refresh Neo-tree
             ["?"] = "show_help", -- Show help
             ["o"] = "system_open",
-            ["f"] = function()
+            ["e"] = function()
               vim.api.nvim_exec("Neotree focus filesystem left", true)
             end,
             ["w"] = function()

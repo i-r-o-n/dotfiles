@@ -31,7 +31,7 @@
 
 /* keyboard duration terms */
 //#define QUICK_TAP_TERM 0
-#define TAPPING_TERM 180
+#define TAPPING_TERM 150
 #define COMBO_TERM 20
 #define COMBO_MUST_HOLD_MODS
 #define COMBO_HOLD_TERM 25
