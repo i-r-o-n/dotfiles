@@ -1,0 +1,61 @@
+unmapAll
+
+# editing modes
+map s enterInsertMode
+map gs focusInput
+map v enterVisualMode
+map V enterVisualLineMode
+
+# page navigation
+map e scrollUp
+map d scrollDown
+map c scrollLeft
+map a scrollRight
+
+# page link opening
+map t LinkHints.activateMode
+map ) LinkHints.activateModeToOpenInNewTab
+
+# page link management
+map T LinkHints.activateModeToCopyLinkUrl
+
+# tab movement
+map D nextTab
+map A previousTab
+map < moveTabLeft
+map > moveTabRight
+map h moveTabToNewWindow
+
+# tab management
+map n createTab
+map N duplicateTab
+map x removeTab
+map % restoreTab
+
+# tab control
+map r reload
+# map kc goBack
+# map ka goForward
+map C goBack
+map A goForward
+
+# url control
+map kw Vomnibar.activateEditUrl
+map kW Vomnibar.activateEditUrlInNewTab
+
+# url management
+map ku goUp
+map kU goToRoot
+map l copyCurrentUrl
+map y openCopiedUrlInCurrentTab
+map Y openCopiedUrlInNewTab
+
+# omnibar
+map I Vomnibar.activate
+map i Vomnibar.activateInNewTab
+map ( Vomnibar.activateTabSelection
+
+
+# misc
+map ? showHelp
+map ks toggleViewSource
