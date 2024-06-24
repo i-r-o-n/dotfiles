@@ -53,8 +53,8 @@ enum custom_keycodes {
 
 #define CHARYBDIS_AUTO_SNIPING_ON_LAYER _POINTER
 
-bool is_alt_tab_active = false;
-uint16_t alt_tab_timer = 0;
+// bool is_alt_tab_active = false;
+// uint16_t alt_tab_timer = 0;
 
 // TODO: change finger combos to location instead of specific keys
 // https://docs.qmk.fm/#/feature_combo?id=layer-independent-combos
@@ -112,13 +112,13 @@ combo_t key_combos[] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    case DDPI_T:
+    case DDPI_T: // scrolling toggle
       if (record->event.pressed) {
         charybdis_cycle_pointer_default_dpi_noeeprom(true);
       }
       break;
 
-    case SDPI_T:
+    case SDPI_T: // sniper/low dpi toggle
       if (record->event.pressed) {
         charybdis_cycle_pointer_sniping_dpi_noeeprom(true);
       }
@@ -160,33 +160,33 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       break;
 
-    case ALT_TAB:
-      if (record->event.pressed) {
-        if (!is_alt_tab_active) {
-          is_alt_tab_active = true;
-          register_code(KC_LALT);
-        }
-        alt_tab_timer = timer_read();
-        register_code(KC_TAB);
-      } else {
-        unregister_code(KC_TAB);
-      }
-      break;
+    // case ALT_TAB:
+    //   if (record->event.pressed) {
+    //     if (!is_alt_tab_active) {
+    //       is_alt_tab_active = true;
+    //       register_code(KC_LALT);
+    //     }
+    //     alt_tab_timer = timer_read();
+    //     register_code(KC_TAB);
+    //   } else {
+    //     unregister_code(KC_TAB);
+    //   }
+    //   break;
   }
   return true;
 };
 
-void matrix_scan_user(void) {
-  if (is_alt_tab_active) {
-    if (timer_elapsed(alt_tab_timer) > 1000) {
-      unregister_code(KC_LALT);
-      is_alt_tab_active = false;
-    }
-  }
-};
+// void matrix_scan_user(void) {
+//   if (is_alt_tab_active) {
+//     if (timer_elapsed(alt_tab_timer) > 1000) {
+//       unregister_code(KC_LALT);
+//       is_alt_tab_active = false;
+//     }
+//   }
+// };
+//
 
-/* auto mouse management*/
-
+// auto mouse management
 void pointing_device_init_user(void) {
     // set_auto_mouse_layer(_POINTER);
     set_auto_mouse_enable(true);
@@ -231,11 +231,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_EXTENSION] = LAYOUT(
   // ╭─────────────────────────────────────────────╮ ╭─────────────────────────────────────────────╮
-        KC_ESC, KC_LGUI, PREVTAB, NEXTTAB,    NONE,       NONE, KC_HOME,   KC_UP,  KC_END,    NONE,
+        KC_ESC, KC_LGUI, PREVTAB, NEXTTAB,    NONE,       NONE, KC_HOME,   KC_END,    NONE,   NONE,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-           OSG,     OSA,     OSS,     OSC,    NONE,       NONE, KC_LEFT, KC_DOWN, KC_RGHT,  KC_TAB,
+           OSG,     OSA,     OSS,     OSC,    NONE,    KC_LEFT, KC_DOWN,    KC_UP, KC_RGHT, KC_TAB,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-       C(KC_Z), C(KC_X), C(KC_C), C(KC_V),    NONE,       NONE,KC_BSPC,C(KC_BSPC), KC_DEL,    NONE,
+       C(KC_Z), C(KC_X), C(KC_C), C(KC_V),    NONE,       NONE, KC_BSPC,C(KC_BSPC), KC_DEL,   NONE,
   // ╰─────────────────────────────────────────────┤ ├─────────────────────────────────────────────╯
                          _______, _______, _______,  S(KC_ENT), _______
   //                   ╰───────────────────────────╯ ╰──────────────────╯
