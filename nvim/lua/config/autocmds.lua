@@ -58,3 +58,23 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 --     vim.fn.system("setxkbmap us")
 --   end,
 -- })
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("JavaIndentation", { clear = true }),
+  pattern = "java",
+  callback = function()
+    vim.bo.tabstop = 4
+    vim.bo.shiftwidth = 4
+    vim.bo.expandtab = true
+  end,
+})
+
+-- vim.api.nvim_exec(
+--   [[
+--   augroup JavaIndentation
+--     autocmd!
+--     autocmd FileType java setlocal tabstop=4 shiftwidth=4 expandtab
+--   augroup END
+-- ]],
+--   false
+-- )

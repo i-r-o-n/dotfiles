@@ -7,6 +7,7 @@
 
 -- exit insert mode
 vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true })
+vim.api.nvim_set_keymap("t", "jj", "<C-\\><C-n>", { noremap = true })
 -- vim.api.nvim_set_keymap("i", "dd", "<Esc>", { noremap = true })
 
 -- correct last spelling mistake in insert mode
