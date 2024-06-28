@@ -11,7 +11,18 @@ return {
   --   -- end,
   -- },
   -- { "quangnguyen30192/cmp-nvim-ultisnips" },
-  { "a-lipson/cmp-nvim-ultisnips" },
+  {
+    "a-lipson/cmp-nvim-ultisnips",
+    keys = {
+      { "<localleader>u", desc = "+ultisnips" },
+      {
+        "<localleader>ur",
+        "<cmd>call UltiSnips#RefreshSnippets()<CR>",
+        desc = "Refresh UltiSnips",
+        mode = { "n", "x", "o" },
+      },
+    },
+  },
   -- { "saadparwaiz1/cmp_luasnip" },
   -- { "micangl/cmp-vimtex" },
   -- TODO: disable Luasnip in tex tiletype buffers
