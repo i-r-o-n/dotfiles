@@ -26,36 +26,26 @@ return {
     },
     { "<localleader>jtv", "<cmd>JavaTestViewLastReport<CR>", desc = "View Report", mode = { "n", "x", "o" } },
   },
+  config = false,
   dependencies = {
-    "nvim-java/lua-async-await",
-    "nvim-java/nvim-java-refactor",
-    "nvim-java/nvim-java-core",
-    "nvim-java/nvim-java-test",
-    "nvim-java/nvim-java-dap",
-    "MunifTanjim/nui.nvim",
-    "neovim/nvim-lspconfig",
-    "mfussenegger/nvim-dap",
     {
-      "williamboman/mason.nvim",
+      "neovim/nvim-lspconfig",
       opts = {
-        registries = {
-          "github:nvim-java/mason-registry",
-          "github:mason-org/mason-registry",
+        servers = {
+          jdtls = {
+            -- Your custom jdtls settings goes here
+          },
         },
-      },
-    },
-    {
-      "williamboman/mason-lspconfig.nvim",
-      opts = {
-        handlers = {
-          ["jdtls"] = function()
-            require("java").setup()
+        setup = {
+          jdtls = function()
+            require("java").setup({
+              -- Your custom nvim-java configuration goes here
+            })
           end,
         },
       },
     },
   },
-  opts = {},
 
   -- {
   --   "rcasia/neotest-java",
