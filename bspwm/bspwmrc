@@ -27,7 +27,7 @@ bspc config gapless_monocle true
 # xcape -e "#66=Escape" &
 
 # autostart applications
-picom --config $HOME/.config/picom/picom.conf & # window stylizer
+picom --config "$HOME/.config/picom/picom.conf" & # window stylizer
 # nitrogen --restore &
 polybar -c ~/.config/polybar/config.ini -r main & # desktop info header
 dunst -conf ~/.config/dunst/dunstrc &             # notifications
@@ -36,8 +36,8 @@ syncthing --no-browser &                          # file syncing
 # open applications
 # TODO: Fix these
 alacritty & # terminal
-bspc desktop -f '^2'
-firefox &
-bspc desktop -f '^3'
-spotify-launcher &
-bspc desktop -f '^1'
+# bspc desktop -f '^2'
+# firefox &
+# bspc desktop -f '^3'
+# spotify-launcher &
+# bspc desktop -f '^1'
