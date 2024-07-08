@@ -1,15 +1,16 @@
 return {
   { "SirVer/ultisnips" },
-  -- {
-  --   "L3MON4D3/LuaSnip",
-  --   -- lazy = true,
-  --   -- enabled = function()
-  --   --   return vim.bo.filetype ~= "tex" -- disable for tex files
-  --   -- end,
-  --   -- keys = function()
-  --   --   return {}
-  --   -- end,
-  -- },
+  {
+    "L3MON4D3/LuaSnip",
+    dependencies = { "rafamadriz/friendly-snippets" },
+    -- lazy = true,
+    -- enabled = function()
+    --   return vim.bo.filetype ~= "tex" -- disable for tex files
+    -- end,
+    -- keys = function()
+    --   return {}
+    -- end,
+  },
   -- { "quangnguyen30192/cmp-nvim-ultisnips" },
   {
     "a-lipson/cmp-nvim-ultisnips",
