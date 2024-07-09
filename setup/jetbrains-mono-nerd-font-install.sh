@@ -22,3 +22,5 @@ curl -LO "${download_url}"
 
 unzip "*.zip" "*.ttf" "*.otf" -d ~/.fonts
 sudo fc-cache -f -v
+
+rm "JetBrainsMono.zip"
