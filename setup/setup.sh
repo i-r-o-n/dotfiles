@@ -26,7 +26,7 @@
 
 # yay-bin
 git clone https://aur.archlinux.org/yay-bin.git
-cd yay-bin
+cd yay-bin || return
 MAKEFLAGS="--noconfirm" makepkg -si --noconfirm
 
 # pac-pacman-aliases
@@ -50,6 +50,6 @@ sudo npm install -g tree-sitter-cli
 # texlive
 curl -L -o install-tl-unx.tar.gz https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 zcat <install-tl-unx.tar.gz | tar xf -
-cd install-tl-*
+cd install-tl-* || return
 sudo perl ./install-tl --no-interaction
 # then this takes some time to complete
