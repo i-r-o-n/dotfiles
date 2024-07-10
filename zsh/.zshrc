@@ -14,6 +14,8 @@ export PATH="$HOME/apps/texlive/2024/bin/x86_64-linux:$PATH"
 # rust cargo
 export PATH="$HOME/.cargo/bin:$PATH"
 
+export PATH="$HOME/.local/bin:$PATH"
+
 export PATH="/usr/bin:$PATH"
 
 # add custom shell utility scripts directory
