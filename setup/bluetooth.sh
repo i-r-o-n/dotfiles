@@ -21,3 +21,7 @@ echo "  scan on"
 echo "  pair <MAC_ADDRESS>"
 echo "  trust <MAC_ADDRESS>"
 echo "  connect <MAC_ADDRESS>"
+
+# may need to re-pair device if
+# bluetoothctl error
+# Failed to connect: org.bluez.Error.Failed br-connection-unknown
