@@ -204,14 +204,15 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-assign [app_id="alacritty"] workspace 1
-assign [app_id="firefox"] workspace 2
-assign [app_id="spotify"] workspace 4
+# assign [app_id="alacritty"] workspace 1
+# assign [app_id="firefox"] workspace 2
+# assign [app_id="spotify"] workspace 4
 
-# run startup only on start
+# black desktop background
 exec_always swaybg -o '*' -c '#000000'
 
-exec_always --no-startup-id ~/.config/sway/scripts/startup.sh
+# run startup only on start
+# exec_always --no-startup-id ~/.config/sway/scripts/startup.sh
 
 include ~/.config/sway/*
 
