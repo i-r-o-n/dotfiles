@@ -20,9 +20,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
   end,
 })
 -- enable spell checking for certain file types
-vim.cmd([[
-  autocmd FileType markdown,tex,html,text setlocal spell
-]])
+vim.cmd([[autocmd FileType markdown,tex,html,text setlocal spell]])
 
 -- disable comment formatting on lines opened after comment
 vim.api.nvim_create_autocmd("FileType", {
@@ -33,12 +31,18 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.hs",
+  callback = function()
+    vim.bo.filetype = "haskell"
+  end,
+})
+
 -- set file type
--- vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, { pattern = "*.kbd", command = "set filetype=kbd" })
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*",
   callback = function()
-    if vim.bo.filetype == "" then
+    if vim.bo.filetype == "" or vim.bo.filetype == "nil" then
       vim.bo.filetype = vim.fn.expand("%:e")
     end
   end,
@@ -68,13 +72,3 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.bo.expandtab = true
   end,
 })
-
--- vim.api.nvim_exec(
---   [[
---   augroup JavaIndentation
---     autocmd!
---     autocmd FileType java setlocal tabstop=4 shiftwidth=4 expandtab
---   augroup END
--- ]],
---   false
--- )
