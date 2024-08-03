@@ -21,6 +21,7 @@
 # firefox - vimium + config
 # fd-find
 # ripgrep
+# fuzzel - menu
 
 # AUR packages
 
