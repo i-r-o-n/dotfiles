@@ -14,7 +14,7 @@ vim.api.nvim_set_keymap("t", "jj", "<C-\\><C-n>", { noremap = true })
 vim.api.nvim_set_keymap("i", "<C-l>", "<c-g>u<Esc>[s1z=`]a<c-g>u", { noremap = true })
 
 -- enter zen mode
-vim.api.nvim_set_keymap("n", "<leader>uz", ":ZenMode<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<leader>uz", ":ZenMode<CR>", { noremap = true, silent = true })
 
 -- ultisnips reload snippets
 vim.api.nvim_create_autocmd("FileType", {
@@ -29,6 +29,8 @@ vim.api.nvim_create_autocmd("FileType", {
     )
   end,
 })
+
+vim.api.nvim_set_keymap("n", "<leader>bs", ":noautocmd write<CR>", { noremap = true })
 
 -- alternate layout support
 -- local layout = require("config.layout")
