@@ -115,8 +115,11 @@ set $windows sh ~/.config/fuzzel/scripts/windows.sh
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
 
-    bindsym $mod+$alt+$left workspace prev
-    bindsym $mod+$alt+$right workspace next
+    # bindsym $mod+$alt+$left workspace prev
+    # bindsym $mod+$alt+$right workspace next
+    bindsym $mod+$alt+$left exec ~/.config/sway/scripts/move-workspace.sh prev
+    bindsym $mod+$alt+$right exec ~/.config/sway/scripts/move-workspace.sh next
+
 #
 # Workspaces:
 #
