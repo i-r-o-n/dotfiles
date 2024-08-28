@@ -17,7 +17,11 @@ i use Arch, btw.
 
 ### bootloader
 
-- systemd-boot
+- GRUB
+
+### init system
+
+- sinit
 
 ### startup scripts
 
