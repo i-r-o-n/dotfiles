@@ -5,7 +5,7 @@
 # Read `man 5 sway` for a complete reference.
 
 # need to change these vars between laptop & desktop
-font pango: JetBrainsMono Nerd Font 14
+font pango: JetBrainsMono Nerd Font 16
 seat * xcursor_theme Adwaita 12
 
 ### Variables

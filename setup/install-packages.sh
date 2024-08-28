@@ -2,22 +2,18 @@
 
 # ly
 # sway
-# polybar
 # git
+# alacritty
 
-sudo pacman -Syu alacritty tmux neovim ripgrep fd-find
+sudo pacman -Syu tmux neovim ripgrep fd-find fuzzel swaybg swayimg swaybar
 
 # signal-desktop
-# tmux
-# polybar
 # zathura
 # poppler zathura-pdf-poppler
 # firefox - vimium + config
-# fd-find
-# ripgrep
-# fuzzel - menu
 
 # old
 
 # bspwm
 # sxhkd
+# polybar
