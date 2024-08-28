@@ -245,7 +245,7 @@
     always_run_script = true
 
     # Define the title of the windows spawned by dunst
-    title = Dunst
+    title = dunst
 
     # Define the class of the windows spawned by dunst
     class = Dunst
