@@ -1,10 +1,25 @@
-# Dot
+# dot
 
-Hello, this is where I will keep my dot files!
+## introduction
 
-I use Arch, btw.
+Hello and welcome; this is where i keep my dot files!
+
+i use Arch, btw.
 
 ---
 
-wm: bspwm
-startup script: /bspwm/bspwmrc
+## configuration details
+
+### wm
+
+- W | sway
+- X | bspwm
+
+### bootloader
+
+- systemd-boot
+
+### startup scripts
+
+- W | sway/config
+- X | bspwm/bspwmrc
