@@ -34,4 +34,4 @@ tmux/plugins/*
 virt-viewer/
 xfce4/
 zsh/**/.git/*
-zsh/themes/powerlevel10k/.git/
+# zsh/themes/powerlevel10k/.git/
