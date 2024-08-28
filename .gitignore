@@ -17,16 +17,17 @@ keepassxc/
 lftp/
 libreoffice/
 mimeapps.list
-nvim.nvchad.base/.git
-nvim.nvchad/.git
+nvim.nvchad/
 nvim/.git/*
 nvim/lazy-lock.json
 nvim/pythonx/__pycache__/
 OpenRGB/
+picom/
 Proton Mail/
 pulse/
 qmk/qmk.ini
 QtProject.conf
+rofi/
 Signal/
 spotify/
 Thunar/
