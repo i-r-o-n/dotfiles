@@ -232,3 +232,24 @@ ls -al
 cd ..
 ls
 nvim .
+nvim .
+gs
+starship
+starship update
+which starship
+pacman -S starship
+sudo pacman -S starship
+clear
+cd ~/.cache
+ls
+ls | grep starship
+cd starship/
+ls
+ls -al
+starship init nu | save -f ~/.cache/starship/init.nu
+$nu.config-path
+gs
+g 
+git status
+cd ..
+git status
