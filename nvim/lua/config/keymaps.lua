@@ -2,7 +2,7 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
--- no longer used
+-- vim local file explore
 -- vim.keymap.set("n", "<leader>uv", vim.cmd.Ex)
 
 -- exit insert mode
@@ -12,9 +12,6 @@ vim.api.nvim_set_keymap("t", "jj", "<C-\\><C-n>", { noremap = true })
 
 -- correct last spelling mistake in insert mode
 vim.api.nvim_set_keymap("i", "<C-l>", "<c-g>u<Esc>[s1z=`]a<c-g>u", { noremap = true })
-
--- enter zen mode
--- vim.api.nvim_set_keymap("n", "<leader>uz", ":ZenMode<CR>", { noremap = true, silent = true })
 
 -- ultisnips reload snippets
 vim.api.nvim_create_autocmd("FileType", {
@@ -30,6 +27,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- save without formatting
 vim.api.nvim_set_keymap("n", "<leader>bs", ":noautocmd write<CR>", { noremap = true })
 
 -- alternate layout support

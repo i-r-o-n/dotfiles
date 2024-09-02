@@ -2,6 +2,7 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+-- pathing
 vim.o.shell = "/usr/bin/zsh"
 
 vim.o.runtimepath = vim.o.runtimepath .. ",~/.config/nvim/lua/"
@@ -9,6 +10,9 @@ vim.o.runtimepath = vim.o.runtimepath .. ",~/.config/nvim/lua/"
 -- display
 vim.o.encoding = "utf-8"
 vim.o.guifont = "JetBrainsMono Nerd Font:h12"
+
+-- tmux
+vim.o.termguicolors = true
 
 vim.o.wrap = true
 vim.o.linebreak = true
