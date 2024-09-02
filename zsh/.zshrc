@@ -112,6 +112,7 @@ enable-fzf-tab
 # starship theme
 # export STARSHIP_CONFIG=~/.config/zsh/themes/starship/starship.toml
 # eval "$(starship init zsh)"
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 # powerlevel10k theme
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

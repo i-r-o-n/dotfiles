@@ -10,7 +10,7 @@ sudo pacman -Syu tmux neovim ripgrep fd-find fuzzel swaybg swayimg swaybar
 # signal-desktop
 # zathura
 # poppler zathura-pdf-poppler
-# firefox - vimium + config
+# firefox/zen - vimium + config, note layout.css.devPixelsPerPx -> 1.35 in about:config
 
 # old
 

@@ -18,6 +18,7 @@ keepassxc/
 lftp/
 libreoffice/
 mimeapps.list
+nushell/history.txt
 nvim.nvchad/
 nvim/.git/*
 nvim/lazy-lock.json

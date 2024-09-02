@@ -29,3 +29,7 @@ sh langs/latex.sh &
 
 # neovim utils
 sh neovim.sh
+
+# starship with nushell
+mkdir ~/.cache/starship
+starship init nu | save -f ~/.cache/starship/init.nu
