@@ -14,9 +14,14 @@ export PATH="$HOME/apps/texlive/2024/bin/x86_64-linux:$PATH"
 # rust cargo
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# ghcup ghc version management
+export PATH="$HOME/.ghcup/bin:$PATH"
+
+# local bin precedence
 export PATH="$HOME/.local/bin:$PATH"
 
-export PATH="/usr/bin:$PATH"
+# what does removing this break?
+# export PATH="/usr/bin:$PATH"
 
 # add custom shell utility scripts directory
 export PATH="$HOME/.config/zsh/scripts:$PATH"
@@ -71,14 +76,17 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 HIST_STAMPS="dd.mm.yyyy"
 
-HISTSIZE=5000
-# HISTFILE=~/.zsh_history
+HISTSIZE=10000
+HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
 
 setopt extended_glob
 setopt appendhistory
 setopt sharehistory
+setopt append_history
+setopt inc_append_history
+setopt share_history
 setopt hist_ignore_space
 setopt hist_ignore_all_dups
 setopt hist_ignore_dups

@@ -1,0 +1,234 @@
+exit
+clear
+ls
+cd .config
+ls
+cd config
+cd ~/.config
+ls
+v.
+nvim .
+which nu
+chsh nu
+chsu $(which nu)
+$(which nu)
+which nu
+chsh -s $(which nu)
+chsh -s nu
+which nu
+echo $(which nu)
+clear
+ls
+less | ls
+ls | less
+clear
+which nu
+which nu | path
+which nu | grep path
+chsh -s /sbin/nu
+chsh -l
+chsh -s /bin/nu
+exit
+clear
+ls
+ls -al
+cat .p10k
+cat .p10k.zsh
+ls -al .config
+t
+tmux rename-session nu-test
+tmux ls
+ls
+cd .config
+ls -al
+cd nushell
+ls -al
+cat history.txt
+cl
+ls | sort-by size | reverse<\n>╭────┬───────────────────────┬──────┬───────────┬─────────────╮<\n>│ #  │         name          │ type │   size    │  modified   │<\n>├────┼───────────────────────┼──────┼───────────┼─────────────┤<\n>│  0 │ Gemfile.lock          │ file │   6.9 KiB │ 3 days ago  │<\n>│  1 │ SUMMARY.md            │ file │   3.7 KiB │ 3 days ago  │<\n>│  2 │ Gemfile               │ file │   1.1 KiB │ 3 days ago  │<\n>│  3 │ LICENSE               │ file │   1.1 KiB │ 3 days ago  │<\n>│  4 │ CONTRIBUTING.md       │ file │     955 B │ 9 mins ago  │<\n>│  5 │ books.md              │ file │     687 B │ 3 days ago  │<\n>...
+ls | sort-by size | reverse
+cd docs
+ls | sort-by size | reverse
+cd .config
+cd ~/.config
+ls | sort-by size | reverse
+ls | sort-by size
+ls | where size < 1kb
+ps
+ps | where cpu > 5
+help commands | where name == each | first
+help commands | where name == each
+help commands | where name == each | first
+DISPLAY:=0 signal-desktop
+clear
+help commands | where name == each | first
+help commands | where name == each | first | get params
+help commands | where name == each | first | get input_output
+help commands | where name == each | first | get input_output | get input
+help commands | where name == each | first | get input_output | get input | get 0
+help commands | where name == each | first | get params.name
+help commands | where name == each | first | get params.name.q
+help commands | where name == each | first | get params.name.0
+clear
+help commands | where name == each | first | get params.name
+help path
+clear
+$nu.env-path
+$nu.config-path
+nvim nushell
+config env --default | nu-highlight | lines
+config nu --default | nu-highlight | lines
+config env --default | nu-highlight | lines
+echo $nu.default-config-dir
+echo $XDG_CONFIG_HOME
+cd dls
+cd ~/dls
+ls
+rm `DALL·E 2024-08-24 21.59.15 - A highly abstract, psychedelic image using the Rastafarian colors—red, yellow, and green. The image should feature completely randomized, irregular sh.webp`
+ls
+rm ProtonMail-desktop-beta.deb
+cat todo_here
+cat tap_hold.md
+ls
+firefox 9c365d3b-4d8c-4df3-8320-78dde4a2968c.webp
+swaying 9c365d3b-4d8c-4df3-8320-78dde4a2968c.webp
+swayimg 9c365d3b-4d8c-4df3-8320-78dde4a2968c.webp
+rm 9c365d3b-4d8c-4df3-8320-78dde4a2968c.webp
+clear
+ls
+rm `Skyhanni Gold Enchantment Text.png`
+clear
+ls
+swayimg FinnDesign.svg
+cd ~/docs
+ls
+mkdir arcv
+ls
+cd ../dls
+ls
+rm vimium-options.json
+mv * ~/docs/arcv
+ls
+cd ~/docs/arcv && ls
+cd ~/docs/arcv and ls
+cd ~/docs/arcv; ls
+mv zen.linux-specific.tar.bz2 ~/dls
+mv todo_here ~/dls
+echo "sort this" > todo_here
+ls
+echo "sort this" >> todo_here
+ls
+echo "sort this" | todo_here
+echo "sort this" | touch todo_here
+ls
+cat todo_here
+v todo_here
+vim todo_here
+cat todo_here
+swayimg test.png
+rm test.png
+clear
+ls
+mv Laurelhurst_Park_Video.mp4.mp4 Laurelhurst_Park_Video.mp4
+mkdir school
+mv *.mp4 school
+ls
+mv EK* ~/dls
+mv `Rwanda Anthem.m4a` school
+mkdir personal
+mv discord_backup_codes.txt certificate_1248612.pdf `Alexandre Lipson - Cybersecurity Compliance Internship Resume.pdf` AL.png personal
+ls
+mkdir random
+mv holyshoot.HC `Nasty Combos.pdf` FinnDesign.svg `Dear Lil Mikey.pdf` random
+ls
+mkdir art
+mv 'Maxon CINEMA 4D Studio R19.024 + Crack [CracksNow].rar' Brushes.abr art
+ls
+ls modded_server/
+mv modded_server/ random
+ls
+rm tap_hold.md
+ls
+firefox .
+mv IMG_3821.m4v national_anthem_singing.m4v
+mv IMG_3923.m4v safari_giraffe.m4v
+mv IMG_3979.m4v farming.m4v
+ls
+mv *.m4v school
+ls
+cat todo_here
+rm todo_here
+clear
+cd ~/dls
+ls
+mkdir ekwb_instructions
+mv *.pdf ekwb_instructions/
+ls
+tar -xvjf zen.linux-specific.tar.bz2
+ls
+cd zen
+ls
+zen
+./zen
+ls
+cd ..
+ls
+ls -al ~ 
+mv ~/dls/zen ~/apps/
+ls
+rm zen.linux-specific.tar.bz2
+cd ~/apps
+ils
+ls
+cd libvirt/
+ls
+cd images/
+ls
+cd ..
+ls
+cd .config
+cd ~/.config
+ls
+cd sway
+nvim .
+cd ~/.local/share/applications/
+ls
+cat swayimg.desktop
+cat mimeinfo.cache
+nvim zen-browser.desktop
+chmod +x ~/.local/share/applications/my-portable-app.desktop
+chmod +x ~/.local/share/applications/zen-browser.desktop
+nvim zen-browser.desktop
+nvim virt-manager-dark.desktop
+cd ~/docs/code/repos/
+ls
+git clone "https://github.com/elkasztano/nushell-syntax-vim"<\n>cd nushell-syntax-vim<\n>nu install.nu
+ls
+nu install.nu
+cd ..
+rm nushell-syntax-vim/
+rm -r nushell-syntax-vim/
+git clone "https://github.com/elkasztano/nushell-syntax-vim"
+cd ~
+ls
+ls -al
+cd .config/nvim
+ls
+mkdir vim
+ls
+cd vim
+mkdir ftdetect ftplugin syntax indent
+ls
+echo "au BufRead,BufNewFile *.nu set filetype=nu" | save ./ftdetect/nu.vim
+cat ./ftdetect/nu.vim
+echo "setlocal commentstring=#%s<\n>setlocal formatoptions=tcroql" | save ./ftplugin/nu.vim
+cat ./ftplugin/nu.vim
+echo "" Vim indent file<\n>" Language: Nushell<\n>" Maintainer: El Kasztano<\n>" Last Updated: 07 December 2023<\n><\n>" Only load if no other indent file is loaded<\n>if exists('b:did_indent') | finish | endif<\n>let b:did_indent = 1<\n><\n>setlocal cindent<\n>setlocal cinoptions=L0,(s,Ws,J1,j1,+0,f5,m1,i0<\n>setlocal cinkeys=0{,0},!^F,o,O,0[,0],0),0#<\n><\n>setlocal autoindent<\n>setlocal indentkeys=0{,0},!^F,o,O,0[,0],0),0#<\n><\n>setlocal shiftwidth=2<\n>setlocal softtabstop=2<\n>setlocal expandtab<\n><\n>setlocal indentexpr=GetNuIndent(v:lnum)<\n><\n>" only define once<\n>if exists("*GetNuIndent") | finish | endif<\n><\n>let s:save_cpo = &cpo<\n>set cpo&vim<\n><\n>function GetNuIndent(lnum)<\n>	let prevlnum = prevnonblank(v:lnum - 1) "get number of last non blank line<\n>	let line = getline(a:lnum)<\n>	let synname = synIDattr(synID(a:lnum, 1, 1), "name")<\n>	if (synname == "nuString") || (synname == "nuComment")<\n>		return -1<\n>	endif<\n>	if getline(prevlnum) =~ '\%(^.*[$\|^.*[\s*#.*$\)'<\n>		return (prevlnum > 0) * indent(prevlnum) + shiftwidth()<\n>	endif<\n>	if getline(v:lnum) =~ "^\s*]\>"<\n>		return (prevlnum > 0) * indent(prevlnum) - shiftwidth()<\n>	endif<\n>	return cindent(a:lnum)	<\n>endfunction<\n><\n>let &cpo = s:save_cpo<\n>unlet s:save_cpo" | save ./indent/nu.vim
+ls
+mv ~/docs/code/repos/nushell-syntax-vim/indent/nu.vim ./indent/
+mv ~/docs/code/repos/nushell-syntax-vim/syntax/nu.vim ./syntax/
+ls
+ls -al
+cd ..
+ls
+nvim .

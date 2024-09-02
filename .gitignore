@@ -10,6 +10,7 @@ Flipper\ Devices\ Inc/
 ghc/
 GIMP/
 github-copilot/
+go/
 htop/
 inkscape/
 JetBrains/
@@ -30,6 +31,7 @@ QtProject.conf
 rofi/
 Signal/
 spotify/
+spotify-player/
 Thunar/
 tmux/plugins/*
 virt-viewer/
