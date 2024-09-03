@@ -104,7 +104,7 @@ path add ($env.HOME | path join ".local" "bin")
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
 
-# $env.STARSHIP_CONFIG = "~/.config/starship/starship.toml"
+$env.STARSHIP_CONFIG = "/home/a/.config/starship/starship.toml"
 starship init nu | save -f ~/.cache/starship/init.nu
 
 zoxide init nushell | save -f ~/.zoxide.nu
