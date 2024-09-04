@@ -3,7 +3,7 @@
 -- Add any additional options here
 
 -- pathing
-vim.o.shell = "/usr/bin/zsh"
+vim.o.shell = "/bin/nu"
 
 vim.o.runtimepath = vim.o.runtimepath .. ",~/.config/nvim/lua/"
 
