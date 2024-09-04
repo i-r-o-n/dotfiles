@@ -96,8 +96,11 @@ use std "path add"
 
 $env.CARGO_HOME = ($env.HOME | path join ".cargo")
 
-path add ($env.CARGO_HOME | path join "bin")
+# TODO: put this into a function!
+
+path add ($env.HOME | path join ".cargo" "bin")
 path add ($env.HOME | path join ".local" "bin")
+path add ($env.HOME | path join ".ghcup" "bin")
 
 # $env.PATH = ($env.PATH | uniq)
 

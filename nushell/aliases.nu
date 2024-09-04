@@ -9,6 +9,9 @@ alias cl = clear
 # neovim
 alias v  = nvim 
 alias v. = nvim .
+def sudov [...args] {
+  EDITOR=nvim sudoedit ...$args
+}
 
 # clipboard
 alias copy  = wl-copy
