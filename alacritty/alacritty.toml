@@ -1,5 +1,3 @@
-# import = ["~/.config/alacritty/catppuccin-mocha.toml"]
-# import = ["~/.config/alacritty/material_theme_mod.toml"]
 import = ["~/.config/alacritty/material.toml"]
 
 [colors]
@@ -8,13 +6,14 @@ draw_bold_text_with_bright_colors = true
 [font]
 size = 28.0
 
+[font.bold_italic]
+family = "JetBrainMono Nerd Font"
+# style = "Bold Italic"
+style = "Italic"
+
 [font.bold]
 family = "JetBrainsMono Nerd Font"
 style = "Bold"
-
-[font.bold_italic]
-family = "JetBrainMono Nerd Font"
-style = "Bold Italic"
 
 [font.italic]
 family = "JetBrainsMono Nerd Font"
@@ -25,4 +24,12 @@ family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [env]
+ALACRITTY_LOG = "debug"
 TERM = "xterm-256color"
+# TERM = "alacritty"
+
+[debug]
+print_events = true
+persistent_logging = true
+log_level = "Debug"
+render_timer = false
