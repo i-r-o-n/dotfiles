@@ -4,26 +4,36 @@
 
 Hello and welcome; this is where i keep my dot files!
 
-i use Arch, btw.
+i use ~Arch~ Gentoo, btw.
 
 ---
 
 ## configuration details
 
+### legend
+
+- A | Arch
+- G | Gentoo
+
 ### wm
 
-- W | sway
-- X | bspwm
+- sway
 
 ### bootloader
 
-- GRUB
+- G | GRUB
+- A | systemd-boot
 
 ### init system
 
-- sinit
+- G | OpenRC
+- A | systemd
+
+### initramfs tooling
+
+- G | dracut
+- A | mkinitcpio
 
 ### startup scripts
 
-- W | sway/config
-- X | bspwm/bspwmrc
+- sway/config
