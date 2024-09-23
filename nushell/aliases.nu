@@ -1,3 +1,5 @@
+# aliases
+
 alias cd = z
 
 alias ssh = ssh -F ~/.config/ssh/config
@@ -32,6 +34,9 @@ alias gd = git diff
 
 # tmux
 alias t = tmux
+
+# emerge
+alias e = emerge --ask
 
 # example from docs
 def lsg [] { ls | sort-by type name -i | grid -c | str trim }
