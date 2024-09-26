@@ -25,6 +25,7 @@ nvim.nvchad/
 nvim/.git/*
 nvim/lazy-lock.json
 nvim/pythonx/__pycache__/
+opam/
 OpenRGB/
 picom/
 Proton Mail/
@@ -37,6 +38,7 @@ spotify/
 spotify-player/
 Thunar/
 tmux/plugins/*
+utop/
 virt-viewer/
 xfce4/
 zsh/**/.git/*
