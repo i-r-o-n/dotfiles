@@ -216,6 +216,9 @@ bindsym $mod+r mode "resize"
 # black desktop background
 exec_always swaybg -o '*' -c '#000000'
 
+# gentoo audio
+exec gentoo-pipewire-launcher restart &
+
 # run startup only on start
 # exec_always --no-startup-id ~/.config/sway/scripts/startup.sh
 
