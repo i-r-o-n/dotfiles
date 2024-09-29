@@ -24,7 +24,7 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu fuzzel --config ~/.config/fuzzel/config.ini
-set $windows sh ~/.config/fuzzel/scripts/windows.sh
+set $windows sh ~/.config/fuzzel/scripts/sway-windows.sh
 
 ### Output configuration
 #
@@ -89,6 +89,7 @@ set $windows sh ~/.config/fuzzel/scripts/windows.sh
 
     # Exit sway (logs you out of your Wayland session)
     # bindsym $mod+Shift+y exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
 
 #
 # Moving around:
