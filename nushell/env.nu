@@ -102,7 +102,7 @@ path add ($env.HOME | path join ".cargo" "bin")
 path add ($env.HOME | path join ".local" "bin")
 path add ($env.HOME | path join ".ghcup" "bin")
 
-# $env.PATH = ($env.PATH | uniq)
+$env.PATH = ($env.PATH | uniq)
 
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')

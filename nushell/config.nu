@@ -896,9 +896,11 @@ source ~/.zoxide.nu
 
 source ~/.config/nushell/aliases.nu
 
-use ~/.config/nushell/functions *
-
+# auxillary functions
+# use ~/.config/nushell/functions *
 # ls ~/.config/nushell/functions | each { |it| source $it.name }
+source ~/.config/nushell/functions/portage.nu
+source ~/.config/nushell/functions/opam-env.nu
 
 # source ~/.config/nushell/starship.nu
 use ~/.cache/starship/init.nu
