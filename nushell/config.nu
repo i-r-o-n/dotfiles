@@ -901,6 +901,7 @@ source ~/.config/nushell/aliases.nu
 # ls ~/.config/nushell/functions | each { |it| source $it.name }
 source ~/.config/nushell/functions/portage.nu
 source ~/.config/nushell/functions/opam-env.nu
+source ~/.config/nushell/functions/spotify-player.nu
 
 # source ~/.config/nushell/starship.nu
 use ~/.cache/starship/init.nu
