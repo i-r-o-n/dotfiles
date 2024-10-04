@@ -36,6 +36,7 @@ context "math()"
 snippet rd "to the ... power" iA
 ^{($1)}$0
 endsnippet
+
 snippet sum "sum" w
 \sum_{n=${1:1}}^{${2:\infty}} ${3:a_n z^n}
 endsnippet
@@ -63,7 +64,7 @@ endsnippet
 priority 300
 context "math()"
 snippet dint "integral" wA
-\int_{${1:-\infty}}^{${2:\infty}} ${3:${VISUAL}} $0
+\int_{${1:-\infty}}^{${2:\infty}} ${3:${VISUAL}} \,d$0
 endsnippet
 
 priority 100

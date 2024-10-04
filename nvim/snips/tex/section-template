@@ -1,9 +1,0 @@
-\documentclass[../${rootfile}]{subfiles}
-\begin{document}
-  \begin{problem}
-    
-  \end{problem}
-  \begin{proof}
-    
-  \end{proof}
-\end{document}

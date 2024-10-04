@@ -27,6 +27,20 @@ snippet lmto "longmapsto" iA
 \longmapsto
 endsnippet
 
+#
+# set
+#
+
+context "math()"
+snippet nsd "interior" iA
+\mathring{$1}$0
+endsnippet
+
+context "math()"
+snippet bnd "boundary" iA
+\partial{$1}$0
+endsnippet
+
 context "math()"
 snippet invs "inverse" iA
 ^{-1}
@@ -42,15 +56,21 @@ snippet trns "transpost" iA
 ^{T}
 endsnippet
 
-#
-# set
-#
-
-snippet UU "union cup" iA
+context "math()"
+snippet Uu "union cup" iA
+\cup 
+endsnippet
+context "math()"
+snippet cup "union cup" iA
 \cup 
 endsnippet
 
+context "math()"
 snippet Nn "intersection cap" iA
+\cap 
+endsnippet
+context "math()"
+snippet cap "intersection cap" iA
 \cap 
 endsnippet
 
@@ -72,8 +92,18 @@ snippet set "set" wA
 \\{$1\\} $0
 endsnippet
 
-snippet || "mid" iA
+context "math()"
+snippet mid "mid" iA
 \mid 
+endsnippet
+
+context "math()"
+snippet nrm "norm" iA 
+\left|$1\right| $0
+endsnippet
+context "math()"
+snippet || "norm" iA 
+|$1| $0
 endsnippet
 
 
