@@ -2,8 +2,6 @@
 
 def main [wd: string] {
     try {
-        let snippet_body = (open ~/.config/nvim/snips/tex/section-template | str trim)
-        let title_completion = "${rootfile}"
 
         let project_dir = if ($wd | path basename) == "sections" {
             $wd | path dirname
@@ -44,7 +42,11 @@ def main [wd: string] {
             | first
         )
 
-        $snippet_body 
+        let title_completion = "${rootfile}"
+
+        # HACK: use a better way of getting template dir
+        open $"($project_dir)/../../../../class/templates/section"
+        | str trim
         | str replace -a $title_completion $project_file
         | save -f (($next_num | into string) + ".tex")
 
