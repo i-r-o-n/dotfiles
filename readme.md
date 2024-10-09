@@ -17,7 +17,8 @@ i use ~Arch~ Gentoo, btw.
 
 ### wm
 
-- sway
+- A | sway
+- G | Hyprland
 
 ### bootloader
 
@@ -37,3 +38,4 @@ i use ~Arch~ Gentoo, btw.
 ### startup scripts
 
 - sway/config
+- hypr/hyprland.conf
