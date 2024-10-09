@@ -37,6 +37,7 @@ snippet rd "to the ... power" iA
 ^{($1)}$0
 endsnippet
 
+context "math()"
 snippet sum "sum" w
 \sum_{n=${1:1}}^{${2:\infty}} ${3:a_n z^n}
 endsnippet
@@ -45,7 +46,9 @@ snippet taylor "taylor" w
 \sum_{${1:k}=${2:0}}^{${3:\infty}} ${4:c_$1} (x-a)^$1 $0
 endsnippet
 
-snippet lim "limit" w
+context "math()"
+# snippet lim "limit" w
+snippet lim "limit" A
 \lim_{${1:n} \to ${2:\infty}} 
 endsnippet
 
