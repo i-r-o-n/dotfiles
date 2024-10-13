@@ -243,11 +243,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_SYMBOL] = LAYOUT(
   // ╭─────────────────────────────────────────────╮ ╭─────────────────────────────────────────────╮
-       KC_LABK, KC_RABK, KC_LCBR, KC_RCBR,    NONE,     KC_GRV, KC_AMPR, KC_ASTR, KC_MINS, KC_PLUS,
+       KC_LABK, KC_RABK, KC_LCBR, KC_RCBR,    NONE,     KC_GRV, KC_CIRC,   KC_DLR, KC_QUES, KC_EXLM,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-       KC_BSLS, KC_SLSH, KC_LPRN, KC_RPRN,    NONE,    KC_TILD, KC_UNDS,  KC_EQL, KC_QUES, KC_EXLM,
+       KC_BSLS, KC_SLSH, KC_LPRN, KC_RPRN,    NONE,    KC_TILD, KC_UNDS,   KC_EQL, KC_MINS, KC_PLUS,
   // ├─────────────────────────────────────────────┤ ├─────────────────────────────────────────────┤
-          NONE, KC_PIPE, KC_LBRC, KC_RBRC,    NONE,    KC_PERC, KC_HASH,  KC_DLR,   KC_AT, KC_CIRC,
+          NONE, KC_PIPE, KC_LBRC, KC_RBRC,    NONE,    KC_PERC, KC_HASH,  KC_AMPR, KC_ASTR, KC_AT, 
   // ╰─────────────────────────────────────────────┤ ├─────────────────────────────────────────────╯
                          _______, _______, _______,    _______, _______
   //                   ╰───────────────────────────╯ ╰──────────────────╯
