@@ -30,7 +30,9 @@ OpenRGB/
 picom/
 Proton Mail/
 pulse/
-qmk/qmk.ini
+qmk/*
+!qmk/qmk.ini
+!qmk/keymaps
 QtProject.conf
 rofi/
 Signal/
