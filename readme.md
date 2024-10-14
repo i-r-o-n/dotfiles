@@ -2,40 +2,14 @@
 
 ## introduction
 
-Hello and welcome; this is where i keep my dot files!
-
-i use ~Arch~ Gentoo, btw.
+Hello, again, and welcome; this is where i keep my dot files!
 
 ---
 
 ## configuration details
 
-### legend
+Gentoo with OpenRC, GRUB, and dracut on Hyprland
 
-- A | Arch
-- G | Gentoo
+### important scripts
 
-### wm
-
-- A | sway
-- G | Hyprland
-
-### bootloader
-
-- G | GRUB
-- A | systemd-boot
-
-### init system
-
-- G | OpenRC
-- A | systemd
-
-### initramfs tooling
-
-- G | dracut
-- A | mkinitcpio
-
-### startup scripts
-
-- sway/config
 - hypr/hyprland.conf
