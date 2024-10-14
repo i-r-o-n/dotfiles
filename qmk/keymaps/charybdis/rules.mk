@@ -13,3 +13,8 @@ SPLIT_KEYBOARD = yes
 POINTING_DEVICE_ENABLE = yes # Enable trackball
 POINTING_DEVICE_DRIVER = pmw3360
 
+
+# from waffle qmk.me
+ifneq ($(findstring Gentoo, $(shell arm-none-eabi-gcc --version)),)
+	EXTRAFLAGS += -U_FORTIFY_SOURCE
+endif
