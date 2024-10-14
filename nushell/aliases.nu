@@ -34,6 +34,8 @@ alias gd = git diff
 
 # tmux
 alias t = tmux
+alias trs = tmux rename-session 
+alias tns = tmux new-session 
 
 # emerge
 alias e = emerge --ask
@@ -43,3 +45,6 @@ def lsg [] { ls | sort-by type name -i | grid -c | str trim }
 
 # mkinitcpio (don't accidentally break bootloader install)
 alias mkinitcpio = ./usr/local/bin/mkinitcpio-wrapper
+
+# in case bash is needed
+alias bash = bash --rcfile ~/.bash_standalone_profile
