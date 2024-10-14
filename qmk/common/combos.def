@@ -1,0 +1,19 @@
+// Copyright 2024 jack@pngu.org
+// SPDX-License-Identifier: GPL-2.0-or-later
+
+//  name        output            keys
+CMB(qspc_lnum, L_NUM, TL_LOWR, KC_Q)
+
+CMD(xj_capsword, CW_TOGG, KC_X, KC_J)
+CMD(jb_oss OSS, KC_J, KC_B)
+// CMD(xb_ KC_X, KC_B)
+// CMD(bm_ KC_B, KC_M)
+// CMD(jm_ KC_J, KC_M)
+
+CMD(sclndot_tab, KC_TAB, KC_SCLN, KC_DOT)
+CMD(domcomm_oss, OSS KC_DOT, KC_COMM)
+// CMD(sclncomm_ KC_SCLN, KC_COMM)
+// CMD(commg_del, KC_BSPC, KC_COMM, KC_G)
+// CMD(dotg_ctldel, C(KC_BSPC), KC_DOT, KC_G)
+
+CMD(fl_esc KC_F, KC_L, KC_ESC)
