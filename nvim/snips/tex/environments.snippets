@@ -11,6 +11,10 @@ else:
 `$2
 endsnippet
 
+snippet "(^|[^a-zA-Z])mm" "inline math" rA
+`!p snip.rv = match.group(1)`\$ ${1:${VISUAL:}} \$$0
+endsnippet
+
 snippet dm "display math" wA
 \[
 ${1:${VISUAL}}
@@ -23,6 +27,7 @@ snippet ali "align" bA
 .\end{align*}
 endsnippet
 
+# for alignment environments
 snippet == "equals" iA
 &= $1 \\\\
 endsnippet
@@ -58,6 +63,12 @@ endsnippet
 snippet qquad "qquad" bA
 \qquad $0
 endsnippet
+
+# proof 
+
+# problem 
+
+# proposition 
 
 snippet desc "description" b
 \begin{description}

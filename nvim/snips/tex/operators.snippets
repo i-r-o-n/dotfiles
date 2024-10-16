@@ -2,6 +2,7 @@ global !p
 from latex_environments import math, comment, env
 endglobal
 
+context "math()"
 snippet lll "l" iA
 \ell
 endsnippet
@@ -25,6 +26,11 @@ endsnippet
 context "math()"
 snippet lmto "longmapsto" iA
 \longmapsto
+endsnippet
+
+context "math()"
+snippet --> "longrightarrow" iA 
+\longrightarrow
 endsnippet
 
 #
@@ -64,6 +70,9 @@ context "math()"
 snippet cup "union cup" iA
 \cup 
 endsnippet
+
+priority 100
+context "math()"
 snippet dcup "bounded union cup" iA
 \bigcup_{$1}^{$2} $0
 endsnippet
@@ -76,6 +85,8 @@ context "math()"
 snippet cap "intersection cap" iA
 \cap 
 endsnippet
+
+priority 100
 context "math()"
 snippet dcap "bounded intersection cap" iA
 \bigcap_{$1}^{$2} $0
@@ -88,6 +99,7 @@ endsnippet
 snippet nnn "bigcap" iA
 \bigcap_{${1:i \in ${2: I}}} $0
 endsnippet
+
 
 context "math()"
 snippet \\\ "setminus" iA
@@ -119,7 +131,9 @@ snippet cc "subset" Ai
 \subset 
 endsnippet
 
-snippet notin "not in " iA
+context "math()"
+# notin
+snippet nin "not in " iA 
 \not\in 
 endsnippet
 
@@ -129,7 +143,7 @@ snippet inn "in " iA
 endsnippet
 
 snippet >> ">>" iA
-\gg
+\gg 
 endsnippet
 
 snippet << "<<" iA
@@ -153,6 +167,11 @@ endsnippet
 priority 100
 context "math()"
 snippet -> "to" iA
+\to 
+endsnippet
+
+context "math()"
+snippet to "to" iA
 \to 
 endsnippet
 
@@ -200,6 +219,7 @@ context "math()"
 snippet iff "iff" Ai
 \iff
 endsnippet
+
 context "math()"
 snippet EE "exists" iA
 \exists 
@@ -211,12 +231,23 @@ snippet AA "forall" iA
 endsnippet
 
 priority 100
+context "math()"
 snippet ... "ldots" iA
 \ldots
 endsnippet
 
 snippet c.. "cdots" iA
 \cdots
+endsnippet
+
+context "math()"
+snippet st "such that separator in list comprehensions" iA 
+\ |\ 
+endsnippet
+
+context "math()"
+snippet ,, "comma separating condition in a list" iA
+,\, 
 endsnippet
 
 context "math()"
