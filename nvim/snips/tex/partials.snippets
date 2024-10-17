@@ -1,0 +1,62 @@
+global !p
+from latex_environments import math, comment, env
+endglobal
+
+snippet part "partial derivative" w
+\frac{\partial ${1:V}}{\partial ${2:x}} $0
+endsnippet
+
+# context "math()"
+# snippet pd "partial derivative" iA
+# \frac{\partial $1}{\partial $2}$0
+# endsnippet
+
+priority 10
+snippet 'pd([a-zA-Z])([a-zA-Z])' "partial derivative" wrA
+`!p if match.group(1) == match.group(2): # _th partial derivative as an operator
+	snip.rv = "\\frac{\\partial}{\\partial " + match.group(2) + "}" 
+else: 
+	snip.rv = "\\frac{\\partial " + match.group(1) + "}{\\partial " + match.group(2) + "}" `
+endsnippet
+
+# priority 10
+# context "math()"
+# snippet 'pd([a-zA-Z]{2})' "partial derivative" wrA
+# \\frac{\\partial `!p snip.rv = match.group(1)[0]`}{\\partial `!p snip.rv = match.group(1)[1]`}
+# endsnippet
+
+priority 100
+context "math()"
+snippet '(\d)pd([a-zA-Z])([a-zA-Z])' "nth partial derivative" wrA
+\\frac{\partial^{`!p snip.rv = match.group(1)`} `!p snip.rv = match.group(2)`}{\partial `!p snip.rv = match.group(3)`^`!p snip.rv = match.group(1)`}
+endsnippet
+
+
+priority 100
+context "math()"
+snippet '(\d)mpd([a-zA-Z]+)' "nth mixed partial derivative" wr
+`!p
+digit = int(match.group(1))
+letters = match.group(2)
+    
+    if len(letters) != digit:
+        snip.rv = "Error: Number of letters does not match the digit"
+        return
+
+    numerator = " ".join(letters)
+    denominator = " ".join([f"\\partial {letter}" for letter in letters])
+    
+    snip.rv = f"\\frac{{\\partial^{{{digit}}} {numerator}}}{{{denominator}}}"
+`
+endsnippet
+
+priority 100
+context "math()"
+snippet 'pmd([a-zA-Z]{3})' "2nd order mixed partial derivative" rA
+\\frac{\\partial^2 `!p snip.rv = match.group(1)[0]`}{\\partial `!p snip.rv = match.group(1)[1]` \\partial `!p snip.rv = match.group(1)[2]`}
+endsnippet
+
+context "math()"
+snippet nabl "nabla" iA
+\nabla 
+endsnippet

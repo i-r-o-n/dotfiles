@@ -3,16 +3,6 @@ from latex_environments import math, comment, env
 endglobal
 
 context "math()"
-snippet conj "conjugate" iA
-\overline{$1}$0
-endsnippet
-
-context "math()"
-snippet norm "norm" iA
-\|$1\|$0
-endsnippet
-
-context "math()"
 snippet sq "\sqrt{}" iA
 \sqrt{${1:${VISUAL}}} $0
 endsnippet
@@ -47,8 +37,7 @@ snippet taylor "taylor" w
 endsnippet
 
 context "math()"
-# snippet lim "limit" w
-snippet lim "limit" A
+snippet lim "limit" wA
 \lim_{${1:n} \to ${2:\infty}} 
 endsnippet
 
@@ -60,13 +49,9 @@ snippet prod "product" w
 \prod_{${1:n=${2:1}}}^{${3:\infty}} ${4:${VISUAL}} $0
 endsnippet
 
-snippet part "partial derivative" w
-\frac{\partial ${1:V}}{\partial ${2:x}} $0
-endsnippet
-
 priority 300
 context "math()"
-snippet dint "integral" wA
+snippet dint "definite integral" wA
 \int_{${1:-\infty}}^{${2:\infty}} ${3:${VISUAL}} \,d$0
 endsnippet
 
@@ -92,69 +77,61 @@ snippet floor "floor" iA
 \left\lfloor $1 \right\rfloor$0
 endsnippet
 
-snippet bigfun "Big function" iA
+snippet bigfun "big function" iA
 \begin{align*}
 	$1: $2 &\longrightarrow $3 \\\\
 	$4 &\longmapsto $1($4) = $0
 .\end{align*}
 endsnippet
 
-# defined in Real Analysis preamble
-snippet inp "inner product" iA 
-\inp{$1}{$2}$0
-endsnippet
-
-#
-# derivatives
-#
-
-# context "math()"
-# snippet pd "partial derivative" iA
-# \frac{\partial $1}{\partial $2}$0
-# endsnippet
-
-priority 10
-snippet 'pd([a-zA-Z])([a-zA-Z])' "partial derivative" wrA
-`!p if match.group(1) == match.group(2): # _th partial derivative as an operator
-	snip.rv = "\\frac{\\partial}{\\partial " + match.group(2) + "}" 
-else: 
-	snip.rv = "\\frac{\\partial " + match.group(1) + "}{\\partial " + match.group(2) + "}" `
-endsnippet
-
-# priority 10
-# context "math()"
-# snippet 'pd([a-zA-Z]{2})' "partial derivative" wrA
-# \\frac{\\partial `!p snip.rv = match.group(1)[0]`}{\\partial `!p snip.rv = match.group(1)[1]`}
-# endsnippet
-
-priority 100
+priority 200
 context "math()"
-snippet '(\d)pd([a-zA-Z])([a-zA-Z])' "nth partial derivative" wrA
-\\frac{\partial^{`!p snip.rv = match.group(1)`} `!p snip.rv = match.group(2)`}{\partial `!p snip.rv = match.group(3)`^`!p snip.rv = match.group(1)`}
+snippet <-> "leftrightarrow" iA
+\leftrightarrow
 endsnippet
 
-
-priority 100
 context "math()"
-snippet '(\d)mpd([a-zA-Z]+)' "nth mixed partial derivative" wr
-`!p
-digit = int(match.group(1))
-letters = match.group(2)
-    
-    if len(letters) != digit:
-        snip.rv = "Error: Number of letters does not match the digit"
-        return
+snippet !> "mapsto" iA
+\mapsto 
+endsnippet
 
-    numerator = " ".join(letters)
-    denominator = " ".join([f"\\partial {letter}" for letter in letters])
-    
-    snip.rv = f"\\frac{{\\partial^{{{digit}}} {numerator}}}{{{denominator}}}"
-`
+context "math()"
+snippet lmto "longmapsto" iA
+\longmapsto
+endsnippet
+
+context "math()"
+snippet --> "longrightarrow" iA 
+\longrightarrow
+endsnippet
+
+snippet >> ">>" iA
+\gg 
+endsnippet
+
+snippet << "<<" iA
+\ll
+endsnippet
+
+snippet ~~ "~" iA
+\sim 
 endsnippet
 
 priority 100
 context "math()"
-snippet 'pmd([a-zA-Z]{3})' "2nd order mixed partial derivative" rA
-\\frac{\\partial^2 `!p snip.rv = match.group(1)[0]`}{\\partial `!p snip.rv = match.group(1)[1]` \\partial `!p snip.rv = match.group(1)[2]`}
+snippet -> "to" iA
+\to 
 endsnippet
 
+context "math()"
+snippet to "to" iA
+\to 
+endsnippet
+
+snippet <! "normal" iA
+\triangleleft 
+endsnippet
+
+snippet <> "booth" iA
+\diamond 
+endsnippet

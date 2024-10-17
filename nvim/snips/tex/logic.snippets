@@ -1,0 +1,44 @@
+global !p
+from latex_environments import math, comment, env
+endglobal
+
+context "math()"
+snippet EE "exists" iA
+\exists 
+endsnippet
+
+context "math()"
+snippet AA "forall" iA
+\forall 
+endsnippet
+
+context "math()"
+snippet impls "implies" iA
+\implies
+endsnippet
+snippet => "implies" Ai
+\implies
+endsnippet
+
+context "math()"
+snippet implby "implied by" iA
+\impliedby
+endsnippet
+snippet =< "implied by" Ai
+\impliedby
+endsnippet
+
+context "math()"
+snippet iff "iff" iA
+\iff
+endsnippet
+
+priority 100
+context "math()"
+snippet ... "ldots" iA
+\ldots
+endsnippet
+
+snippet c.. "cdots" iA
+\cdots
+endsnippet

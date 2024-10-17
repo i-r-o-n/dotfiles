@@ -1,6 +1,6 @@
-#
-# brackets
-#
+global !p
+from latex_environments import math, comment, env
+endglobal
 
 context "math()"
 # snippet () "left( right)" iA
@@ -12,7 +12,6 @@ endsnippet
 snippet lrp "left( right)" iA
 \left( ${1:${VISUAL}} \right) $0
 endsnippet
-
 snippet lr( "left( right)" i
 \left( ${1:${VISUAL}} \right) $0
 endsnippet
@@ -24,7 +23,6 @@ endsnippet
 snippet lr{ "left\{ right\}" i
 \left\\{ ${1:${VISUAL}} \right\\} $0
 endsnippet
-
 snippet lrb "left\{ right\}" i
 \left\\{ ${1:${VISUAL}} \right\\} $0
 endsnippet
@@ -32,6 +30,7 @@ endsnippet
 snippet lr[ "left[ right]" i
 \left[ ${1:${VISUAL}} \right] $0
 endsnippet
+
 
 snippet lra "leftangle rightangle" iA
 \left<${1:${VISUAL}} \right>$0

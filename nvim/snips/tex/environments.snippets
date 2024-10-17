@@ -2,7 +2,7 @@ global !p
 from latex_environments import math, comment, env
 endglobal
 
-snippet ml "in-line math" wA
+snippet ml "inline math" wA
 $${1}$`!p
 if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
 	snip.rv = ' '
@@ -21,6 +21,11 @@ ${1:${VISUAL}}
 .\] $0
 endsnippet
 
+context "math()"
+snippet tt "text" iA
+\text{$1}$0
+endsnippet
+
 snippet ali "align" bA
 \begin{align*}
 	${1:${VISUAL}}
@@ -32,12 +37,11 @@ snippet == "equals" iA
 &= $1 \\\\
 endsnippet
 
-snippet ovst "overset" iA
-\overset{$1}{$2}$0
-endsnippet
-
-snippet unst "underset" iA
-\underset{$1}{$2}$0
+context "math()"
+snippet case "cases" wA
+\begin{cases}
+	${1:${VISUAL}}
+\end{cases}
 endsnippet
 
 snippet enum "enumerate" bA
@@ -64,11 +68,29 @@ snippet qquad "qquad" bA
 \qquad $0
 endsnippet
 
-# proof 
+snippet beg "begin{} / end{}" bA
+\\begin{$1}
+	$0
+\\end{$1}
+endsnippet
 
-# problem 
+snippet proof "proof" bA 
+\\begin{proof}[Proof $1]
+  $0
+\\end{proof}
+endsnippet
 
-# proposition 
+snippet prob "problem" bA 
+\\begin{problem}[$1]
+  $0
+\\end{problem}
+endsnippet
+
+snippet prop "proposition" bA 
+\\begin{proposition}[$1]
+  $0
+\\end{proposition}
+endsnippet
 
 snippet desc "description" b
 \begin{description}
@@ -98,46 +120,6 @@ snippet table "table environment" b
 	$0${5/((?<=.)c|l|r)|./(?1: & )/g}
 	\end{tabular}
 \end{table}
-endsnippet
-
-snippet beg "begin{} / end{}" bA
-\\begin{$1}
-	$0
-\\end{$1}
-endsnippet
-
-context "math()"
-snippet case "cases" wA
-\begin{cases}
-	$1
-\end{cases}
-endsnippet
-
-snippet template "basic template" b
-\documentclass[a4paper]{article}
-
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{textcomp}
-\usepackage{amsmath, amssymb}
-
-
-% figure support
-\usepackage{import}
-\usepackage{xifthen}
-\pdfminorversion=7
-\usepackage{pdfpages}
-\usepackage{transparent}
-\newcommand{\incfig}[1]{%
-	\def\svgwidth{\columnwidth}
-	\import{./figures/}{#1.pdf_tex}
-}
-
-\pdfsuppresswarningpagegroup=1
-
-\begin{document}
-	$0
-\end{document}
 endsnippet
 
 snippet plot "Plot" w

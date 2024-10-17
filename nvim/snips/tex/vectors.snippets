@@ -1,0 +1,78 @@
+global !p
+from latex_environments import math, comment, env
+endglobal
+
+context "math()"
+snippet conj "conjugate" iA
+\overline{$1}$0
+endsnippet
+
+context "math()"
+snippet nrm "norm" iA
+\|$1\|$0
+endsnippet
+
+context "math()"
+snippet norm "norm with expanding bars" iA 
+\left|$1\right| $0
+endsnippet
+
+context "math()"
+snippet || "norm" iA 
+\|$1\| $0
+endsnippet
+
+context "math()"
+snippet xx "cross" iA
+\times 
+endsnippet
+
+priority 100
+snippet ** "cdot" iA
+\cdot 
+endsnippet
+
+# defined in Real Analysis preamble
+snippet inp "inner product" iA 
+\inp{$1}{$2}$0
+endsnippet
+
+priority 10
+context "math()"
+snippet hat "hat" iA
+\hat{$1}$0
+endsnippet
+
+priority 100
+context "math()"
+snippet "([a-zA-Z])hat" "hat" riA
+\hat{`!p snip.rv=match.group(1)`}
+endsnippet
+
+snippet clvc "column vector" iA
+\begin{pmatrix} ${1:x}_${2:1}\\\\ \vdots\\\\ $1_${2:n} \end{pmatrix}
+endsnippet
+
+priority 10
+context "math()"
+snippet vc "simple vector" iA
+\vec{$1}$2
+endsnippet
+
+priority 10
+context "math()"
+snippet bvc "bold vector" iA
+\mathbf{$1}$2
+endsnippet
+
+priority 100
+context "math()"
+snippet "([a-zA-Z])vec" "simple vector" riA
+\vec{`!p snip.rv=match.group(1)`}
+endsnippet
+
+priority 1000
+context "math()"
+snippet "([a-zA-Z]_[0-9nmij])vec" "vector with subscript" riA
+\vec{`!p snip.rv=match.group(1)`}
+endsnippet

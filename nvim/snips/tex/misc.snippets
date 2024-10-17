@@ -1,0 +1,21 @@
+global !p
+from latex_environments import math, comment, env
+endglobal
+
+# script letters
+context "math()"
+snippet mcal "mathcal" iA
+\mathcal{$1}$0
+endsnippet
+
+context "math()"
+snippet lll "l" iA
+\ell
+endsnippet
+
+
+# standard units
+snippet SI "SI" iA
+\SI{$1}{$2}
+endsnippet
+
