@@ -1,6 +1,6 @@
 #pragma once
 // this might fuck it up, but it's needed for _POINTER assignment
-#include "common.h"
+#include "layers.h"
 
 #define CHARYBDIS_MINIMUM_SNIPING_DPI 150
 #define CHARYBDIS_MINIMUM_DEFAULT_DPI 400

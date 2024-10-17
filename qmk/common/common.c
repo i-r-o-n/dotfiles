@@ -1,5 +1,5 @@
 #include "combos.h"
-#include "common.h"
+#include "layers.h"
 
 
 /* #ifdef POINTING_DEVICE_ENABLE */

@@ -51,6 +51,7 @@ void raise_paste(tap_dance_state_t *state, void *user_data);
 #define NONE XXXXXXX
 #define TRNS _______
 #define NONE5 NONE,NONE,NONE,NONE,NONE
+#define TRNS5 TRNS,TRNS,TRNS,TRNS,TRNS
 
 // home row left, right
 #define HRML(k1, k2, k3, k4) LGUI_T(k1), LALT_T(k2), LSFT_T(k3), LCTL_T(k4)
@@ -74,6 +75,17 @@ void raise_paste(tap_dance_state_t *state, void *user_data);
 #define __FUNCTION3__ NONE5,NONE, KC_F1, KC_F2, KC_F3, KC_F10,
 #define __FUNCTION4__ NONE,NONE,NONE,TRNS,NONE
 #define ___FUNCTION___ __FUNCTION1__, __FUNCTION2__, __FUNCTION3__, __FUNCTION4__
+
+#define __SYMBOL1__ KC_LABK, KC_RABK, KC_LCBR, KC_RCBR, NONE, KC_GRV,  KC_CIRC,   KC_DLR, KC_QUES, KC_EXLM,
+#define __SYMBOL2__ KC_BSLS, KC_SLSH, KC_LPRN, KC_RPRN, NONE, KC_TILD, KC_UNDS,   KC_EQL, KC_MINS, KC_PLUS,
+#define __SYMBOL3__ NONE,    KC_PIPE, KC_LBRC, KC_RBRC, NONE, KC_PERC, KC_HASH,  KC_AMPR, KC_ASTR, KC_AT, 
+#define ___SYMBOL___ __SYMBOL1__, __SYMBOL2__, __SYMBOL3__, TRNS5 
+
+#define __MEDIA1__ NONE5, NONE5 
+#define __MEDIA2__ KC_MSTP, KC_MPRV, KC_MNXT, KC_MPLY, NONE, NONE5
+#define __MEDIA3__ NONE,    KC_MUTE, KC_VOLD, KC_VOLU, NONE, NONE5
+#define ___MEDIA___ __MEDIA1__, __MEDIA2__, __MEDIA3__, TRNS5 
 // clang-format on
+
 
 #define LAYOUT_common(...) LAYOUT(__VA_ARGS__)
