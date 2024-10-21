@@ -12,12 +12,17 @@ endsnippet
 # `!p snip.rv = match.group(1) + "_{" + match.group(2) + "+1}"`
 # endsnippet
 
-snippet ovst "overset" iA
+snippet oset "overset" iA
 \overset{$1}{$2}$0
 endsnippet
 
-snippet unst "underset" iA
+snippet uset "underset" iA
 \underset{$1}{$2}$0
+endsnippet
+
+context "math()"
+snippet bset "beneath limits" iA 
+\limits_{$1} $0 
 endsnippet
 
 context "math()"

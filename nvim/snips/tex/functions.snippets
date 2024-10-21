@@ -8,6 +8,16 @@ snippet sq "\sqrt{}" iA
 endsnippet
 
 context "math()"
+snippet ps "+" iA 
+ + 
+endsnippet
+
+context "math()"
+snippet ms "-" iA 
+ - 
+endsnippet
+
+context "math()"
 snippet sr "^2" iA
 ^2
 endsnippet
@@ -41,7 +51,8 @@ snippet lim "limit" wA
 \lim_{${1:n} \to ${2:\infty}} 
 endsnippet
 
-snippet limsup "limsup" w
+context "math()"
+snippet lsup "limsup" wA
 \limsup_{${1:n} \to ${2:\infty}} 
 endsnippet
 
