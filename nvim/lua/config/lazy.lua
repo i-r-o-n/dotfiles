@@ -25,6 +25,9 @@ require("lazy").setup({
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
 
+  -- attempted fix for github fetch failures
+  concurrency = 5,
+
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {

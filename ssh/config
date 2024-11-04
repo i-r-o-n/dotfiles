@@ -1,13 +1,17 @@
-# account one
 Host github.com-account1
   HostName github.com
   User git
   IdentityFile ~/.ssh/id_ed25519_github1
   IdentitiesOnly yes
 
-# account two
 Host github.com-account2
   HostName github.com
   User git
   IdentityFile ~/.ssh/id_ed25519_github2
   IdentitiesOnly yes
+
+# fallback general
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519_github1
