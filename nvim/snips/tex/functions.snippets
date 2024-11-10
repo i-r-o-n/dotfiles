@@ -43,9 +43,10 @@ snippet rd "to the ... power" iA
 endsnippet
 
 context "math()"
-snippet sum "sum" w
-\sum_{n=${1:1}}^{${2:\infty}} ${3:a_n z^n}
+snippet sum "sum" wA
+\sum_{${1:n=1}}^{${2:\infty}} $3
 endsnippet
+# \sum_{n=${1:1}}^{${2:\infty}} ${3:a_n z^n}
 
 snippet taylor "taylor" w
 \sum_{${1:k}=${2:0}}^{${3:\infty}} ${4:c_$1} (x-a)^$1 $0
