@@ -1,5 +1,6 @@
 return {
   "nvim-java/nvim-java",
+  enabled = false,
   keys = {
     { "<localleader>j", desc = "+java", mode = { "n", "x", "o" } },
     { "<localleader>jr", "<cmd>JavaRunnerRunMain<CR>", desc = "Run Main", mode = { "n", "x", "o" } },

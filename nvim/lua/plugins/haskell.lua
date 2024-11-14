@@ -16,15 +16,44 @@
 -- end, opts)
 -- vim.keymap.set("n", "<leader>rq", ht.repl.quit, opts)
 
-require("lspconfig").hls.setup({
-  settings = {
-    haskell = {
-      formattingProvider = "stylish-haskell",
-    },
-  },
-})
+-- require("lspconfig").hls.setup({
+--   filetypes = { "haskell", "lhaskell", "cabal" },
+--   settings = {
+--     haskell = {
+--       -- formattingProvider = "stylish-haskell",
+--       checkProject = true,
+--       formattingProvider = "ormolu",
+--       plugin = {
+--         ghcide = {
+--           -- Automatically add type annotations
+--           type_lenses = {
+--             enabled = true,
+--             globalOn = true, -- Show type lenses everywhere
+--           },
+--         },
+--       },
+--     },
+--   },
+-- })
+
+-- require("iron.core").setup({
+--   config = {
+--     repl_definition = {
+--       haskell = {
+--         command = function(meta)
+--           local file = vim.api.nvim_buf_get_name(meta.current_bufnr)
+--           -- call `require` in case iron is set up before haskell-tools
+--           return require("haskell-tools").repl.mk_repl_cmd(file)
+--         end,
+--       },
+--     },
+--   },
+-- })
 
 return {
+  { "nbouscal/vim-stylish-haskell" },
+  { "alx741/vim-hindent" },
+  -- { "neovimhaskell/haskell-vim" },
   --   {
   --     "mrcjkb/haskell-tools.nvim",
   --     version = "^4",
@@ -36,5 +65,5 @@ return {
   --       mode = { "n" },
   --     },
   --   },
-  --   { "Vigemus/iron.nvim" },
+  { "Vigemus/iron.nvim" },
 }
