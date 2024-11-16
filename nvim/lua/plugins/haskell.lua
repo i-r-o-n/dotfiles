@@ -65,5 +65,6 @@ return {
   --       mode = { "n" },
   --     },
   --   },
-  { "Vigemus/iron.nvim" },
+  { "Vigemus/iron.nvim" }, -- repl
+  { "kevinhwang91/nvim-ufo" }, -- folding
 }
