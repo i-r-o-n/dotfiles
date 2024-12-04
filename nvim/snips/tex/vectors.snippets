@@ -7,9 +7,26 @@ snippet conj "conjugate" iA
 \overline{$1}$0
 endsnippet
 
+# context "math()"
+# snippet nrm "norm" wA
+# \|$1\|$0
+# endsnippet
+
+# priority 10
+# context "math()"
+# snippet nm "norm" iA
+# |$1| $0
+# endsnippet
+
+# priority 100
+# context "math()"
+# snippet "([a-zA-Z])nm" "norm" riA
+# \mathbf{`!p snip.rv=match.group(1)`}
+# endsnippet
+
 context "math()"
-snippet nrm "norm" iA
-\|$1\|$0
+snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\{[A-Za-z]+\})|)((\^|_)(\{\d+\}|\d))*)nm' "symbol norm" wrA
+|{`!p snip.rv = match.group(1)`}| $0
 endsnippet
 
 context "math()"
@@ -47,6 +64,18 @@ priority 100
 context "math()"
 snippet "([a-zA-Z])hat" "hat" riA
 \hat{`!p snip.rv=match.group(1)`}
+endsnippet
+
+priority 10
+context "math()"
+snippet bd "bold" iA
+\mathbf{$1}$0
+endsnippet
+
+priority 100
+context "math()"
+snippet "([a-zA-Z])bd" "bold" riA
+\mathbf{`!p snip.rv=match.group(1)`}$0
 endsnippet
 
 snippet clvc "column vector" iA
