@@ -34,12 +34,12 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- TODO: still needed?
 -- set filetype for haskell
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = "*.hs",
-  callback = function()
-    vim.bo.filetype = "haskell"
-  end,
-})
+-- vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+--   pattern = "*.hs",
+--   callback = function()
+--     vim.bo.filetype = "haskell"
+--   end,
+-- })
 
 -- force set file type
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
@@ -67,15 +67,15 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 -- })
 
 -- set java identation preferences
-vim.api.nvim_create_autocmd("FileType", {
-  group = vim.api.nvim_create_augroup("JavaIndentation", { clear = true }),
-  pattern = "java",
-  callback = function()
-    vim.bo.tabstop = 4
-    vim.bo.shiftwidth = 4
-    vim.bo.expandtab = true
-  end,
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+--   group = vim.api.nvim_create_augroup("JavaIndentation", { clear = true }),
+--   pattern = "java",
+--   callback = function()
+--     vim.bo.tabstop = 4
+--     vim.bo.shiftwidth = 4
+--     vim.bo.expandtab = true
+--   end,
+-- })
 
 local latex_utils = require("scripts.latex_utils")
 
