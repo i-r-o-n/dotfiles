@@ -8,6 +8,8 @@ alias rm = trash-put # consider using rm -t
 
 alias cl = clear
 
+alias nf = neofetch
+
 # neovim
 alias v  = nvim 
 alias v. = nvim .
