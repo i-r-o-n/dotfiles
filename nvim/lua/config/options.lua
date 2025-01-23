@@ -46,6 +46,3 @@ vim.g.vimtex_compiler_latexmk = {
 
 -- ultisnips
 vim.g.UltiSnipsSnippetDirectories = { "~/.config/nvim/snips" }
-
--- scroll off at end of file on insert mode
-require("scrollEOF").setup({ insert_mode = true })

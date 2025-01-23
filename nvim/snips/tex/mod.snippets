@@ -1,0 +1,19 @@
+global !p
+from latex_environments import math, comment, env
+endglobal
+
+snippet eqv "equivalent to" iA 
+\equiv 
+endsnippet
+
+priority 10
+context "math()"
+snippet '(\d+)mod' "modulus n" wrA
+\mod{`!p snip.rv = match.group(1)`}
+endsnippet
+
+priority 1000
+context "math()"
+snippet '\((\d+)mod' "(modulus n)" wrA
+\pmod{`!p snip.rv = match.group(1)`}
+endsnippet
