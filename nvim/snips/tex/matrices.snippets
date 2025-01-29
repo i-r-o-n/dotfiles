@@ -53,29 +53,34 @@ def create_matrix(cols, rows, sep, start, end):
 endglobal
 
 
+context "math()"
 snippet rij "mrij" i
 (${1:x}_${2:n})_{${3:$2}\\in${4:\\N}}$0
 endsnippet
 
+context "math()"
 snippet pmat "pmat" iA
 \begin{pmatrix} $1 \end{pmatrix} $0
 endsnippet
 
+context "math()"
 snippet bmat "bmat" iA
 \begin{bmatrix} $1 \end{bmatrix} $0
 endsnippet
 
+context "math()"
 snippet vmat "vmat" iA
 \begin{vmatrix} $1 \end{vmatrix} $0
 endsnippet
 
-
+priority 1000
 post_jump "create_row_placeholders(snip)"
-snippet "tr(\d+)" "latex table row variable" br
+snippet "tr (\d+)" "latex table row variable" br
 `!p snip.rv = match.group(1)`
 endsnippet
 
 post_jump "create_matrix_placeholders(snip)"
+context "math()"
 snippet 'arr (\d+),(\d+)' "LaTeX array" br
 \begin{array}{`!p
 orient = ""

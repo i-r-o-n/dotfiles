@@ -66,16 +66,17 @@ snippet "([a-zA-Z])hat" "hat" riA
 \hat{`!p snip.rv=match.group(1)`}
 endsnippet
 
+# \mathbf
 priority 10
 context "math()"
 snippet bd "bold" iA
-\mathbf{$1}$0
+\bf{$1}$0
 endsnippet
 
 priority 100
 context "math()"
 snippet "([a-zA-Z])bd" "bold" riA
-\mathbf{`!p snip.rv=match.group(1)`}$0
+\bf{`!p snip.rv=match.group(1)`}$0
 endsnippet
 
 snippet clvc "column vector" iA
