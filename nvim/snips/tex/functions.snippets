@@ -18,7 +18,7 @@ snippet ms "-" iA
 endsnippet
 
 context "math()"
-snippet pms "+-" iA 
+snippet +- "+-" iA 
  \pm 
 endsnippet
 
@@ -74,14 +74,14 @@ endsnippet
 
 priority 100
 context "math()"
-snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp)' "ln" rwA
+snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp|det)' "functions" rwA
 \\`!p snip.rv = match.group(1)`{$1} $0
 endsnippet
 
 priority 200
 context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int)' "ln" rwA
-\\`!p snip.rv = match.group(1)`{$1} $0
+snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int)' "repeat functions" rwA
+\\`!p snip.rv = match.group(1)`$1 $0
 endsnippet
 
 context "math()"
@@ -109,6 +109,12 @@ endsnippet
 
 context "math()"
 snippet !> "mapsto" iA
+\mapsto 
+endsnippet
+
+priority 200
+context "math()"
+snippet mto "mapsto" iA
 \mapsto 
 endsnippet
 
