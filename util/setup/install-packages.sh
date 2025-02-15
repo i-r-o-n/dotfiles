@@ -2,7 +2,7 @@
 
 # emerge the following:
 # git
-# tmux
+# ?tmux -> do i even use anymore
 # neovim
 # ripgrep
 # fd-find
