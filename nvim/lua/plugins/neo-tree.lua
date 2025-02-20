@@ -2,6 +2,7 @@ return {
   { "nvim-tree/nvim-web-devicons" },
   {
     "nvim-neo-tree/neo-tree.nvim",
+    enabled = false,
     config = function()
       require("neo-tree").setup({
         filesystem = {
