@@ -97,3 +97,5 @@ vim.api.nvim_create_autocmd("VimEnter", {
     end
   end,
 })
+
+require("scripts.repeat_command").setup_util_commands()
