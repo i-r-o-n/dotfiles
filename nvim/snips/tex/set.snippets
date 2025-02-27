@@ -15,6 +15,11 @@ snippet "([a-zA-Z])bar" "bar / closure" riA
 endsnippet
 
 context "math()"
+snippet "([a-zA-Z0-9]\])" "n set" riA 
+[`!p snip.rv=match.group(1)`] 
+endsnippet
+
+context "math()"
 snippet nsd "interior" iA
 \mathring{$1}$0
 endsnippet
@@ -35,7 +40,7 @@ snippet cmpl "complement" iA
 endsnippet
 
 context "math()"
-snippet trns "transpost" iA
+snippet trns "transpose" iA
 ^{T}
 endsnippet
 
@@ -93,7 +98,6 @@ snippet cc "subset" Ai
 endsnippet
 
 context "math()"
-# notin
 snippet nin "not in " iA 
 \not\in 
 endsnippet
@@ -101,11 +105,6 @@ endsnippet
 context "math()"
 snippet inn "in " iA
 \in 
-endsnippet
-
-context "math()"
-snippet mid "mid" iA
-\mid 
 endsnippet
 
 context "math()"

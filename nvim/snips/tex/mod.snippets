@@ -6,13 +6,13 @@ snippet eqv "equivalent to" iA
 \equiv 
 endsnippet
 
-priority 10
+priority 200
 context "math()"
 snippet '(\d+)mod' "modulus n" wrA
 \mod{`!p snip.rv = match.group(1)`}
 endsnippet
 
-priority 1000
+priority 300
 context "math()"
 snippet '\((\d+)mod' "(modulus n)" wrA
 \pmod{`!p snip.rv = match.group(1)`}

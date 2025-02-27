@@ -3,46 +3,6 @@ from latex_environments import math, comment, env
 endglobal
 
 context "math()"
-snippet sq "\sqrt{}" iA
-\sqrt{${1:${VISUAL}}} $0
-endsnippet
-
-context "math()"
-snippet ps "+" iA 
- + 
-endsnippet
-
-context "math()"
-snippet ms "-" iA 
- - 
-endsnippet
-
-context "math()"
-snippet +- "+-" iA 
- \pm 
-endsnippet
-
-context "math()"
-snippet sr "^2" iA
-^2
-endsnippet
-
-context "math()"
-snippet cb "^3" iA
-^3
-endsnippet
-
-context "math()"
-snippet td "to the ... power" iA
-^{$1}$0
-endsnippet
-
-context "math()"
-snippet rd "to the ... power" iA
-^{($1)}$0
-endsnippet
-
-context "math()"
 snippet sum "sum" wA
 \sum_{${1:n=1}}^{${2:\infty}} $3
 endsnippet
@@ -74,13 +34,13 @@ endsnippet
 
 priority 100
 context "math()"
-snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp|det|sup)' "functions" rwA
+snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp|det|sup|mod)' "functions with bracketed arguments" rwA
 \\`!p snip.rv = match.group(1)`{$1} $0
 endsnippet
 
 priority 200
 context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int)' "repeat functions" rwA
+snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int|mid)' "functions" rwA
 \\`!p snip.rv = match.group(1)`$1 $0
 endsnippet
 
@@ -112,12 +72,12 @@ snippet !> "mapsto" iA
 \mapsto 
 endsnippet
 
-priority 200
 context "math()"
 snippet mto "mapsto" iA
 \mapsto 
 endsnippet
 
+priority 100
 context "math()"
 snippet lmto "longmapsto" iA
 \longmapsto
@@ -147,7 +107,7 @@ snippet -> "to" iA
 endsnippet
 
 context "math()"
-snippet uconv "uniform convergence" iA 
+snippet ucnv "uniform convergence" iA 
 \rightrightarrows
 endsnippet
 
