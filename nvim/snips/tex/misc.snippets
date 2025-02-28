@@ -2,6 +2,12 @@ global !p
 from latex_environments import math, comment, env
 endglobal
 
+# put a letter in math mode
+# snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)ml' "math mode" rwA
+snippet '([a-zA-Z])ml' "math mode" rwA
+$`!p snip.rv=match.group(1)`$ 
+endsnippet
+
 # script letters
 context "math()"
 snippet mcal "mathcal" iA
