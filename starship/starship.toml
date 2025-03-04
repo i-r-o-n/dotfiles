@@ -82,9 +82,13 @@ truncation_symbol = "…/"
 [directory.substitutions]
 "docs" = "󰈙 "
 "dls" = " "
-"Music" = "󰝚 "
-"Pictures" = " "
-"Developer" = "󰲋 "
+".config" = "󰒓"
+"config" = "󰒓"
+"temp" = "󰊠"
+"emp" = "󰊠"
+"music" = "󰝚 "
+"pictures" = " "
+"developer" = "󰲋 "
 
 [git_branch]
 symbol = ""
