@@ -1,6 +1,7 @@
 # aliases
 
 alias cd = z
+alias zi = __zoxide_zi
 
 alias ssh = ssh -F ~/.config/ssh/config
 
