@@ -5,6 +5,8 @@ alias zi = __zoxide_zi
 
 alias ssh = ssh -F ~/.config/ssh/config
 
+alias su = sudo
+
 alias rm = trash-put # consider using rm -t
 
 alias cl = clear
