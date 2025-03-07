@@ -7,6 +7,9 @@ alias ssh = ssh -F ~/.config/ssh/config
 
 alias su = sudo
 
+alias em = emerge
+alias sem = sudo emerge
+
 alias rm = trash-put # consider using rm -t
 
 alias cl = clear
