@@ -1,0 +1,12 @@
+command = /usr/bin/nu
+shell-integration = none
+
+font-family = JetBrains Mono Nerd Font
+font-size = 42
+
+window-padding-x = 0
+window-padding-y = 0
+
+background-opacity = 1.0
+background-blur = false
+background = 000000
