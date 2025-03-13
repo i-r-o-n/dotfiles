@@ -14,10 +14,10 @@ snippet "([a-zA-Z])bar" "bar / closure" riA
 \overline{`!p snip.rv=match.group(1)`}
 endsnippet
 
-context "math()"
-snippet "([a-zA-Z0-9]\])" "n set" riA 
-[`!p snip.rv=match.group(1)`] 
-endsnippet
+# context "math()"
+# snippet "([a-zA-Z0-9]\])" "n set" riA 
+# [`!p snip.rv=match.group(1)`] 
+# endsnippet
 
 context "math()"
 snippet nsd "interior" iA
@@ -92,9 +92,22 @@ snippet set "set" wA
 \\{$1\\} $0
 endsnippet
 
+priority 10
 context "math()"
 snippet cc "subset" Ai
 \subset 
+endsnippet
+
+priority 100
+context "math()"
+snippet ecc "subset equals" Ai
+\subseteq 
+endsnippet
+
+priority 100
+context "math()"
+snippet ncc "subset not equals" Ai
+\subsetneq 
 endsnippet
 
 context "math()"
