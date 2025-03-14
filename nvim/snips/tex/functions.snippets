@@ -34,14 +34,20 @@ endsnippet
 
 priority 100
 context "math()"
-snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp|det|sup|mod|ker)' "functions with bracketed arguments" rwA
+snippet '(?<!\\)(sin|cos|cot|csc|ln|log|exp|star|perp|det|sup|mod|ker)' "functions with bracketed arguments" rwA
 \\`!p snip.rv = match.group(1)`{$1} $0
 endsnippet
 
 priority 200
 context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int|mid|cong)' "functions" rwA
+snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|int)' "functions" rwA
 \\`!p snip.rv = match.group(1)`$1 $0
+endsnippet
+
+priority 100
+context "math()"
+snippet '(?<!\\)(to|pi|zeta|mid|cong)' "named symbols" rwA
+\\`!p snip.rv = match.group(1)`
 endsnippet
 
 snippet '([a-zA-Z])abs' "|_| bars" rwA
@@ -116,12 +122,7 @@ snippet ucnv "uniform convergence" iA
 endsnippet
 
 context "math()"
-snippet to "to" iA
-\to 
-endsnippet
-
-context "math()"
-snippet appx "approximately equal to" iA 
+snippet apx "approximately equal to" iA 
 \approx 
 endsnippet
 

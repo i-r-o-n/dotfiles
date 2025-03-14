@@ -3,7 +3,8 @@ from latex_environments import math, comment, env
 endglobal
 
 context "math()"
-snippet "([xy])([ijmn])" "common subscripts" irA
+# snippet "([xy])([ijmn])" "common subscripts" irA
+snippet "([xy])([ij])" "common subscripts" irA
 `!p snip.rv = match.group(1) + "_" + match.group(2)`
 endsnippet
 
@@ -40,55 +41,16 @@ _\text{$1} $0
 endsnippet
 
 context "math()"
-snippet '([A-Za-z])(\d)' "auto subscript" wrA
+snippet '([A-Za-z])(\d)' "auto subscript" rwA
 `!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
 endsnippet
 
 context "math()"
-snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
+snippet '([A-Za-z])_(\d\d)' "auto subscript2" rwA
 `!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
 endsnippet
 
-snippet ooo "\infty" iA
+context "math()"
+snippet '(?<!\\)(oo|infty)' "infinity" rwA
 \infty
-endsnippet
-
-snippet NN "n" iA
-\N
-endsnippet
-
-snippet OO "emptyset" iA
-\O
-endsnippet
-
-snippet RR "real" iA
-\R
-endsnippet
-
-snippet QQ "Q" iA
-\Q
-endsnippet
-
-snippet ZZ "Z" iA
-\Z
-endsnippet
-
-snippet zzn "Zn" iA 
-\Z_n
-endsnippet
-
-snippet R0+ "R0+" iA
-\\R_0^+
-endsnippet
-
-snippet HH "H" iA
-\mathbb{H}
-endsnippet
-
-snippet DD "D" iA
-\mathbb{D}
-endsnippet
-
-snippet CC "C" iA
-\\C
 endsnippet

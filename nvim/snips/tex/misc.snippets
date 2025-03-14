@@ -8,6 +8,11 @@ snippet '([a-zA-Z])ml' "math mode" rwA
 $`!p snip.rv=match.group(1)`$ 
 endsnippet
 
+# \b regex boundary check no word/letter prior (could try \s whitespace match)
+snippet '\b([a-zA-Z])mm' "math mode" rwA
+$`!p snip.rv=match.group(1)`$
+endsnippet
+
 # script letters
 context "math()"
 snippet mcal "mathcal" iA
