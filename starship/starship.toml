@@ -89,6 +89,9 @@ truncation_symbol = "…/"
 "music" = "󰝚 "
 "pictures" = " "
 "developer" = "󰲋 "
+"~" = "󰋜 "
+"home" = "󰋜 "
+"apps" = "󰀻 "
 
 [git_branch]
 symbol = ""
