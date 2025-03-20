@@ -1,0 +1,27 @@
+/* light blue borders for active, more transparent bg and more border-radius */
+:root {
+    --border-color-active: rgba(220, 220, 220, 0.9);
+    --bg-color: rgba(0, 0, 0, 0.8);
+    --border-radius: 15px;
+}
+
+/* more margin around image for 4K screen */
+.client-image {
+    margin: 15px;
+}
+
+/* increased index for 4K screen */
+.index {
+    margin: 10px;
+    font-size: 25px;
+}
+
+/* increased font size for 4K screen */
+.workspace {
+    font-size: 35px;
+}
+
+/* increased font size for 4K screen */
+.client {
+    font-size: 25px;
+}
