@@ -1,10 +1,13 @@
 command = /usr/bin/nu
 # shell-integration = none
 
-font-size = 30
+font-size = 36
 
 window-padding-x = 0
 window-padding-y = 0
+
+gtk-titlebar = true
+gtk-tabs-location = hidden
 
 # theme = "Adwaita Dark"
 theme = custom-dark
@@ -12,3 +15,14 @@ theme = custom-dark
 background = 000000
 
 keybind = ctrl+shift+space=toggle_tab_overview
+
+keybind = ctrl+shift+a=next_tab
+keybind = ctrl+shift+c=previous_tab
+keybind = ctrl+shift+x=close_tab
+
+keybind = ctrl+shift+w=close_window
+keybind = ctrl+shift+enter=new_window
+
+# keybind = space>u+z=reset_font_size
+keybind = ctrl+shift+plus=increase_font_size:20
+keybind = ctrl+shift+minus=decrease_font_size:20
