@@ -1,16 +1,14 @@
 command = /usr/bin/nu
-shell-integration = none
+# shell-integration = none
 
-# font-family = JetBrains Mono Nerd Font
-font-size = 24
+font-size = 30
 
 window-padding-x = 0
 window-padding-y = 0
 
-# theme = catppuccin-mocha
 # theme = "Adwaita Dark"
 theme = custom-dark
 
-# background-opacity = 1.0
-# background-blur = false
 background = 000000
+
+keybind = ctrl+shift+space=toggle_tab_overview
