@@ -22,6 +22,9 @@ alias v. = nvim .
 def sudov [...args] {
   EDITOR=nvim sudoedit ...$args
 }
+def vf [...args] {
+  cd ...$args; nvim .
+}
 
 # clipboard
 alias copy  = wl-copy
