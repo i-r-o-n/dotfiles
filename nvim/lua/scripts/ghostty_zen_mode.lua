@@ -1,23 +1,11 @@
--- In your Neovim config
-local function toggle_terminal_zen(entering_zen)
+local M = {}
+
+function M.toggle_terminal_zen_mode(entering_zen)
   if entering_zen then
-    -- Commands to make Ghostty more minimal
-    vim.fn.system("ghostty set-prop padding=20")
-    vim.fn.system("ghostty set-prop window.transparent=false")
-    -- Add other Ghostty commands as needed
+    vim.fn.system('notify-send "neovim" "entering zen mode"')
   else
-    -- Restore normal Ghostty settings
-    vim.fn.system("ghostty set-prop padding=0")
-    vim.fn.system("ghostty set-prop window.transparent=true")
+    vim.fn.system('notify-send "neovim" "leaving zen mode"')
   end
 end
 
--- Hook this into zen-mode events
-require("zen-mode").setup({
-  on_open = function()
-    toggle_terminal_zen(true)
-  end,
-  on_close = function()
-    toggle_terminal_zen(false)
-  end,
-})
+return M

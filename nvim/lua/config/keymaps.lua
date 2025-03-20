@@ -28,7 +28,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- save without formatting
-vim.api.nvim_set_keymap("n", "<leader>bs", ":noautocmd write<CR>", { noremap = true })
+-- vim.api.nvim_set_keymap("n", "<leader>bs", ":noautocmd write<CR>", { noremap = true })
 
 -- Function to delete LSP log file with confirmation
 vim.api.nvim_create_user_command("ClearLspLog", function()

@@ -1,3 +1,5 @@
+local ghostty_integration = require("scripts.ghostty_zen_mode")
+
 return {
   {
     "folke/zen-mode.nvim",
@@ -15,6 +17,12 @@ return {
           font = "+8",
         },
       },
+      on_open = function()
+        ghostty_integration.toggle_terminal_zen_mode(true)
+      end,
+      on_close = function()
+        ghostty_integration.toggle_terminal_zen_mode(false)
+      end,
     },
   },
   { "folke/twilight.nvim" },
