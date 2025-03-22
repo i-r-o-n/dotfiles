@@ -1,6 +1,3 @@
-command = /usr/bin/nu
-# shell-integration = none
-
 font-size = 36
 
 window-padding-x = 0
