@@ -102,6 +102,7 @@ $env.CARGO_HOME = ($env.HOME | path join ".cargo")
 path add ($env.HOME | path join ".cargo" "bin")
 path add ($env.HOME | path join ".local" "bin")
 path add ($env.HOME | path join ".ghcup" "bin")
+path add ($env.HOME | path join ".bun"   "bin")
 
 path add "/usr/local/texlive/2024/bin/x86_64-linux"
 
