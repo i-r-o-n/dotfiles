@@ -2,6 +2,11 @@ global !p
 from latex_environments import math, comment, env
 endglobal
 
+context "math()"
+snippet del "partial operator" wA 
+\partial 
+endsnippet
+
 snippet part "partial derivative" w
 \frac{\partial ${1:V}}{\partial ${2:x}} $0
 endsnippet
