@@ -6,7 +6,3 @@ debug
 foo.*
 *.log
 data
-
-scripts/*
-!scripts/**/*.nu
-!scripts/**/*.hs
