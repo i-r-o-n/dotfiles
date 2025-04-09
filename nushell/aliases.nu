@@ -3,6 +3,8 @@
 alias cd = z
 alias zi = __zoxide_zi
 
+alias cat = bat # prefer bat preview
+
 alias ssh = ssh -F ~/.config/ssh/config
 
 alias su = sudo

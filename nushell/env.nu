@@ -95,14 +95,17 @@ use std "path add"
 # $env.PATH = ($env.PATH | split row (char esep))
 # path add /some/path
 
+# MANPATH="$MANPATH":'/home/a/.opam/default/man'; export MANPATH;
+
 $env.CARGO_HOME = ($env.HOME | path join ".cargo")
 
 # TODO: put this into a function!
 
-path add ($env.HOME | path join ".cargo" "bin")
 path add ($env.HOME | path join ".local" "bin")
 path add ($env.HOME | path join ".ghcup" "bin")
 path add ($env.HOME | path join ".bun"   "bin")
+
+path add ($env.HOME | path join ".opam" "default" "bin")
 
 path add "/usr/local/texlive/2024/bin/x86_64-linux"
 
