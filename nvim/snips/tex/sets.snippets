@@ -1,3 +1,7 @@
+global !p
+from latex_environments import math, comment, env
+endglobal
+
 snippet NN "n" iA
 \N
 endsnippet
@@ -36,4 +40,9 @@ endsnippet
 
 snippet CC "C" iA
 \\C
+endsnippet
+
+context "math()"
+snippet openset "Omega" iA 
+\Omega 
 endsnippet
