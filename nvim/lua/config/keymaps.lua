@@ -8,7 +8,9 @@
 -- exit insert mode
 vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true })
 vim.api.nvim_set_keymap("t", "jj", "<C-\\><C-n>", { noremap = true })
--- vim.api.nvim_set_keymap("i", "dd", "<Esc>", { noremap = true })
+-- semimak quick exits
+vim.api.nvim_set_keymap("i", "qp", "<Esc>", { noremap = true })
+vim.api.nvim_set_keymap("i", "pq", "<Esc>", { noremap = true })
 
 -- correct last spelling mistake in insert mode
 vim.api.nvim_set_keymap("i", "<C-l>", "<c-g>u<Esc>[s1z=`]a<c-g>u", { noremap = true })
@@ -27,10 +29,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- save without formatting
--- vim.api.nvim_set_keymap("n", "<leader>bs", ":noautocmd write<CR>", { noremap = true })
-
--- Function to delete LSP log file with confirmation
+-- delete LSP log file with confirmation
 vim.api.nvim_create_user_command("ClearLspLog", function()
   local log_path = vim.fn.expand("~/.local/state/nvim/lsp.log")
 
@@ -52,10 +51,6 @@ vim.keymap.set("n", "<leader>cL", ":ClearLspLog<CR>", {
   desc = "Clear LSP log file",
 })
 
--- alternate layout support
--- local layout = require("config.layout")
--- layout.remap_keys()
-
 -- vim.api.nvim_set_keymap("n", "\\ur", ":call UltiSnips#RefreshSnippets()<CR>", { noremap = true, silent = true })
 -- these dont' need to be defined here
 -- vim.g.UltiSnipsExpandTrigger = "<tab>"
@@ -64,16 +59,3 @@ vim.keymap.set("n", "<leader>cL", ":ClearLspLog<CR>", {
 
 -- latex build (handled by vimtex)
 -- vim.api.nvim_set_keymap("n", "<A-b>", ":!lualatex %<CR>", { noremap = true, silent = true })
-
--- nvim tmux navigator
--- require("nvim-tmux-navigation").setup({
---   disable_when_zoomed = true, -- defaults to false
---   keybindings = {
---     left = "<C-h>",
---     down = "<C-j>",
---     up = "<C-k>",
---     right = "<C-l>",
---     last_active = "<C-\\>",
---     next = "<C-Space>",
---   },
--- })

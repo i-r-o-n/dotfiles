@@ -3,22 +3,22 @@
 -- Add any additional autocmds here
 
 -- auto update
-local function auto_update_group(name)
-  return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
-end
+-- local function auto_update_group(name)
+--   return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
+-- end
 
 -- FIXME: does this work?
 -- auto update plugins
-vim.api.nvim_create_autocmd("VimEnter", {
-  -- vim.api.nvim_set_option("t_SI", "\x1b[5 q"),
-  -- vim.api.nvim_set_option("t_EI", "\x1b[1 q"),
-  group = auto_update_group("autoupdate"),
-  callback = function()
-    if require("lazy.status").has_updates then
-      require("lazy").update({ show = false })
-    end
-  end,
-})
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--   -- vim.api.nvim_set_option("t_SI", "\x1b[5 q"),
+--   -- vim.api.nvim_set_option("t_EI", "\x1b[1 q"),
+--   group = auto_update_group("autoupdate"),
+--   callback = function()
+--     if require("lazy.status").has_updates then
+--       require("lazy").update({ show = false })
+--     end
+--   end,
+-- })
 
 -- enable spell checking for certain file types
 vim.cmd([[autocmd FileType markdown,tex,html,text setlocal spell]])
@@ -32,15 +32,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- TODO: still needed?
--- set filetype for haskell
--- vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
---   pattern = "*.hs",
---   callback = function()
---     vim.bo.filetype = "haskell"
---   end,
--- })
-
 -- force set file type
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*",
@@ -50,32 +41,6 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     end
   end,
 })
-
--- keyboard layout force change
--- vim.api.nvim_create_autocmd("InsertEnter", {
---   pattern = "*",
---   callback = function()
---     vim.fn.system("setxkbmap semimak")
---   end,
--- })
---
--- vim.api.nvim_create_autocmd("InsertLeave", {
---   pattern = "*",
---   callback = function()
---     vim.fn.system("setxkbmap us")
---   end,
--- })
-
--- set java identation preferences
--- vim.api.nvim_create_autocmd("FileType", {
---   group = vim.api.nvim_create_augroup("JavaIndentation", { clear = true }),
---   pattern = "java",
---   callback = function()
---     vim.bo.tabstop = 4
---     vim.bo.shiftwidth = 4
---     vim.bo.expandtab = true
---   end,
--- })
 
 local latex_utils = require("scripts.latex_utils")
 
