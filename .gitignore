@@ -43,6 +43,7 @@ tmux/plugins/*
 transmission-daemon/
 utop/
 virt-viewer/
+xdg-desktop-portal/
 xfce4/
 zsh/**/.git/*
 # zsh/themes/powerlevel10k/.git/
