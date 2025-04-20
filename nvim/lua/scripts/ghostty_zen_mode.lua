@@ -1,5 +1,7 @@
 local M = {}
 
+-- TODO: increase and decrease font size in ghostty
+
 function M.toggle_terminal_zen_mode(entering_zen)
   if entering_zen then
     vim.fn.system('notify-send "neovim" "entering zen mode"')
