@@ -1,4 +1,12 @@
 return {
+  -- {
+  --   "nvim-lualine/lualine.nvim",
+  --   opts = function()
+  --     return { options = {
+  --       section_separators = { left = "", right = "" },
+  --     } }
+  --   end,
+  -- },
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
@@ -107,7 +115,7 @@ return {
       }
 
       -- do not add trouble symbols if aerial is enabled
-      -- And allow it to be overriden for some buffer types (see autocmds)
+      -- and allow it to be overriden for some buffer types (see autocmds)
       if vim.g.trouble_lualine and LazyVim.has("trouble.nvim") then
         local trouble = require("trouble")
         local symbols = trouble.statusline({

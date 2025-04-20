@@ -1,3 +1,15 @@
+-- autocmds.lua setting
+-- set java identation preferences
+-- vim.api.nvim_create_autocmd("FileType", {
+--   group = vim.api.nvim_create_augroup("JavaIndentation", { clear = true }),
+--   pattern = "java",
+--   callback = function()
+--     vim.bo.tabstop = 4
+--     vim.bo.shiftwidth = 4
+--     vim.bo.expandtab = true
+--   end,
+-- })
+
 return {
   "nvim-java/nvim-java",
   enabled = false,
