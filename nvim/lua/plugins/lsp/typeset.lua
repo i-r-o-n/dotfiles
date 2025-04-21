@@ -19,4 +19,8 @@ return {
     version = "1.*",
     opts = {}, -- lazy.nvim will implicitly calls `setup {}`
   },
+  {
+    "kaarmu/typst.vim",
+    ft = "typst", -- lazy = false,
+  },
 }
