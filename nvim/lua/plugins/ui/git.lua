@@ -10,7 +10,7 @@ return {
     -- order to load the plugin when the command is run for the first time
     -- FIXME: still does not load until LazyGit command is run
     keys = {
-      { "<leader>gg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+      { "<leader>gl", "<cmd>LazyGit<cr>", desc = "LazyGit" },
     },
     cmd = {
       "LazyGit",
