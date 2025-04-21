@@ -40,3 +40,8 @@ vim.g.vimtex_compiler_latexmk = {
 
 -- ultisnips
 vim.g.UltiSnipsSnippetDirectories = { "~/.config/nvim/snips" }
+
+-- typst
+vim.g.typst_pdf_viewer = "zathura"
+vim.g.typst_conceal = 1
+vim.g.typst_folding = 1
