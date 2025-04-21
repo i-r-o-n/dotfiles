@@ -10,6 +10,7 @@ return {
     -- keys = function()
     --   return {}
     -- end,
+      vim.keymap.set({ "i", "s" }, "<C-J>", function() ls.jump(1) end, { silent = true })
   },
   -- { "quangnguyen30192/cmp-nvim-ultisnips" },
   {
