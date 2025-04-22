@@ -64,3 +64,30 @@ vim.api.nvim_create_autocmd("VimEnter", {
 })
 
 require("scripts.repeat_command").setup_util_commands()
+
+-- require("lspconfig").tinymist.setup({
+--   root_dir = function(_, bufnr)
+--     return vim.fs.root(bufnr, { ".git" }) or vim.fn.expand("%:p:h")
+--   end,
+-- })
+
+-- require("lspconfig")["tinymist"].setup({ -- Alternatively, can be used `vim.lsp.config["tinymist"]`
+--   root_dir = "-",
+--   on_attach = function(client, bufnr)
+--     vim.keymap.set("n", "<leader>tp", function()
+--       client:exec_cmd({
+--         title = "pin",
+--         command = "tinymist.pinMain",
+--         arguments = { vim.api.nvim_buf_get_name(0) },
+--       }, { bufnr = bufnr })
+--     end, { desc = "[T]inymist [P]in", noremap = true })
+--
+--     vim.keymap.set("n", "<leader>tu", function()
+--       client:exec_cmd({
+--         title = "unpin",
+--         command = "tinymist.pinMain",
+--         arguments = { vim.v.null },
+--       }, { bufnr = bufnr })
+--     end, { desc = "[T]inymist [U]npin", noremap = true })
+--   end,
+-- })
