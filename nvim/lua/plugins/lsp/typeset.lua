@@ -22,7 +22,8 @@ return {
     }, -- lazy.nvim will implicitly calls `setup {}`
   },
   {
-    "kaarmu/typst.vim",
+    -- "kaarmu/typst.vim",
+    "i-r-o-n/typst.vim",
     ft = "typst", -- lazy = false,
   },
 }
