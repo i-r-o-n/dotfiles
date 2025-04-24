@@ -1,5 +1,5 @@
 return {
-  { "SirVer/ultisnips" },
+  { "SirVer/ultisnips", enabled = false },
   {
     "L3MON4D3/LuaSnip",
     dependencies = { "rafamadriz/friendly-snippets" },
@@ -11,6 +11,7 @@ return {
       })
 
       local ls = require("luasnip")
+
       -- vim.keymap.set({ "i", "s" }, "<C-c>", function()
       --     ls.setup({ enable_autosnippets = false })
       -- end, { silent = false })
@@ -24,10 +25,10 @@ return {
       vim.keymap.set({ "i", "s" }, "<C-c>", function()
         ls.jump(-1)
       end, { silent = true })
-      --
-      --
+
       ls.config.setup({
-        -- enable_autosnippets = true,
+        -- required for returning two snippet tables { manual },{ auto }
+        enable_autosnippets = true,
         region_check_events = "InsertEnter",
         delete_check_events = "InsertLeave",
       })

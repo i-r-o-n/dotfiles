@@ -8,6 +8,8 @@ local d = common.d
 local t = common.t
 
 return {
+
+  -- TODO: add ordering snippets eg geq and leq
   sm({ trig = "==", name = "equals aligned" }, fmt([[&= {} \]], { i(1) })),
 
   sm({ trig = "xx", name = "Cross Product" }, { t("times ") }),

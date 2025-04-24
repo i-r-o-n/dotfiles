@@ -12,8 +12,18 @@ local rep = common.rep
 local get_visual = common.get_visual
 
 return {
+  -- confirmation snippets
+  sm({ trig = "conj", name = "Conjugate" }, fmt([[overline({}){}]], { d(1, get_visual), i(0) })),
+  sm({ trig = "bar", name = "Over: bar" }, fmt([[overline({}){}]], { d(1, get_visual), i(0) })),
+}, {
+  -- automatic snippets
   sm(
-    { trig = "(%a)(%d)", regTrig = true, name = "Auto-subscript 1D", dscr = "Auto-subscript with 1 digit" },
+    {
+      trig = "(%a)(%d)",
+      regTrig = true,
+      name = "Auto-subscript 1D",
+      dscr = "Auto-subscript with 1 digit",
+    },
     fmt([[{}_{}]], {
       f(function(_, snip)
         return snip.captures[1]
@@ -87,19 +97,12 @@ return {
 
   sm({ trig = "hbar", name = "hbar" }, { t("planck.reduce") }),
 
-  -- sm(
-  --   { trig = "(%a)bar", name = "Letter bars", regTrig = true },
-  --   fmt([[overline({}) ]], {
-  --     f(function(_, snip)
-  --       return snip.captures[1]
-  --     end),
-  --   })
-  -- ),
-
   sm(
     { trig = "(%a)bar", name = "Letter bars", regTrig = true },
     fmt([[overline({}) ]], {
-      l(l.CAPTURES[1]),
+      f(function(_, snip)
+        return snip.captures[1]
+      end),
     })
   ),
 
@@ -111,9 +114,6 @@ return {
       end),
     })
   ),
-
-  sm({ trig = "conj", name = "Conjugate" }, fmt([[overline({}){}]], { d(1, get_visual), i(0) })),
-  sm({ trig = "bar", name = "Over: bar" }, fmt([[overline({}){}]], { d(1, get_visual), i(0) })),
 
   sm(
     { trig = "(%a),.", name = "Vectors", regTrig = true },
