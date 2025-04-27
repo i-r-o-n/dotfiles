@@ -1,8 +1,3 @@
-" -----------------------------------------------------------------------------
-" Zathura settings
-" -----------------------------------------------------------------------------
-
-" Colors
 set default-bg              "#000000"
 set default-fg              "#FFFFFF"
 
@@ -19,10 +14,10 @@ set notification-warning-bg "#FB6F92"
 set notification-warning-fg "#0F1419"
 
 " set highlight-color         "#FFEA00"
-set highlight-color         "#FCBA0366"
-set highlight-active-color  "#E6A80066"
+" set highlight-color         "#FCBA03"
+" set highlight-active-color  "#E6A800"
 " set highlight-active-color  "#BDAD00"
-set highlight-transparency  0.4
+" set highlight-transparency  0.4
 
 set completion-highlight-fg "#23B0A3"
 set completion-highlight-bg "#0F1419"
@@ -39,22 +34,25 @@ set recolor-darkcolor       "#FFFFFF"
 set recolor-reverse-video   "true"
 set recolor-keephue         "false"
 
-" Clipboard
 set selection-clipboard clipboard
 
-" Search
 set incremental-search true
 set search-hadjust true
+set show-directories true
+set show-hidden true
 
-" Autoadjust
 set adjust-open width
 
-" Typography
-set font "JetBrainsMono Nerd Font"
+set font "JetBrainsMono Nerd Font 20"
 
-" -----------------------------------------------------------------------------
-" Zathura mappings
-" -----------------------------------------------------------------------------
+set completion-bg "#000000"  
+set completion-fg "#bbbbbb"
+set completion-group-bg "#000000"
+set completion-group-fg "#ffffff"
+set completion-highlight-bg "#000000"
+set completion-highlight-fg "#ffffff"
+
+" mappings
 
 " Zoom in/out
 map [normal]     z zoom in
@@ -92,5 +90,10 @@ map [fullscreen] W adjust_window width
 
 map [normal]     i set recolor
 map [fullscreen] i set recolor
+
+" map [normal]     <Down>      feedkeys ":open <Tab><Down>"
+" map [normal]     <Up>        feedkeys ":open <Tab><Up>"
+" map [inputbar] <Down> feedkeys "<Tab>"
+" map [inputbar] <Up> feedkeys "<S-Tab>"
 
 " vim: ft=vim
