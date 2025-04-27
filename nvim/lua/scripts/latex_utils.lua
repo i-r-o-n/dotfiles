@@ -50,6 +50,29 @@ M.setup_latex_commands = function()
       end,
     })
   end, {})
+
+  -- ultisnips reload snippets
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = "snippets",
+    callback = function()
+      vim.api.nvim_buf_set_keymap(
+        0,
+        "n",
+        "\\ur",
+        ":call UltiSnips#RefreshSnippets()<CR>",
+        { noremap = true, silent = true }
+      )
+    end,
+  })
+
+  -- vim.api.nvim_set_keymap("n", "\\ur", ":call UltiSnips#RefreshSnippets()<CR>", { noremap = true, silent = true })
+  -- these dont' need to be defined here
+  -- vim.g.UltiSnipsExpandTrigger = "<tab>"
+  -- vim.g.UltiSnipsJumpForwardTrigger = "<tab>"
+  -- vim.g.UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+  -- latex build (handled by vimtex)
+  -- vim.api.nvim_set_keymap("n", "<A-b>", ":!lualatex %<CR>", { noremap = true, silent = true })
 end
 
 return M
