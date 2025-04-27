@@ -4,14 +4,14 @@ return {
     init = function()
       -- Use init for configuration, don't use the more common "config".
     end,
-    keys = {
-      { "<localleader>l", desc = "+vimtex" },
-      {
-        "<localleader>ll",
-        desc = "compile",
-        mode = { "n", "x", "o" },
-      },
-    },
+    -- keys = {
+    --   { "<localleader>l", desc = "+vimtex" },
+    --   {
+    --     "<localleader>ll",
+    --     desc = "compile",
+    --     mode = { "n", "x", "o" },
+    --   },
+    -- },
   },
   {
     "chomosuke/typst-preview.nvim",
@@ -22,8 +22,7 @@ return {
     }, -- lazy.nvim will implicitly calls `setup {}`
   },
   {
-    -- "kaarmu/typst.vim",
-    "i-r-o-n/typst.vim",
+    "kaarmu/typst.vim",
     ft = "typst", -- lazy = false,
   },
 }
