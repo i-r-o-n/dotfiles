@@ -23,6 +23,8 @@ vim.o.conceallevel = 2
 vim.o.spelllang = "en_us"
 -- vim.o.spell = true
 
+vim.g.maplocalleader = ","
+
 -- latex
 vim.env.PATH = vim.env.PATH .. ":/usr/local/texlive/2024/bin/x86_64-linux"
 vim.g.tex_flavor = "latex"
