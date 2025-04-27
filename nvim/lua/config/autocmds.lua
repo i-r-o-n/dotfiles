@@ -44,6 +44,8 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 
 local latex_utils = require("scripts.latex_utils")
 
+local typst_utils = require("scripts.typst_utils")
+
 -- load custom latex commands for latex files
 vim.api.nvim_create_autocmd({ "FileType", "VimEnter", "BufEnter", "BufWinEnter" }, {
   pattern = { "tex", "latex" },
@@ -52,42 +54,24 @@ vim.api.nvim_create_autocmd({ "FileType", "VimEnter", "BufEnter", "BufWinEnter" 
   end,
 })
 
--- load custom latex commands in working directories
-vim.api.nvim_create_autocmd("VimEnter", {
-  pattern = "*",
+-- load custom typst commands for typst files
+vim.api.nvim_create_autocmd({ "FileType", "VimEnter", "BufEnter", "BufWinEnter" }, {
+  pattern = { "typst" }, -- don't know which is the proper filetype
   callback = function()
-    local cwd = vim.fn.getcwd()
-    if string.match(cwd, "~/docs/latex") then
-      latex_utils.setup_latex_commands()
-    end
+    typst_utils.setup_typst_commands()
   end,
 })
 
+-- load custom latex commands in working directories
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--   pattern = "*",
+--   callback = function()
+--     local cwd = vim.fn.getcwd()
+--     if string.match(cwd, "~/docs/latex") then
+--       latex_utils.setup_latex_commands()
+--     end
+--   end,
+-- })
+
+-- global utility commands
 require("scripts.repeat_command").setup_util_commands()
-
--- require("lspconfig").tinymist.setup({
---   root_dir = function(_, bufnr)
---     return vim.fs.root(bufnr, { ".git" }) or vim.fn.expand("%:p:h")
---   end,
--- })
-
--- require("lspconfig")["tinymist"].setup({ -- Alternatively, can be used `vim.lsp.config["tinymist"]`
---   root_dir = "-",
---   on_attach = function(client, bufnr)
---     vim.keymap.set("n", "<leader>tp", function()
---       client:exec_cmd({
---         title = "pin",
---         command = "tinymist.pinMain",
---         arguments = { vim.api.nvim_buf_get_name(0) },
---       }, { bufnr = bufnr })
---     end, { desc = "[T]inymist [P]in", noremap = true })
---
---     vim.keymap.set("n", "<leader>tu", function()
---       client:exec_cmd({
---         title = "unpin",
---         command = "tinymist.pinMain",
---         arguments = { vim.v.null },
---       }, { bufnr = bufnr })
---     end, { desc = "[T]inymist [U]npin", noremap = true })
---   end,
--- })
