@@ -2,7 +2,6 @@ return {
   { "SirVer/ultisnips", enabled = false },
   {
     "L3MON4D3/LuaSnip",
-    dependencies = { "rafamadriz/friendly-snippets" },
     config = function()
       require("luasnip.loaders.from_lua").load({
         paths = {
@@ -36,16 +35,16 @@ return {
   },
   -- { "quangnguyen30192/cmp-nvim-ultisnips" },
   {
-    "a-lipson/cmp-nvim-ultisnips",
-    keys = {
-      { "<localleader>u", desc = "+ultisnips" },
-      {
-        "<localleader>ur",
-        "<cmd>call UltiSnips#RefreshSnippets()<CR>",
-        desc = "Refresh UltiSnips",
-        mode = { "n", "x", "o" },
-      },
-    },
+    -- "a-lipson/cmp-nvim-ultisnips",
+    -- keys = {
+    --   { "<localleader>u", desc = "+ultisnips" },
+    --   {
+    --     "<localleader>ur",
+    --     "<cmd>call UltiSnips#RefreshSnippets()<CR>",
+    --     desc = "Refresh UltiSnips",
+    --     mode = { "n", "x", "o" },
+    --   },
+    -- },
   },
   -- { "saadparwaiz1/cmp_luasnip" },
   -- { "micangl/cmp-vimtex" },
