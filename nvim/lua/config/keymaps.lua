@@ -15,20 +15,6 @@ vim.api.nvim_set_keymap("i", "pq", "<Esc>", { noremap = true })
 -- correct last spelling mistake in insert mode
 vim.api.nvim_set_keymap("i", "<C-l>", "<c-g>u<Esc>[s1z=`]a<c-g>u", { noremap = true })
 
--- ultisnips reload snippets
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "snippets",
-  callback = function()
-    vim.api.nvim_buf_set_keymap(
-      0,
-      "n",
-      "\\ur",
-      ":call UltiSnips#RefreshSnippets()<CR>",
-      { noremap = true, silent = true }
-    )
-  end,
-})
-
 -- delete LSP log file with confirmation
 vim.api.nvim_create_user_command("ClearLspLog", function()
   local log_path = vim.fn.expand("~/.local/state/nvim/lsp.log")
@@ -50,12 +36,3 @@ vim.keymap.set("n", "<leader>cL", ":ClearLspLog<CR>", {
   noremap = true,
   desc = "Clear LSP log file",
 })
-
--- vim.api.nvim_set_keymap("n", "\\ur", ":call UltiSnips#RefreshSnippets()<CR>", { noremap = true, silent = true })
--- these dont' need to be defined here
--- vim.g.UltiSnipsExpandTrigger = "<tab>"
--- vim.g.UltiSnipsJumpForwardTrigger = "<tab>"
--- vim.g.UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
--- latex build (handled by vimtex)
--- vim.api.nvim_set_keymap("n", "<A-b>", ":!lualatex %<CR>", { noremap = true, silent = true })
