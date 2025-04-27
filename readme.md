@@ -2,13 +2,14 @@
 
 ## introduction
 
-Hello, again, and welcome; this is where i keep my dot files!
+hello, again, and welcome;
+this is where i keep my configuration files!
 
 ---
 
 ## configuration details
 
-Hyprland on Gentoo with OpenRC 
+Hyprland on Gentoo with OpenRC
 
 ### important scripts
 
