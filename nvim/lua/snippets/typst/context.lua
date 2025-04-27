@@ -11,33 +11,83 @@ local f = common.f
 local t = common.t
 local get_visual = common.get_visual
 
-return {
-  s(
-    { trig = "dm", name = "Insert block math", snippetType = "autosnippet" },
-    fmt(
-      [[
-    $ {} $
+return {}, {
+  sm({ trig = "==", name = "equals aligned" }, fmt([[&= {} \]], { i(1) })),
 
-    {}]],
-      { i(1), i(0) }
-    )
+  --[[
+    there are two separate inline math snippet modes 
+    haven't decided on the best triggers for them yet 
+
+    - mode 1: use on a completed math expression to wrap in math mode, 
+      then insert space afterwards to continue typing non-math content.
+
+    - mode 2: use on an incomplete math expression to wrap in math mode, 
+      then place cursor inside of math context to continue entering math content.
+
+  ]]
+
+  s(
+    {
+      -- trig = "([%a%d][%a%d_]{0,4})ml",
+      trig = "([%a%d_]+)ml",
+      name = "inline math expression",
+      regTrig = true,
+      wordTrig = true,
+    },
+    fmt([[${}$ {}]], {
+      f(function(_, snip)
+        return snip.captures[1]
+      end),
+      i(0),
+    })
+  ),
+
+  s(
+    {
+      trig = "([%a%d_]+)mm",
+      name = "inline math expression",
+      regTrig = true,
+      wordTrig = true,
+    },
+    fmt([[${}{}$]], {
+      f(function(_, snip)
+        return snip.captures[1]
+      end),
+      i(0),
+    })
   ),
 
   ms(
     {
-      { trig = "mm", name = "Insert inline math", snippetType = "autosnippet" },
-      { trig = "ml", name = "Insert inline math", snippetType = "autosnippet" },
+      { trig = "mm", name = "insert inline math" },
+      { trig = "ml", name = "insert inline math" },
     },
-    fmt([[${}${}{} ]], {
+    fmt([[${}${}]], {
       i(1),
-      f(function(args, snip)
-        if args[1][1] and not string.match(args[1][1], "^[%.,%?%- ]") then
-          return " "
-        else
-          return ""
-        end
-      end, { 2 }),
-      i(2),
+      i(0),
     })
+    -- fmt([[${}${}{} ]], {
+    --   i(1),
+    --   f(function(args, snip)
+    --     if args[1][1] and not string.match(args[1][1], "^[%.,%?%- ]") then
+    --       return " "
+    --     else
+    --       return ""
+    --     end
+    --   end, { 2 }),
+    --   i(2),
+    -- })
+  ),
+
+  -- display math mode, separating by newlines is personal preference
+  -- TODO: add configuration option for newline or just spaces for display math
+  s(
+    { trig = "dm", name = "Insert block math" },
+    fmt(
+      [[$ 
+      {} 
+      $ {}]],
+      { i(1), i(0) }
+    )
   ),
 }

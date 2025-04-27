@@ -2,33 +2,58 @@ local common = require("snippets.typst.common")
 local get_visual = common.get_visual
 local fmt = common.fmt
 local fmta = common.fmta
+local pfm = common.pfm
 local sm = common.sm
 local i = common.i
 local d = common.d
+local l = common.l
 local t = common.t
 
 return {
 
+  sm(
+    { trig = "prod", name = "product" },
+    fmt(
+      [[
+      product_({}={})^({}) {} {}
+      ]],
+      { i(1, "n"), i(2, "1"), i(3, "infinity"), d(4, get_visual), i(0) }
+    )
+  ),
+}, {
+
   -- TODO: add ordering snippets eg geq and leq
-  sm({ trig = "==", name = "equals aligned" }, fmt([[&= {} \]], { i(1) })),
 
-  sm({ trig = "xx", name = "Cross Product" }, { t("times ") }),
-
-  sm({ trig = "del", name = "Nabla" }, { t("nabla ") }),
+  sm({ trig = "xx", name = "cross product" }, { t("times ") }),
 
   -- sm({ trig = "..", name = "Dot Product", priority = 100 }, { t("dot ") }),
 
-  sm({ trig = "lim", name = "Limit" }, fmt([[lim_({} -> {}) ]], { i(1, "n"), i(2, "infinity") })),
-
   sm(
-    { trig = "sum", name = "Summation (Sigma)" },
+    { trig = "lim", name = "limit" },
     fmt(
       [[
-      sum_(n={})^({}) {}
+      lim_({} -> {}) 
       ]],
-      { i(1, "index"), i(2, "infinity"), d(3, get_visual) }
+      { i(1, "n"), i(2, "infinity") }
     )
   ),
+
+  sm(
+    { trig = "sum", name = "summation" },
+    fmt(
+      [[
+      sum_({})^({}) {}
+      ]],
+      { i(1, "n=0"), i(2, "infinity"), d(3, get_visual) }
+    )
+  ),
+
+  sm({ trig = "inv", name = "inverse (^-1)", wordTrig = false }, { t("^(-1)") }),
+
+  sm({ trig = "sq", name = "square root" }, fmt([[sqrt({}) {}]], { d(1, get_visual), i(0) })),
+  pfm({ trig = "sq", name = "square root", priority = 1001 }, { l("sqrt(" .. l.POSTFIX_MATCH .. ") ") }),
+  sm({ trig = "sr", name = "squared", wordTrig = false }, { t("^2") }),
+  sm({ trig = "cb", name = "cubed", wordTrig = false }, { t("^3") }),
 
   -- sm({ trig = "taylor", name = "Taylor series" },
   --   fmt(
@@ -40,7 +65,7 @@ return {
   -- ),
 
   sm(
-    { trig = "iint", name = "Integral", priority = 300 },
+    { trig = "iint", name = "integral", priority = 300 },
     fmt(
       [[
       integral_({})^({}) {} {}
@@ -50,37 +75,26 @@ return {
   ),
 
   sm(
-    { trig = "prod", name = "Product (Pi)" },
+    { trig = "dint", name = "integral", priority = 300 },
     fmt(
       [[
-      product_({}={})^({}) {} {}
+      integral_({})^({}) {} {}
       ]],
-      { i(1, "n"), i(2, "1"), i(3, "infinity"), d(4, get_visual), i(0) }
-    )
-  ),
-
-  sm(
-    { trig = "case", name = "Cases, Piecewise" },
-    fmt(
-      [[
-      cases(
-          {}
-      ) {}
-      ]],
-      { i(1, "cases here"), i(0) }
+      { i(1, "a"), i(2, "b"), d(3, get_visual), i(0) }
     )
   ),
 
   -- derivatives
+  sm({ trig = "del", name = "Nabla" }, { t("nabla ") }),
 
-  sm({ trig = "part", name = "Partial Derivative" }, fmt([[(diff {})/(diff {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
-  sm({ trig = "pdf", name = "Partial Derivative" }, fmt([[(diff {})/(diff {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
-  sm({ trig = "ddf", name = "Total Derivative" }, fmt([[(d {})/(d {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
-  sm({ trig = "la+", name = "Laplace {Transform}" }, fmta([[cal(L) lr({ <> }) <>]], { i(1), i(0) })),
-  sm({ trig = "lap", name = "Laplace (Transform)" }, fmta([[cal(L) lr(( <> )) <>]], { i(1), i(0) })),
+  sm({ trig = "part", name = "partial derivative" }, fmt([[(diff {})/(diff {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
+  sm({ trig = "pdf", name = "partial derivative" }, fmt([[(diff {})/(diff {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
+  sm({ trig = "ddf", name = "total derivative" }, fmt([[(d {})/(d {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
+  sm({ trig = "lap", name = "laplace (transform)" }, fmta([[cal(L) lr(( <> )) <>]], { i(1), i(0) })),
 
-  sm({ trig = "ddx", name = "d/dx Total Derivative" }, fmt([[(d {})/(d x) {}]], { i(1, "y"), i(0) })),
-  sm({ trig = "pdx", name = "d/dx Partial Derivative" }, fmt([[(diff {})/(diff x) {}]], { i(1, "y"), i(0) })),
-  sm({ trig = "ddt", name = "d/dt Total Derivative" }, fmt([[(d {})/(d t) {}]], { i(1, "y"), i(0) })),
-  sm({ trig = "pdt", name = "d/dt Partial Derivative" }, fmt([[(diff {})/(diff t) {}]], { i(1, "y"), i(0) })),
+  -- TODO: expand to general derative variable
+  sm({ trig = "ddx", name = "d/dx total derivative" }, fmt([[(d {})/(d x) {}]], { i(1, "y"), i(0) })),
+  sm({ trig = "pdx", name = "d/dx partial derivative" }, fmt([[(diff {})/(diff x) {}]], { i(1, "y"), i(0) })),
+  sm({ trig = "ddt", name = "d/dt total derivative" }, fmt([[(d {})/(d t) {}]], { i(1, "y"), i(0) })),
+  sm({ trig = "pdt", name = "d/dt partial derivative" }, fmt([[(diff {})/(diff t) {}]], { i(1, "y"), i(0) })),
 }

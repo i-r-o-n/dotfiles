@@ -6,9 +6,12 @@ local i = common.i
 local d = common.d
 local get_visual = common.get_visual
 
+-- NOTE: these snippets correspond with the tinyset typst math environment
+-- repo https://github.com/a-lipson/tinyset
+
 return {
   sb(
-    { trig = "proof", name = "Proof" },
+    { trig = "proof", name = "proof" },
     fmt(
       [[
       #proof[
@@ -16,6 +19,19 @@ return {
       ]
       ]],
       { i(0) }
+    )
+  ),
+
+  -- TODO: determine a better way to differentiate this snippet as having a label option
+  sb(
+    { trig = "proof[]", name = "labeled proof of ..." },
+    fmt(
+      [[
+      #proof[{}][
+      {}
+      ]
+      ]],
+      { i(1), i(0) }
     )
   ),
 

@@ -1,5 +1,5 @@
 local common = require("snippets.typst.common")
-local postfixm = common.pfm
+local pfm = common.pfm
 local fmt = common.fmt
 local sm = common.sm
 local sn = common.sn
@@ -8,32 +8,32 @@ local i = common.i
 local l = common.l
 local get_visual = common.get_visual
 
-return {
+return {}, {
 
-  sm(
-    { trig = "/", name = "Fraction Num", dscr = "Creates a fraction with selection as numerator." },
-    fmt("({})/({}) {}", {
-      -- f(function(_, snip)
-      --   local res, env = {}, snip.env
-      --   for _, val in ipairs(env.LS_SELECT_RAW) do
-      --     table.insert(res, val)
-      --   end
-      --   return res
-      -- end, {}),
-      d(1, get_visual),
-      i(2, "den"),
-      i(0),
-    })
-  ),
+  -- sm(
+  --   { trig = "/", name = "Fraction Num", dscr = "Creates a fraction with selection as numerator." },
+  --   fmt("({})/({}) {}", {
+  --     -- f(function(_, snip)
+  --     --   local res, env = {}, snip.env
+  --     --   for _, val in ipairs(env.LS_SELECT_RAW) do
+  --     --     table.insert(res, val)
+  --     --   end
+  --     --   return res
+  --     -- end, {}),
+  --     d(1, get_visual),
+  --     i(2, "den"),
+  --     i(0),
+  --   })
+  -- ),
 
-  sm(
-    { trig = "\\", name = "Fraction Den", dscr = "Creates a fraction with selection as denominator." },
-    fmt("({})/({}) {}", {
-      i(2, "num"),
-      d(1, get_visual),
-      i(0),
-    })
-  ),
+  -- sm(
+  --   { trig = "\\", name = "Fraction Den", dscr = "Creates a fraction with selection as denominator." },
+  --   fmt("({})/({}) {}", {
+  --     i(2, "num"),
+  --     d(1, get_visual),
+  --     i(0),
+  --   })
+  -- ),
 
   -- postfixm(
   --   { trig = ".fr", name = "Surround into fraction" },
@@ -46,11 +46,11 @@ return {
   --   })
   -- ),
 
-  postfixm(
-    { trig = ".fr", snippetType = "autosnippet", name = "Surround into fraction" },
+  pfm(
+    { trig = "fr", name = "surround into fraction" },
     fmt("{}/({}) {}", {
       l("(" .. l.POSTFIX_MATCH .. ")"),
-      i(2, "den"),
+      i(1),
       i(0),
     })
   ),

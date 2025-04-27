@@ -75,13 +75,17 @@ function M.space_conditional(args)
 end
 
 -- use LuaSnip's extend decorator to set
--- opts = { condition = in_math, show_condition = in_math }
+local math_opts = { condition = M.in_math, show_condition = M.in_math }
 extdec.register(M.s, { arg_indx = 3 })
 extdec.register(M.ms, { arg_indx = 3 })
 extdec.register(postfix, { arg_indx = 3 })
 
--- Create the math-specific multi_snippet function
-M.smm = extdec.apply(ls.multi_snippet, { condition = M.in_math, show_condition = M.in_math })
+-- M.pfms = extdec.apply(function(trig, nodes, opts)
+--   return postfix(trig, function(opts)
+--     return M.c(1, nodes)
+--   end, opts)
+-- end, { condition = M.in_math, show_condition = M.in_math })
+
 -- math mode context
 M.sm = extdec.apply(M.s, { condition = M.in_math, show_condition = M.in_math })
 -- math mode context multi trigger
