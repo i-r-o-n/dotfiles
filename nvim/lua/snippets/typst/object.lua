@@ -99,7 +99,30 @@ return {
     fmt([[{}_({}) {}]], { l("(" .. l.POSTFIX_MATCH .. ")"), i(1), i(0) })
   ),
 
-  pfm({ trig = "td", name = "subscript" }, fmt([[{}^({}) {}]], { l("(" .. l.POSTFIX_MATCH .. ")"), i(1), i(0) })),
+  -- pfm({ trig = "td", name = "subscript" }, fmt([[{}^({}) {}]], { l("(" .. l.POSTFIX_MATCH .. ")"), i(1), i(0) })),
+  pfm({ trig = "td", name = "subscript" }, fmt([[{}^({}) {}]], { l(l.POSTFIX_MATCH), i(1), i(0) })),
+
+  sm(
+    {
+      trig = (common.math_expr_pattern .. "td"),
+      name = "superscript",
+      regTrig = true,
+      wordTrig = true,
+      priority = 100,
+    },
+    fmt([[{}^({})]], {
+      f(function(_, snip)
+        return snip.captures[1]
+        -- local capture = snip.captures[1]
+        -- if capture:sub(1, 1) == "(" and capture:sub(-1) == ")" then
+        --   return capture
+        -- else
+        --   return "(" .. capture .. ")"
+        -- end
+      end),
+      i(0),
+    })
+  ),
 
   -- sm(
   --   { trig = "td", name = "exponent", wordTrig = false },

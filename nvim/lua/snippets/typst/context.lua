@@ -33,6 +33,11 @@ return {}, {
       name = "inline math expression",
       regTrig = true,
       wordTrig = true,
+      condition = function(line_to_cursor, matched_trigger, captures)
+        -- Prevent triggering when typing "uniformly"
+        local capture = captures[1]
+        return capture ~= "unifor" and capture ~= "uniform"
+      end,
     },
     fmt([[${}$ {}]], {
       f(function(_, snip)
@@ -85,8 +90,8 @@ return {}, {
     { trig = "dm", name = "Insert block math" },
     fmt(
       [[$ 
-      {} 
-      $ {}]],
+{} 
+$ {}]],
       { i(1), i(0) }
     )
   ),

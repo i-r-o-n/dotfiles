@@ -95,4 +95,10 @@ M.sb = extdec.apply(M.s, { condition = line_begin })
 -- postfix math mode
 M.pfm = extdec.apply(postfix, { condition = M.in_math, show_condition = M.in_math })
 
+-- matching regex patterns
+
+M.math_expr_pattern = "([%a%d_%+%-()]+)"
+
+M.word = ""
+
 return M

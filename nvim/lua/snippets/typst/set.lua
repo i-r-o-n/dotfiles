@@ -3,6 +3,9 @@ local sm = common.sm
 local t = common.t
 
 return {
-  sm({ trig = "notin", name = "Not In" }, { t("in.not ") }),
-  sm({ trig = "OO", name = "Empty Set" }, { t("emptyset ") }),
+  sm({ trig = "notin", name = "not in" }, { t("in.not ") }),
+  sm({ trig = "OO", name = "empty set" }, { t("emptyset ") }),
+}, {
+  sm({ trig = "nin", name = "not in", hidden = true }, { t("in.not ") }),
+  sm({ trig = "cc", name = "subset", hidden = true }, { t("subset ") }),
 }

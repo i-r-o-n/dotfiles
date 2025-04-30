@@ -28,6 +28,8 @@ return {
 
   -- sm({ trig = "..", name = "Dot Product", priority = 100 }, { t("dot ") }),
 
+  sm({ trig = "mto", name = "maps to" }, { t("mapsto ") }),
+
   sm(
     { trig = "lim", name = "limit" },
     fmt(
@@ -85,8 +87,6 @@ return {
   ),
 
   -- derivatives
-  sm({ trig = "del", name = "Nabla" }, { t("nabla ") }),
-
   sm({ trig = "part", name = "partial derivative" }, fmt([[(diff {})/(diff {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
   sm({ trig = "pdf", name = "partial derivative" }, fmt([[(diff {})/(diff {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
   sm({ trig = "ddf", name = "total derivative" }, fmt([[(d {})/(d {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
