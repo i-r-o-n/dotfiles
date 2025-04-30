@@ -34,8 +34,9 @@ return {
       integrations = {
         cmp = true,
         gitsigns = true,
-        nvimtree = true,
-        neotree = true,
+        -- nvimtree = true,
+        -- neotree = true,
+        snacks = false,
         treesitter = true,
         notify = true,
         telescope = {
