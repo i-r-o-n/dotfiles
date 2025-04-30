@@ -26,19 +26,19 @@ vim.o.spelllang = "en_us"
 vim.g.maplocalleader = ","
 
 -- latex
-vim.env.PATH = vim.env.PATH .. ":/usr/local/texlive/2024/bin/x86_64-linux"
-vim.g.tex_flavor = "latex"
-vim.g.vimtex_view_method = "zathura"
-vim.g.vimtex_quickfix_mode = 0
-vim.g.tex_conceal = "abdmg"
-vim.g.vimtex_compiler_latexmk = {
-  options = {
-    "-lualatex",
-    "-file-line-error",
-    "-synctex=1",
-    "-interaction=nonstopmode",
-  },
-}
+-- vim.env.PATH = vim.env.PATH .. ":/usr/local/texlive/2024/bin/x86_64-linux"
+-- vim.g.tex_flavor = "latex"
+-- vim.g.vimtex_view_method = "zathura"
+-- vim.g.vimtex_quickfix_mode = 0
+-- vim.g.tex_conceal = "abdmg"
+-- vim.g.vimtex_compiler_latexmk = {
+--   options = {
+--     "-lualatex",
+--     "-file-line-error",
+--     "-synctex=1",
+--     "-interaction=nonstopmode",
+--   },
+-- }
 
 -- ultisnips
 vim.g.UltiSnipsSnippetDirectories = { "~/.config/nvim/snips" }
