@@ -16,7 +16,7 @@ echo "Available drives:"
 lsblk -o NAME,FSTYPE,SIZE,FSAVAIL,FSUSE%,MOUNTPOINTS
 
 # Prompt user to select a drive
-read -p "Enter the drive name to mount (e.g., nvme0n1p2): " selected_drive
+read -r -p "Enter the drive name to mount (e.g., nvme0n1p2): " selected_drive
 
 # Mount the selected drive
 mount_point="/mnt/gentoo"
