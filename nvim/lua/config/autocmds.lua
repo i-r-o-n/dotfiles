@@ -75,3 +75,9 @@ vim.api.nvim_create_autocmd({ "FileType", "VimEnter", "BufEnter", "BufWinEnter" 
 
 -- global utility commands
 require("scripts.repeat_command").setup_util_commands()
+
+require("conform").setup({
+  formatters_by_ft = {
+    typst = { "typstyle" },
+  },
+})
