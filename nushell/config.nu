@@ -1,6 +1,4 @@
 # Nushell Config File
-#
-# version = "0.97.1"
 
 # For more information on defining custom themes, see
 # https://www.nushell.sh/book/coloring_and_theming.html
@@ -899,9 +897,11 @@ source ~/.config/nushell/aliases.nu
 # auxillary functions
 # use ~/.config/nushell/functions *
 # ls ~/.config/nushell/functions | each { |it| source $it.name }
-source ~/.config/nushell/functions/portage.nu
-source ~/.config/nushell/functions/opam-env.nu
-source ~/.config/nushell/functions/spotify-player.nu
+
+# source ~/.config/nushell/functions/portage.nu
+# source ~/.config/nushell/functions/opam-env.nu
+# source ~/.config/nushell/functions/spotify-player.nu
+source ~/.config/nushell/functions/mod.nu
 
 # source ~/.config/nushell/starship.nu
 use ~/.cache/starship/init.nu
