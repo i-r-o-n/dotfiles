@@ -2,15 +2,24 @@ return {
   { "tpope/vim-fugitive" },
   {
     "kdheepak/lazygit.nvim",
-    -- optional for floating window border decoration
-    dependencies = {
+    dependencies = { -- optional for floating window border decoration
       "nvim-lua/plenary.nvim",
     },
-    -- setting the keybinding for LazyGit with 'keys' is recommended in
-    -- order to load the plugin when the command is run for the first time
-    -- FIXME: still does not load until LazyGit command is run
     keys = {
-      { "<leader>gl", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+      {
+        "<leader>gg",
+        function()
+          Snacks.terminal({ "lazygit" })
+        end,
+        desc = "LazyGit (cwd)",
+      },
+      {
+        "<leader>gG",
+        function()
+          Snacks.terminal({ "lazygit" }, { cwd = LazyVim.root.get() })
+        end,
+        desc = "LazyGit (Root Dir)",
+      },
     },
     cmd = {
       "LazyGit",
