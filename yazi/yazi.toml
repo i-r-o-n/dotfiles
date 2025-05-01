@@ -1,0 +1,7 @@
+[manager]
+show_hidden = true
+linemode = "size_and_mtime"
+scrolloff = 8
+
+# [opener]
+# edit = [{ run = '$EDITOR "$@"', block = true, for = "unix" }]
