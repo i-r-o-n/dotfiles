@@ -111,6 +111,8 @@ path add "/usr/local/texlive/2024/bin/x86_64-linux"
 
 $env.PATH = ($env.PATH | uniq)
 
+$env.EDITOR = "nvim"
+
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')
 

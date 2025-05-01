@@ -18,7 +18,6 @@ alias cl = clear
 
 alias nf = neofetch
 
-# neovim
 alias v  = nvim 
 alias v. = nvim .
 def sudov [...args] {
@@ -27,6 +26,8 @@ def sudov [...args] {
 def vf [...args] {
   cd ...$args; nvim .
 }
+
+alias y = yazi
 
 # clipboard
 alias copy  = wl-copy
@@ -54,7 +55,7 @@ alias tns = tmux new-session
 alias e = emerge --ask
 
 # example from docs
-def lsg [] { ls | sort-by type name -i | grid -c | str trim }
+# def lsg [] { ls | sort-by type name -i | grid -c | str trim }
 
 # mkinitcpio (don't accidentally break bootloader install)
 alias mkinitcpio = ./usr/local/bin/mkinitcpio-wrapper
