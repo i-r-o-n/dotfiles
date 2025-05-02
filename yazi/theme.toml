@@ -1,2 +1,24 @@
+[manager]
+cwd = { fg = "darkgray" }
+hovered = { fg = "black", bg = "white" }
+# preview_hovered = {}
+border_symbol = " "
+border_style = { hidden = true }
+
+[status]
+sep_left = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+[pick]
+border = { hidden = true }
+
+[input]
+border = { hidden = true }
+
+
+[cmp]
+active = { fg = "red" }
+inactive = { fg = "red" }
+
 [icon]
 exts = [{ name = "typ", text = "󰬛", fg = "#4ec5fc" }]
