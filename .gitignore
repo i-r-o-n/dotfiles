@@ -22,6 +22,7 @@ lftp/
 libreoffice/
 mimeapps.list
 nushell/history.txt
+nvim.new/
 nvim.nvchad/
 nvim/.git/*
 nvim/lazy-lock.json
