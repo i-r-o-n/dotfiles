@@ -107,7 +107,8 @@ style = 'green italic'
 [sudo]
 format = "[$symbol]($style)"
 style = "bold italic bright-purple"
-symbol = "⋈┈"
+# symbol = "⋈┈"
+symbol = "⋈"
 disabled = false
 
 [username]
