@@ -9,4 +9,4 @@ local get_visual = common.get_visual
 return {
   sm({ trig = "pmat", name = "() Matrix" }, fmt([[mat(delim: "(", {}) {}]], { d(1, get_visual), i(0) })),
   sm({ trig = "bmat", name = "[] Matrix" }, fmt([[mat(delim: "[", {}) {}]], { d(1, get_visual), i(0) })),
-}
+}, {}

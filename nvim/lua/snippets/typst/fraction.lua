@@ -75,7 +75,8 @@ return {}, {
     fmt([[{}/({})]], {
       f(function(_, snip)
         local capture = snip.captures[1]
-        if capture:sub(1, 1) == "(" and capture:sub(-1) == ")" then
+        -- if capture:sub(1, 1) == "(" and capture:sub(-1) == ")" then
+        if capture:sub(-1) == ")" then
           return capture
         else
           return "(" .. capture .. ")"

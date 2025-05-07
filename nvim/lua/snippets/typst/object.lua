@@ -17,7 +17,6 @@ return {
   sm({ trig = "bar", name = "Over: bar" }, fmt([[overline({}){}]], { d(1, get_visual), i(0) })),
   sm({ trig = "comp", name = "Complement (^complement)", wordTrig = false }, { t("^complement") }),
 
-  -- TODO:
   sm(
     { trig = "case", name = "cases, piecewise" },
     fmt(

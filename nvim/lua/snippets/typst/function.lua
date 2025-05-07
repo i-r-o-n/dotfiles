@@ -21,14 +21,23 @@ return {
     )
   ),
 }, {
-
-  -- TODO: add ordering snippets eg geq and leq
+  sm({ trig = "neq", name = "not equals" }, { t("!= ") }),
+  sm({ trig = "geq", name = "greater than equals" }, { t(">= ") }),
+  sm({ trig = "leq", name = "less than equals" }, { t("<= ") }),
 
   sm({ trig = "xx", name = "cross product" }, { t("times ") }),
 
-  -- sm({ trig = "..", name = "Dot Product", priority = 100 }, { t("dot ") }),
+  sm({ trig = "..", name = "dot product", priority = 100 }, { t("dot ") }),
 
-  sm({ trig = "mto", name = "maps to" }, { t("mapsto ") }),
+  sm({ trig = "mto", name = "maps to" }, { t("|-> ") }),
+  sm({ trig = "to", name = "to" }, { t("-> ") }),
+
+  sm({ trig = "inv", name = "inverse (^-1)", wordTrig = false }, { t("^(-1)") }),
+
+  sm({ trig = "sq", name = "square root" }, fmt([[sqrt({}) {}]], { d(1, get_visual), i(0) })),
+  pfm({ trig = "sq", name = "square root", priority = 1001 }, { l("sqrt(" .. l.POSTFIX_MATCH .. ") ") }),
+  sm({ trig = "sr", name = "squared", wordTrig = false }, { t("^2") }),
+  sm({ trig = "cb", name = "cubed", wordTrig = false }, { t("^3") }),
 
   sm(
     { trig = "lim", name = "limit" },
@@ -50,13 +59,6 @@ return {
     )
   ),
 
-  sm({ trig = "inv", name = "inverse (^-1)", wordTrig = false }, { t("^(-1)") }),
-
-  sm({ trig = "sq", name = "square root" }, fmt([[sqrt({}) {}]], { d(1, get_visual), i(0) })),
-  pfm({ trig = "sq", name = "square root", priority = 1001 }, { l("sqrt(" .. l.POSTFIX_MATCH .. ") ") }),
-  sm({ trig = "sr", name = "squared", wordTrig = false }, { t("^2") }),
-  sm({ trig = "cb", name = "cubed", wordTrig = false }, { t("^3") }),
-
   -- sm({ trig = "taylor", name = "Taylor series" },
   --   fmt(
   --     [[
@@ -67,7 +69,7 @@ return {
   -- ),
 
   sm(
-    { trig = "iint", name = "integral", priority = 300 },
+    { trig = "iint", name = "improper integral", priority = 300 },
     fmt(
       [[
       integral_({})^({}) {} {}
@@ -77,7 +79,7 @@ return {
   ),
 
   sm(
-    { trig = "dint", name = "integral", priority = 300 },
+    { trig = "dint", name = "definite integral", priority = 300 },
     fmt(
       [[
       integral_({})^({}) {} {}
@@ -87,14 +89,14 @@ return {
   ),
 
   -- derivatives
-  sm({ trig = "part", name = "partial derivative" }, fmt([[(diff {})/(diff {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
-  sm({ trig = "pdf", name = "partial derivative" }, fmt([[(diff {})/(diff {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
-  sm({ trig = "ddf", name = "total derivative" }, fmt([[(d {})/(d {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
-  sm({ trig = "lap", name = "laplace (transform)" }, fmta([[cal(L) lr(( <> )) <>]], { i(1), i(0) })),
+  -- sm({ trig = "part", name = "partial derivative" }, fmt([[(diff {})/(diff {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
+  -- sm({ trig = "pdf", name = "partial derivative" }, fmt([[(diff {})/(diff {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
+  -- sm({ trig = "ddf", name = "total derivative" }, fmt([[(d {})/(d {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
+  -- sm({ trig = "lap", name = "laplace (transform)" }, fmta([[cal(L) lr(( <> )) <>]], { i(1), i(0) })),
 
-  -- TODO: expand to general derative variable
-  sm({ trig = "ddx", name = "d/dx total derivative" }, fmt([[(d {})/(d x) {}]], { i(1, "y"), i(0) })),
-  sm({ trig = "pdx", name = "d/dx partial derivative" }, fmt([[(diff {})/(diff x) {}]], { i(1, "y"), i(0) })),
-  sm({ trig = "ddt", name = "d/dt total derivative" }, fmt([[(d {})/(d t) {}]], { i(1, "y"), i(0) })),
-  sm({ trig = "pdt", name = "d/dt partial derivative" }, fmt([[(diff {})/(diff t) {}]], { i(1, "y"), i(0) })),
+  -- -- TODO: expand to general derative variable
+  -- sm({ trig = "ddx", name = "d/dx total derivative" }, fmt([[(d {})/(d x) {}]], { i(1, "y"), i(0) })),
+  -- sm({ trig = "pdx", name = "d/dx partial derivative" }, fmt([[(diff {})/(diff x) {}]], { i(1, "y"), i(0) })),
+  -- sm({ trig = "ddt", name = "d/dt total derivative" }, fmt([[(d {})/(d t) {}]], { i(1, "y"), i(0) })),
+  -- sm({ trig = "pdt", name = "d/dt partial derivative" }, fmt([[(diff {})/(diff t) {}]], { i(1, "y"), i(0) })),
 }

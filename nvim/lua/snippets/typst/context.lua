@@ -11,6 +11,21 @@ local f = common.f
 local t = common.t
 local get_visual = common.get_visual
 
+-- initialize from an array
+local ignore_words_array = {
+  "unifor",
+  "uniform",
+  "su",
+  "sum",
+}
+
+local ignore_words = {}
+
+-- convert to hash table
+for _, word in ipairs(ignore_words_array) do
+  ignore_words[word] = true
+end
+
 return {}, {
   sm({ trig = "==", name = "equals aligned" }, fmt([[&= {} \]], { i(1) })),
 
@@ -34,9 +49,8 @@ return {}, {
       regTrig = true,
       wordTrig = true,
       condition = function(line_to_cursor, matched_trigger, captures)
-        -- Prevent triggering when typing "uniformly"
-        local capture = captures[1]
-        return capture ~= "unifor" and capture ~= "uniform"
+        -- prevent triggering when typing words which contain substring "ml"
+        return not ignore_words[captures[1]]
       end,
     },
     fmt([[${}$ {}]], {
@@ -53,6 +67,10 @@ return {}, {
       name = "inline math expression",
       regTrig = true,
       wordTrig = true,
+      condition = function(line_to_cursor, matched_trigger, captures)
+        -- prevent triggering when typing words which contain substring "mm"
+        return not ignore_words[captures[1]]
+      end,
     },
     fmt([[${}{}$]], {
       f(function(_, snip)
