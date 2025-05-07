@@ -6,6 +6,7 @@ antiderivatives
 antidiagonal
 arctangent
 assumsption
+biholomorphic
 bijection
 bijective
 bipartition
@@ -84,6 +85,7 @@ preimage
 quaternions
 reducibles
 Reimann
+Rouché
 subcover
 subfield
 subgraph
@@ -108,5 +110,3 @@ unfactored
 Wirtinger
 WLOG
 ZFC
-Rouché
-biholomorphic
