@@ -9,7 +9,7 @@ return {
     "catppuccin/nvim",
     name = "catppuccin",
     opts = {
-      term_colors = true,
+      -- term_colors = true,
       transparent_background = true,
       -- styles = {
       --   comments = {},
@@ -24,19 +24,19 @@ return {
       --   properties = {},
       --   types = {},
       -- },
-      color_overrides = {
-        mocha = {
-          base = "#000000",
-          mantle = "#000000",
-          crust = "#000000",
-        },
-      },
+      -- color_overrides = {
+      --   mocha = {
+      --     base = "#000000",
+      --     mantle = "#111111",
+      --     crust = "#111111",
+      --   },
+      -- },
       integrations = {
         cmp = true,
         gitsigns = true,
         -- nvimtree = true,
         -- neotree = true,
-        snacks = false,
+        snacks = true,
         treesitter = true,
         notify = true,
         telescope = {
