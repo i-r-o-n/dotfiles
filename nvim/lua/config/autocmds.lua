@@ -32,6 +32,12 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+vim.api.nvim_create_user_command("Setwd", function()
+  vim.cmd("cd " .. vim.fn.expand("%:p:h"))
+end, {})
+
+-- BUG: potential issue when opening from yazi
+
 -- reopen dashboard on all buffers closed
 vim.api.nvim_create_augroup("DashboardAutoOpen", { clear = true })
 vim.api.nvim_create_autocmd({ "BufDelete" }, {
