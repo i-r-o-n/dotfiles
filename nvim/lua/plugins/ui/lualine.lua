@@ -8,13 +8,16 @@ return {
         options = {
           component_separators = "",
           section_separators = { left = "", right = "" },
+          theme = "auto",
         },
         sections = {
           lualine_a = { "mode" },
-          lualine_b = { "branch" },
+          lualine_b = {
+            LazyVim.lualine.root_dir(),
+            { "branch", icon = "" },
+          },
 
           lualine_c = {
-            LazyVim.lualine.root_dir(),
             {
               "diagnostics",
               symbols = {
