@@ -11,11 +11,14 @@ theme = custom-dark
 
 background = 000000
 
+
 keybind = ctrl+shift+space=toggle_tab_overview
 
 keybind = ctrl+shift+o=new_tab
 keybind = ctrl+shift+a=next_tab
 keybind = ctrl+shift+c=previous_tab
+
+keybind = ctrl+y=copy_to_clipboard
 
 keybind = ctrl+shift+x=close_tab
 
