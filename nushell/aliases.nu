@@ -16,7 +16,8 @@ alias rm = trash-put # consider using rm -t
 
 alias cl = clear
 
-alias nf = neofetch
+alias nf = fastfetch
+alias fetch = python ~/apps/anifetch/anifetch.py -f ~/apps/anifetch/example.mp4 -ff -W 80 -H 80 -c '--symbols wide --fg-only'
 
 alias v  = nvim 
 alias v. = nvim .
