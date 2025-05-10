@@ -17,6 +17,8 @@ local ignore_words_array = {
   "uniform",
   "su",
   "sum",
+  "gam",
+  "ga",
 }
 
 local ignore_words = {}

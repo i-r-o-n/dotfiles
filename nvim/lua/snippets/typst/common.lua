@@ -101,4 +101,14 @@ M.math_expr_pattern = "([%a%d_%+%-()]+)"
 
 M.word = ""
 
+-- BUG: these definitions only work locally
+
+-- M.math_shorthand = function(trigger, word)
+--   return M.sm({ trig = trigger, name = word .. " shorthand" }, { M.t(word) })
+-- end
+--
+-- M.shorthand = function(trigger, word)
+--   return M.s({ trig = trigger, name = word .. " shorthand" }, { M.t(word) })
+-- end
+
 return M

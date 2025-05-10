@@ -8,17 +8,22 @@ local i = common.i
 local d = common.d
 local l = common.l
 local t = common.t
+-- local sh = common.shorthand
+-- local smh = common.math_shorthand
 
 return {
+  sm({ trig = "int", name = "integral shorthand" }, { t("integral") }),
+
+  sm({ trig = "lim", name = "limit" }, fmt([[lim_({} -> {}) ]], { i(1, "n"), i(2, "infinity") })),
+
+  sm(
+    { trig = "sum", name = "summation" },
+    fmt([[sum_({})^({}) {} ]], { i(1, "n=0"), i(2, "infinity"), d(3, get_visual) })
+  ),
 
   sm(
     { trig = "prod", name = "product" },
-    fmt(
-      [[
-      product_({}={})^({}) {} {}
-      ]],
-      { i(1, "n"), i(2, "1"), i(3, "infinity"), d(4, get_visual), i(0) }
-    )
+    fmt([[product_({}={})^({}) {} {} ]], { i(1, "n"), i(2, "1"), i(3, "infinity"), d(4, get_visual), i(0) })
   ),
 }, {
   sm({ trig = "neq", name = "not equals" }, { t("!= ") }),
@@ -39,26 +44,6 @@ return {
   sm({ trig = "sr", name = "squared", wordTrig = false }, { t("^2") }),
   sm({ trig = "cb", name = "cubed", wordTrig = false }, { t("^3") }),
 
-  sm(
-    { trig = "lim", name = "limit" },
-    fmt(
-      [[
-      lim_({} -> {}) 
-      ]],
-      { i(1, "n"), i(2, "infinity") }
-    )
-  ),
-
-  sm(
-    { trig = "sum", name = "summation" },
-    fmt(
-      [[
-      sum_({})^({}) {}
-      ]],
-      { i(1, "n=0"), i(2, "infinity"), d(3, get_visual) }
-    )
-  ),
-
   -- sm({ trig = "taylor", name = "Taylor series" },
   --   fmt(
   --     [[
@@ -70,23 +55,15 @@ return {
 
   sm(
     { trig = "iint", name = "improper integral", priority = 300 },
-    fmt(
-      [[
-      integral_({})^({}) {} {}
-      ]],
-      { i(1, "-infinity"), i(2, "infinity"), d(3, get_visual), i(0) }
-    )
+    fmt([[integral_({})^({}) {} {}]], { i(1, "-infinity"), i(2, "infinity"), d(3, get_visual), i(0) })
   ),
 
   sm(
     { trig = "dint", name = "definite integral", priority = 300 },
-    fmt(
-      [[
-      integral_({})^({}) {} {}
-      ]],
-      { i(1, "a"), i(2, "b"), d(3, get_visual), i(0) }
-    )
+    fmt([[integral_({})^({}) {} dd {}]], { i(1, "a"), i(2, "b"), d(3, get_visual), i(0) })
   ),
+
+  sm({ trig = "dlim", name = "defined limit" }, fmt([[lim_({} -> {}) ]], { i(1, "n"), i(2, "infinity") })),
 
   -- derivatives
   -- sm({ trig = "part", name = "partial derivative" }, fmt([[(diff {})/(diff {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),
