@@ -1,0 +1,21 @@
+[language-server.tinymist]
+command = "tinymist"
+config = { exportPdf = "onType", formatterMode = "typstyle" }
+
+[[language]]
+name = "typst"
+language-servers = ["tinymist"]
+
+[language-server.coq-lsp]
+command = "coq-lsp"
+
+[[language]]
+name = "coq"
+scope = "source.coq"
+grammar = "coq"
+injection-regex = "coq"
+file-types = ["v", "coq"]
+roots = ["_CoqProject", "coq-pkgs"]
+comment-token = "(*"
+indent = { tab-width = 2, unit = "  " }
+language-servers = ["coq-lsp"]

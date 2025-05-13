@@ -1,0 +1,13 @@
+inherits = "catppuccin_mocha"
+
+"ui.background" = { bg = "#000000" }
+# ui.background.separator = "#222222"
+"ui.menu" = { bg = "#000000" }
+"ui.popup" = { bg = "#000000" }
+"ui.window" = { bg = "#000000" }
+"ui.help" = { bg = "#000000" }
+
+[palette]
+base = "#000000"   # Main background
+mantle = "#000000" # Status line background
+crust = "#000000"  # Gutter background
