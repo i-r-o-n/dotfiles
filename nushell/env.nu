@@ -101,9 +101,10 @@ $env.CARGO_HOME = ($env.HOME | path join ".cargo")
 
 # TODO: put this into a function!
 
-path add ($env.HOME | path join ".local" "bin")
-path add ($env.HOME | path join ".ghcup" "bin")
 path add ($env.HOME | path join ".bun"   "bin")
+path add ($env.HOME | path join ".cargo" "bin")
+path add ($env.HOME | path join ".ghcup" "bin")
+path add ($env.HOME | path join ".local" "bin")
 
 path add ($env.HOME | path join ".opam" "default" "bin")
 
