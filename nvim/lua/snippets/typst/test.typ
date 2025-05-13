@@ -3,7 +3,7 @@
 #show: style("test")
 
 #problem[
-  This is an example problem.
+    This is an example problem.
 ]
 
 Paragraph alignment check
