@@ -21,6 +21,8 @@ local ignore_words_array = {
   "ga",
   "le",
   "lem",
+  "co",
+  "com",
 }
 
 local ignore_words = {}

@@ -12,6 +12,9 @@ local t = common.t
 -- local smh = common.math_shorthand
 
 return {
+  -- auto-trigger overlaps with ... snippet
+  sm({ trig = "..", name = "dot product", priority = 100 }, { t("dot ") }),
+
   sm({ trig = "int", name = "integral shorthand" }, { t("integral") }),
 
   sm({ trig = "lim", name = "limit" }, fmt([[lim_({} -> {}) ]], { i(1, "n"), i(2, "infinity") })),
@@ -32,15 +35,14 @@ return {
 
   sm({ trig = "xx", name = "cross product" }, { t("times ") }),
 
-  sm({ trig = "..", name = "dot product", priority = 100 }, { t("dot ") }),
-
   sm({ trig = "mto", name = "maps to" }, { t("|-> ") }),
   sm({ trig = "to", name = "to" }, { t("-> ") }),
 
   sm({ trig = "inv", name = "inverse (^-1)", wordTrig = false }, { t("^(-1)") }),
 
-  sm({ trig = "sq", name = "square root" }, fmt([[sqrt({}) {}]], { d(1, get_visual), i(0) })),
-  pfm({ trig = "sq", name = "square root", priority = 1001 }, { l("sqrt(" .. l.POSTFIX_MATCH .. ") ") }),
+  sm({ trig = "sq", name = "square root", wordTrig = true }, fmt([[sqrt({}) {}]], { d(1, get_visual), i(0) })),
+  -- TODO: adjust to only trigger on words
+  -- pfm({ trig = "sq", name = "square root", priority = 1001 }, { l("sqrt(" .. l.POSTFIX_MATCH .. ") ") }),
   sm({ trig = "sr", name = "squared", wordTrig = false }, { t("^2") }),
   sm({ trig = "cb", name = "cubed", wordTrig = false }, { t("^3") }),
 
