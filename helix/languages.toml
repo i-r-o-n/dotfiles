@@ -1,6 +1,6 @@
 [language-server.tinymist]
 command = "tinymist"
-config = { exportPdf = "onType", formatterMode = "typstyle" }
+config = { formatterMode = "typstyle" }
 
 [[language]]
 name = "typst"
