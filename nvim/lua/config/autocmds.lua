@@ -2,24 +2,6 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
--- auto update
--- local function auto_update_group(name)
---   return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
--- end
-
--- FIXME: does this work?
--- auto update plugins
--- vim.api.nvim_create_autocmd("VimEnter", {
---   -- vim.api.nvim_set_option("t_SI", "\x1b[5 q"),
---   -- vim.api.nvim_set_option("t_EI", "\x1b[1 q"),
---   group = auto_update_group("autoupdate"),
---   callback = function()
---     if require("lazy.status").has_updates then
---       require("lazy").update({ show = false })
---     end
---   end,
--- })
-
 -- enable spell checking for certain file types
 vim.cmd([[autocmd FileType markdown,tex,html,text setlocal spell]])
 
@@ -64,23 +46,33 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
+-- trim whitespace on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function()
+    local save_cursor = vim.fn.getpos(".")
+    vim.cmd([[%s/\s\+$//e]])
+    vim.fn.setpos(".", save_cursor)
+  end,
+})
+
 local latex_utils = require("scripts.latex_utils")
 
 local typst_utils = require("scripts.typst_utils")
+
+-- load custom typst commands for typst files
+vim.api.nvim_create_autocmd({ "filetype", "vimenter", "bufenter", "bufwinenter" }, {
+  pattern = { "typst" }, -- don't know which is the proper filetype
+  callback = function()
+    typst_utils.setup_typst_commands()
+  end,
+})
 
 -- load custom latex commands for latex files
 vim.api.nvim_create_autocmd({ "FileType", "VimEnter", "BufEnter", "BufWinEnter" }, {
   pattern = { "tex", "latex" },
   callback = function()
     latex_utils.setup_latex_commands()
-  end,
-})
-
--- load custom typst commands for typst files
-vim.api.nvim_create_autocmd({ "FileType", "VimEnter", "BufEnter", "BufWinEnter" }, {
-  pattern = { "typst" }, -- don't know which is the proper filetype
-  callback = function()
-    typst_utils.setup_typst_commands()
   end,
 })
 
@@ -98,6 +90,8 @@ vim.api.nvim_create_autocmd({ "FileType", "VimEnter", "BufEnter", "BufWinEnter" 
 -- global utility commands
 require("scripts.repeat_command").setup_util_commands()
 
+-- TODO: modify in typst
+-- setup formatting
 require("conform").setup({
   formatters_by_ft = {
     typst = { "typstyle" },
