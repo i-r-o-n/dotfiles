@@ -47,3 +47,7 @@ vim.g.UltiSnipsSnippetDirectories = { "~/.config/nvim/snips" }
 vim.g.typst_pdf_viewer = "zathura"
 vim.g.typst_conceal = 1
 vim.g.typst_folding = 1
+
+-- agda
+vim.g.cornelis_use_global_binary = 1
+vim.g.cornelis_split_location = "vertical"
