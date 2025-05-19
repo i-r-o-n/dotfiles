@@ -24,5 +24,15 @@ return {
   {
     "kaarmu/typst.vim",
     ft = "typst", -- lazy = false,
+    -- FIXME: i don't know is this will work.
+    init = function()
+      require("lspconfig").tinymist.setup({
+        settings = {
+          tinymist = {
+            formatterMode = "typstyle",
+          },
+        },
+      })
+    end,
   },
 }
