@@ -43,6 +43,7 @@
       "showPeCoreCount": true,
       "temp": true,
     },
+    "gpu",
     // "cpucache",
     // "cpuusage",
     // {
