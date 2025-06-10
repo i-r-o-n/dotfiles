@@ -90,7 +90,7 @@ vim.api.nvim_create_autocmd({ "FileType", "VimEnter", "BufEnter", "BufWinEnter" 
 -- global utility commands
 require("scripts.repeat_command").setup_util_commands()
 
--- TODO: modify in typst
+-- TODO: control activation in typst
 -- setup formatting
 require("conform").setup({
   formatters_by_ft = {
