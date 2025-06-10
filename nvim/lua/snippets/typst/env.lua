@@ -11,6 +11,19 @@ local get_visual = common.get_visual
 
 return {
   sb(
+    { trig = "diagram", name = "cetz diagram" },
+    fmta(
+      [[
+      #align(center, cetz-canvas({
+        import draw: *
+        <>
+      }))
+      ]],
+      { i(0) }
+    )
+  ),
+
+  sb(
     { trig = "proof", name = "proof" },
     fmt(
       [[
@@ -267,4 +280,4 @@ return {
   --     }
   --   )
   -- ),
-}
+}, {}

@@ -21,7 +21,7 @@ return {
     { trig = "case", name = "cases, piecewise" },
     fmt(
       [[cases(
-          {} & {} \ 
+          {} & {} \
       ) {}
       ]],
       { i(1), i(2), i(0) }
@@ -137,7 +137,7 @@ return {
 
   sm(
     { trig = "(%a)bar", name = "letter bar", regTrig = true },
-    fmt([[overline({}) ]], {
+    fmt([[overline({})]], {
       f(function(_, snip)
         return snip.captures[1]
       end),
@@ -146,7 +146,25 @@ return {
 
   sm(
     { trig = "(%a)hat", name = "letter hat", regTrig = true },
-    fmt([[hat({}) ]], {
+    fmt([[hat({})]], {
+      f(function(_, snip)
+        return snip.captures[1]
+      end),
+    })
+  ),
+
+  sm(
+    { trig = "(%a)abs", name = "absolute value function", regTrig = true },
+    fmt([[abs({})]], {
+      f(function(_, snip)
+        return snip.captures[1]
+      end),
+    })
+  ),
+
+  sm(
+    { trig = "(%a)bas", name = "absolute value bars", regTrig = true },
+    fmt([[|{}|]], {
       f(function(_, snip)
         return snip.captures[1]
       end),
@@ -176,8 +194,8 @@ return {
     fmt([[vec({}_{}, dots.v, {}_{})]], { i(1, "x"), i(2, "1"), rep(1), i(3, "n") })
   ),
 
-  sm({ trig = "...", name = "lower horizontal dots", priority = 100 }, { t("#sym.dots.h") }),
-  sm({ trig = "c..", name = "center horizontal dots", priority = 100 }, { t("#sym.dots.h.c") }),
+  sm({ trig = "...", name = "lower horizontal dots", priority = 100 }, { t("dots") }),
+  sm({ trig = "c..", name = "center horizontal dots", priority = 100 }, { t("dots.c") }),
 
   sm({ trig = "tt", name = "text" }, fmt([["{}" {}]], { i(1, "text here"), i(0) })),
 }

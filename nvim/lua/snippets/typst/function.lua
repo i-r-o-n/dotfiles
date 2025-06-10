@@ -29,14 +29,17 @@ return {
     fmt([[product_({}={})^({}) {} {} ]], { i(1, "n"), i(2, "1"), i(3, "infinity"), d(4, get_visual), i(0) })
   ),
 }, {
-  sm({ trig = "neq", name = "not equals" }, { t("!= ") }),
-  sm({ trig = "geq", name = "greater than equals" }, { t(">= ") }),
-  sm({ trig = "leq", name = "less than equals" }, { t("<= ") }),
+  -- TODO: reorganize these
+  sm({ trig = "neq", name = "not equals" }, { t("!=") }),
+  sm({ trig = "geq", name = "greater than equals" }, { t(">=") }),
+  sm({ trig = "leq", name = "less than equals" }, { t("<=") }),
+
+  sm({ trig = "impl", name = "implies" }, { t("==>") }),
 
   sm({ trig = "xx", name = "cross product" }, { t("times ") }),
 
-  sm({ trig = "mto", name = "maps to" }, { t("|-> ") }),
-  sm({ trig = "to", name = "to" }, { t("-> ") }),
+  sm({ trig = "mto", name = "maps to" }, { t("|->") }),
+  sm({ trig = "to", name = "to" }, { t("->") }),
 
   sm({ trig = "inv", name = "inverse (^-1)", wordTrig = false }, { t("^(-1)") }),
 
@@ -66,6 +69,11 @@ return {
   ),
 
   sm({ trig = "dlim", name = "defined limit" }, fmt([[lim_({} -> {}) ]], { i(1, "n"), i(2, "infinity") })),
+
+  sm(
+    { trig = "dsum", name = "defined summation" },
+    fmt([[sum_({})^({}) {} ]], { i(1, "n=0"), i(2, "infinity"), d(3, get_visual) })
+  ),
 
   -- derivatives
   -- sm({ trig = "part", name = "partial derivative" }, fmt([[(diff {})/(diff {}) {}]], { i(1, "f"), i(2, "x"), i(0) })),

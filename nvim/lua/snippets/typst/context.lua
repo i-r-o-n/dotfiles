@@ -23,6 +23,11 @@ local ignore_words_array = {
   "lem",
   "co",
   "com",
+  "sy",
+  "sym",
+  "reco",
+  "recom",
+  "im",
 }
 
 local ignore_words = {}
@@ -36,13 +41,13 @@ return {}, {
   sm({ trig = "==", name = "equals aligned" }, fmt([[&= {} \]], { i(1) })),
 
   --[[
-    there are two separate inline math snippet modes 
-    haven't decided on the best triggers for them yet 
+    there are two separate inline math snippet modes
+    haven't decided on the best triggers for them yet
 
-    - mode 1: use on a completed math expression to wrap in math mode, 
+    - mode 1: use on a completed math expression to wrap in math mode,
       then insert space afterwards to continue typing non-math content.
 
-    - mode 2: use on an incomplete math expression to wrap in math mode, 
+    - mode 2: use on an incomplete math expression to wrap in math mode,
       then place cursor inside of math context to continue entering math content.
 
   ]]
@@ -113,8 +118,8 @@ return {}, {
   s(
     { trig = "dm", name = "Insert block math" },
     fmt(
-      [[$ 
-{} 
+      [[$
+{}
 $ {}]],
       { i(1), i(0) }
     )
