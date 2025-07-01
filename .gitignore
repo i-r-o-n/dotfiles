@@ -35,7 +35,7 @@ picom/
 Proton Mail/
 pulse/
 qBittorrent/
-qmk/*venv
+qmk/qmk.ini
 QtProject.conf
 rofi/
 Signal/
