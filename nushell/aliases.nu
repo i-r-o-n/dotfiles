@@ -7,27 +7,25 @@ alias cat = bat # prefer bat preview
 
 alias ssh = ssh -F ~/.config/ssh/config
 
-alias su = sudo
-
-alias em = emerge
-alias sem = sudo emerge
-
 alias rm = trash-put # consider using rm -t
 
-alias cl = clear
-
 alias nf = fastfetch
-alias fetch = python ~/apps/anifetch/anifetch.py -f ~/apps/anifetch/example.mp4 -ff -W 80 -H 80 -c '--symbols wide --fg-only'
+alias fetch = python ~/app/anifetch/anifetch.py -f ~/app/anifetch/example.mp4 -ff -W 80 -H 80 -c '--symbols wide --fg-only'
 
 alias v  = nvim 
 alias v. = nvim .
+# def vf [...args] {
+#   z ...$args; nvim .
+# }
+
+
+alias h = hx
+
 def sudov [...args] {
   EDITOR=nvim sudoedit ...$args
 }
-def vf [...args] {
-  cd ...$args; nvim .
-}
 
+alias e = eza
 alias y = yazi
 
 # clipboard
@@ -52,9 +50,6 @@ alias t = tmux
 alias trs = tmux rename-session 
 alias tns = tmux new-session 
 
-# emerge
-alias e = emerge --ask
-
 # example from docs
 # def lsg [] { ls | sort-by type name -i | grid -c | str trim }
 
@@ -63,3 +58,19 @@ alias mkinitcpio = ./usr/local/bin/mkinitcpio-wrapper
 
 # in case bash is needed
 alias bash = bash --rcfile ~/.bash_standalone_profile
+
+# def ls-spaced [...args] {
+#     let has_l_flag = ($args | any {|f| $f =~ '^-.*l.*$' })
+
+#     if $has_l_flag {
+#         ^ls ...$args | update mode {|row|
+#             $row.mode
+#             | str substring 0..2
+#             | append ($row.mode | str substring 3..5)
+#             | append ($row.mode | str substring 6..9)
+#             | str join " "
+#         }
+#     } else {
+#         ^ls ...$args
+#     }
+# }
