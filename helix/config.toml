@@ -1,12 +1,30 @@
 theme = "custom"
 
+[editor]
+line-number = "relative"
+
 [keys.insert]
-"C-d" = "normal_mode"
-"C-s" = [":format", ":write", "normal_mode"]
+C-d = "normal_mode"
+C-s = [":format", ":write", "normal_mode"]
 
 [keys.normal]
-"C-s" = [":format", ":write", "normal_mode"]
-"C-j" = "save_selection"
+C-s = [":format", ":write", "normal_mode"]
+C-j = "save_selection"
+# movement
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
+# selection
+X = "extend_line_above"
+A-x = "extend_to_line_bounds"
+
+[keys.normal."]"]
+m.i = "@/[\\(\\[{]<ret>mim" 
+m.a = "@/[\\(\\[{]<ret>mam" 
+
+[keys.normal."["]
+m.i = "@?[\\(\\[{]<ret>mim" 
+m.a = "@?[\\(\\[{]<ret>mam" 
 
 [keys.normal."space"]
-"q" = ":quit"
+q = ":quit"
+
