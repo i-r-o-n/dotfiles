@@ -1,0 +1,23 @@
+//  name        output            keys
+
+// layer access combos
+CMB(qspc_lnum, L_NUM, TL_LOWR, KC_Q)
+CMB(tl_blii_num, MO(4), TL_LOWR, KC_Q)
+CMB(tr_brii_mse, MO(6), TL_UPPR, KC_P)
+
+// caps word and shift combos
+CMB(xj_capsword, CW_TOGG, KC_X, KC_J)
+
+// one shot shifts
+CMB(jb_oss,      OSS, KC_J,   KC_B)
+CMB(dotcomm_oss, OSS, KC_DOT, KC_COMM)
+
+// escape
+CMB(fl_esc, KC_ESC, KC_F, KC_L)
+// tab
+CMB(sclndot_tab, KC_TAB, KC_SCLN, KC_DOT)
+// backspace
+CMB(commg_bspc, KC_BSPC, KC_COMM, KC_G)
+CMB(dotg_wdel, C(KC_BSPC), KC_DOT, KC_G)
+
+

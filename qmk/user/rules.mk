@@ -7,16 +7,12 @@ CAPS_WORD_ENABLE = yes
 TRI_LAYER_ENABLE = yes
 BOOTMAGIC_ENABLE = yes
 
-# what does this do again?
-INTROSPECTION_KEYMAP_C = keymap.c
-SRC += tapping.c
+INTROSPECTION_KEYMAP_C = introspection.c
+
+# hopefully this works!?
+SRC += $(USER_PATH)/user.c
 
 # Gentoo optimization enables _FOUND_SOURCE, conflict with qmk printf lib
 ifneq ($(findstring Gentoo, $(shell arm-none-eabi-gcc --version)),)
 	EXTRAFLAGS += -U_FORTIFY_SOURCE
 endif
-
-# sweep display
-# OLED_ENABLE     = yes
-# OLED_DRIVER     = SSD1306
-# LTO_ENABLE      = yes
