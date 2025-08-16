@@ -26,5 +26,6 @@ m.i = "@?[\\(\\[{]<ret>mim"
 m.a = "@?[\\(\\[{]<ret>mam" 
 
 [keys.normal."space"]
-q = ":quit"
+q = ":q"
+x = ":x" # write quit
 
