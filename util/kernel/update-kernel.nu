@@ -1,3 +1,5 @@
+#!/usr/bin/env nu
+
 use ~/.config/nushell/lib/common.nu confirm
 
 ^eselect kernel list
@@ -32,6 +34,14 @@ if (confirm "Proceed") {
   }
 
   echo "Kernel installation complete"
+
+  if (confirm "Clean kernel") {
+    ^make clean
+
+    ^eclean-kernel
+
+    echo "Kernel build artifacts cleaned"
+  }
 } else {
   echo "Operation canceled"
 }
