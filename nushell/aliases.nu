@@ -1,5 +1,7 @@
 # aliases
 
+alias sudo = doas
+
 alias cd = z
 alias zi = __zoxide_zi
 
