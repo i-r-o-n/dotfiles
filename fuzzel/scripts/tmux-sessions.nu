@@ -1,5 +1,10 @@
 #!/usr/bin/env nu
 
+def spawn_session [name: string, path: path] {
+    tmux new-session -d -s $name
+    tmux send-keys -t $name cd $path ENTER
+}
+
 def create_syncthing_session [] {
     tmux new-session -d -s syncthing
     tmux detach -s syncthing
