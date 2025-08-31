@@ -1,0 +1,4 @@
+[general]
+check-grammar = true
+check-spelling = true
+language = "en-US"
