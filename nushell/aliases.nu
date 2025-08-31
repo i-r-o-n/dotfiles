@@ -23,9 +23,9 @@ alias v. = nvim .
 
 alias h = hx
 
-def sudov [...args] {
-  EDITOR=nvim sudoedit ...$args
-}
+# def sudov [...args] {
+#   EDITOR=nvim sudoedit ...$args
+# }
 
 alias e = eza
 alias y = yazi

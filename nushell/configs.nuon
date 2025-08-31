@@ -1,0 +1,7 @@
+[
+  { name: "nushell", path: "~/.config/nushell/config.nu" }
+  { name: "helix",   path: "~/.config/helix/config.toml" }
+  { name: "helix-lang", path: "~/.config/helix/languages.toml" }
+  { name: "ghostty", path: "~/.config/ghostty/config" }
+  { name: "hyprland", path: "~/.config/hypr/hyprland.conf" }
+]
