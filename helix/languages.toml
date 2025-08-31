@@ -1,13 +1,10 @@
-[language-server.tinymist]
-command = "tinymist"
-config = { formatterMode = "typstyle" }
-
 [[language]]
 name = "typst"
 language-servers = ["tinymist"]
 
-[language-server.coq-lsp]
-command = "coq-lsp"
+[language-server.tinymist]
+command = "tinymist"
+config = { formatterMode = "typstyle" }
 
 [[language]]
 name = "coq"
@@ -19,3 +16,17 @@ roots = ["_CoqProject", "coq-pkgs"]
 comment-token = "(*"
 indent = { tab-width = 2, unit = "  " }
 language-servers = ["coq-lsp"]
+
+[language-server.coq-lsp]
+command = "coq-lsp"
+
+[[language]]
+name = "markdown"
+soft-wrap.enable = true
+soft-wrap.wrap-at-text-width = true
+soft-wrap.wrap-indicator = ""
+language-servers = ["marksman", "harper"]
+
+[language-server.harper]
+command = "harper-ls"
+args = ["--stdio"]

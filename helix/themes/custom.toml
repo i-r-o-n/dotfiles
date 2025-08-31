@@ -1,13 +1,20 @@
 inherits = "catppuccin_mocha"
 
+# doesn't work with [ui] block?
 "ui.background" = { bg = "#000000" }
-# ui.background.separator = "#222222"
 "ui.menu" = { bg = "#000000" }
 "ui.popup" = { bg = "#000000" }
 "ui.window" = { bg = "#000000" }
 "ui.help" = { bg = "#000000" }
+# ui.background.separator = "#222222"
+
+"diagnostic.error"= { underline = { style = "curl", color = "red" } }
+"diagnostic.warning"= { underline = { style = "line", color = "yellow" } }
+"diagnostic.info"= { underline = { style = "line", color = "blue" } }
+"diagnostic.hint"= { underline = { style = "line", color = "green" } }
 
 [palette]
 base = "#000000"   # Main background
 mantle = "#000000" # Status line background
 crust = "#000000"  # Gutter background
+

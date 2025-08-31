@@ -2,6 +2,9 @@ theme = "custom"
 
 [editor]
 line-number = "relative"
+indent-guides.render = true
+continue-comments = false
+# soft-wrap.enable = true
 
 [keys.insert]
 C-d = "normal_mode"
@@ -25,7 +28,12 @@ m.a = "@/[\\(\\[{]<ret>mam"
 m.i = "@?[\\(\\[{]<ret>mim" 
 m.a = "@?[\\(\\[{]<ret>mam" 
 
+[keys.normal.space.u]
+w = ":toggle soft-wrap.enable"
+z = ":toggle gutters.line-numbers.min-width 50 3"
+
 [keys.normal."space"]
 q = ":q"
-x = ":x" # write quit
+x = ":x"
+
 
