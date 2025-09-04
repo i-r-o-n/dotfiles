@@ -36,4 +36,6 @@ z = ":toggle gutters.line-numbers.min-width 50 3"
 q = ":q"
 x = ":x"
 
-
+[keys.select]
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
