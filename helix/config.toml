@@ -35,7 +35,11 @@ z = ":toggle gutters.line-numbers.min-width 50 3"
 [keys.normal."space"]
 q = ":q"
 x = ":x"
+# external
+# l = [":new", ":insert-output lazygit", ":redraw", "jump_backward"]
+l = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
 
 [keys.select]
 "{" = "goto_prev_paragraph"
 "}" = "goto_next_paragraph"
+
