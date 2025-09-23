@@ -20,3 +20,14 @@ Host remarkable
     HostName 10.11.99.1
     User root
     Port 22
+
+Host server
+	# HostName alipson.me
+	HostName 35.93.180.132
+	User ubuntu
+	IdentityFile ~/.ssh/key1.pem
+	# IdentityFile ~/.ssh/LightsailDefaultKey-us-west-2.pem
+	
+Host git.alipson.me
+    User ubuntu
+    IdentityFile ~/.ssh/key1.pem

@@ -33,10 +33,10 @@ alias y = yazi
 # clipboard
 alias copy  = wl-copy
 # alias copy  = xclip # copy to X clipboard (register *)
-alias copys = xclip -selection clipboard # copy to system wide clipboard (register +)
+# alias copys = xclip -selection clipboard # copy to system wide clipboard (register +)
 alias put   = wl-paste
 # alias put   = xclip -o # output copied content (paste)
-alias puts  = xclip -o -selection clipboard # paste from system wide clipboard (equivalent to `v -selection clipboard`)
+# alias puts  = xclip -o -selection clipboard # paste from system wide clipboard (equivalent to `v -selection clipboard`)
 
 # git
 alias g  = git

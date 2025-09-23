@@ -38,7 +38,7 @@ if (confirm "Proceed") {
   if (confirm "Clean kernel") {
     ^make clean
 
-    ^eclean-kernel
+    ^eclean-kernel -n 1
 
     echo "Kernel build artifacts cleaned"
   }

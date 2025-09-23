@@ -4,4 +4,5 @@
   { name: "helix-lang", path: "~/.config/helix/languages.toml" }
   { name: "ghostty", path: "~/.config/ghostty/config" }
   { name: "hyprland", path: "~/.config/hypr/hyprland.conf" }
+  { name: "alias", path: "~/.config/nushell/aliases.nu" }
 ]
