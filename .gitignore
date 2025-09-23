@@ -32,6 +32,7 @@ nvim/pythonx/__pycache__/
 opam/
 OpenRGB/
 picom/
+plover/
 Proton Mail/
 pulse/
 qBittorrent/
@@ -46,6 +47,7 @@ tmux/plugins/*
 transmission-daemon/
 unity3d/
 utop/
+Vial/
 virt-viewer/
 xdg-desktop-portal/
 xfce4/
